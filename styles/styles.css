@@ -1,0 +1,35 @@
+*{
+    margin: 0%;
+    
+}
+header{
+    width: 100vw;
+    height: 25vh;
+    color: #fff;
+    background-color: #ea422c;
+}
+body{
+    font-family: 'Renogare', sans-serif;
+}
+.icone{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw;
+}
+.icone img{
+    width: 8vw;
+    height: 8vw;
+}
+.login{
+    display: flex;
+    font-size: 1vw;
+}
+
+.imgPrincipal img{
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    height: 50vh;
+
+}
