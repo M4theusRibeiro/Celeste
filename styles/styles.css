@@ -1,35 +1,91 @@
 *{
-    margin: 0%;
-    
-}
-header{
-    width: 100vw;
-    height: 25vh;
-    color: #fff;
-    background-color: #ea422c;
+
 }
 body{
     font-family: 'Renogare', sans-serif;
 }
+button{
+    background-color: #ea422c;
+    color: white;
+    border: #fff solid 0.1vw;
+    font-size: 1vw;
+    width: 12vw;
+    height: 8vh;
+}
+
+/* HEADER */
+header{
+    width: 100vw;
+    height: 18vh;
+    color: #fff;
+    background-color: #ea422c;
+}
+
 .icone{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2vw;
+   
 }
 .icone img{
     width: 8vw;
     height: 8vw;
 }
-.login{
+.navbar ul{
+    width: 8vw;
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+}
+.navbar{
     display: flex;
     font-size: 1vw;
 }
 
-.imgPrincipal img{
+
+/* Banner principal */
+
+.banner
+    {
+       width: 100vw;
+       height: 300vh;
+       background-image: url("/assets/img/background.png");
+    }
+  
+.img-celeste{
     display: flex;
     justify-content: center;
-    width: 50vw;
-    height: 50vh;
+}
 
+/* Banner game */
+
+.bannergame{
+    background-color: #222222;
+    width: 100vw;
+    height: 80vh;
+}
+.caixa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4vw;
+}
+.borda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 80vh;
+    border: #fff solid 0.1vw;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height:40vh;
+    background-color: #222222;
 }

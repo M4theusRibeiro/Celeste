@@ -4,13 +4,21 @@
     font-family: 'Renogare', sans-serif;
 }
 
+header{
+    width: 100vw;
+    height: 18vh;
+    color: #fff;
+    background-color: #ea422c;
+}
 html{
     scroll-behavior: smooth;
 }
-
-
 
 .container {
     width: 80%;
     height: 100%;
   }
+
+.txtBranco{
+    color: #fff;
+}
