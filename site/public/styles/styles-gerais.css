@@ -1,0 +1,32 @@
+@import url('http://fonts.cdnfonts.com/css/renogare');
+*{
+    margin: 0%;
+    font-family: 'Renogare', sans-serif;
+}
+
+header{
+    width: 100vw;
+    height: 18vh;
+    color: #fff;
+    background-color: rgba(234, 66, 44, 0.7);
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 80%;
+    height: 100%;
+}
+
+
+.txtBranco{
+    color: #fff;
+}
+.txtVermelho{
+   color: #ea422c;
+}
+
+.agora{
+    color: black;
+}
