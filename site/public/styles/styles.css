@@ -93,16 +93,34 @@ nav img{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45vw;
-    height: 50vh;
+    width: 38vw;
+    height: 49vh;
     background-color: #fff;
     border: #ea422c solid 1vw;
     border-style:ridge;
 }
 
 .borda video{
-    width: 46vw;
-    height: 60vh;
+    width: 50vw;
+    height: 50vh;
+}
+.bannerPersonagem{
+    display: flex;
+    justify-content: center;
+}
+.bordaPersonagem{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10vw;
+        height: 15vh;
+        background-color: #fff;
+        border: #ea422c solid 1vw;
+        border-style:ridge;
+}
+.imgPersonagem{
+    width: 10vw;
+    height: 15vh;
 }
 
 /* FOOTER */

@@ -1,0 +1,76 @@
+*{
+    margin: 0%;
+}
+body{
+    font-family: 'Renogare', sans-serif;
+}
+button{
+    background-color: #ea422c;
+    color: white;
+    border: #fff solid 0.1vw;
+    border-radius: 300px;
+    font-size: 1vw;
+    width: 16vw;
+    height: 5vh;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+/* HEADER */
+header{
+    width: 100%;
+    height: 8vh;
+    color: #fff;
+    background-color: rgba(234, 66, 44,0.7);
+    position: absolute;
+    overflow: hidden;
+    position: fixed;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 4vw;
+    height: 4vw;
+}
+.icon{
+    width: 4vw;
+    height: 4vw;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    width: 20vw;
+    font-size: 1vw;
+    padding-right: 2%;
+    justify-content: space-between;
+}
+.navbar a {
+    text-decoration: none;
+    
+}
+.navbar ul {
+    list-style: none;
+    width: 20vw;
+    display: flex;
+    justify-content: space-around;
+}
+.navbar ul li {
+    cursor: pointer;
+}
+
+.banner
+    {
+        width: 100%;
+        height: 5%;
+        padding: 5% 0 5% 0;
+}
+.imgFundo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100vw;
+    background-image: url("../assets/img/backgroundCadastro.png");
+  }
