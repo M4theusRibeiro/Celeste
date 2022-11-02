@@ -18,7 +18,15 @@ html{
     width: 80%;
     height: 100%;
 }
-
+.container2 {
+    width: 80%;
+    height: 150%;
+    border: 0.2vw solid #444;
+    border-bottom: 3vw solid #444;
+    background-color: #222;
+    flex-direction: column;
+  
+}
 
 .txtBranco{
     color: #fff;
@@ -26,7 +34,24 @@ html{
 .txtVermelho{
    color: #ea422c;
 }
-
+.txtLaranja{
+    color:#e4412c
+}
+.txtRoxo{
+    color: #db4ce4;
+}
+.txtVerde{
+    color:#006400
+}
+.txtVerdeClaro{
+    color:#7cbc44
+}
+.txtLight{
+    color:#fce4bc
+}
+.txtAmareloClaro{
+    color:#fcec7c
+}
 .agora{
     color: black;
 }

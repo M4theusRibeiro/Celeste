@@ -104,23 +104,133 @@ nav img{
     width: 50vw;
     height: 50vh;
 }
+
+/* Banner Personagem */
+.personagens{
+    background-color: #222;
+}
 .bannerPersonagem{
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+    padding-top: 1vw;
+    flex-direction: column;
+    background-color: #222;
+    margin-top: 14%;
 }
+.caixa2{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 2vw;
+    padding: 1vw;
+}
+.ImgBaixa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border-top: #444 solid 0.2vw;
+    height: auto;
+}
+.ImgBaixaMad{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    width: 50vw;
+     height: 56vh;
+    background-image: url("../assets/img/gif/1647753275_Celeste\ Summit\ 3.gif");
+    background-size: 100%;
+}
+.ImgBaixaBad{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    width: 50vw;
+     height: 56vh;
+    background-image: url("../assets/img/personagensGif/badeline/bad.gif");
+    background-size: 100%;
+}
+.ImgBaixaTheo{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    width: 50vw;
+     height: 56vh;
+    background-image: url("../assets/img/personagensGif/theo/theo.gif");
+    background-size: 100%;
+}
+.ImgBaixaOshiro{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    width: 50vw;
+     height: 56vh;
+    background-image: url("../assets/img/personagensGif/oshiro/oshiro.gif");
+    background-size: 100%;
+}
+.ImgBaixaVovo{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    width: 50vw;
+    height: 56vh;
+    background-image: url("../assets/img/personagensGif/vovo/vovó.gif");
+    background-size: 100%;
+}
+.titulo2{
+    display: flex;
+    justify-content: center;
+    font-size: 3vw;
+    background-color: #222222;
+}
+
+.bordaCard{
+    margin: 0.1vw;
+    border: #fff solid 0.1vw;
+}
+
 .bordaPersonagem{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 10vw;
-        height: 15vh;
-        background-color: #fff;
-        border: #ea422c solid 1vw;
-        border-style:ridge;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 12vh;
+    border: #fff solid 0.1vw;
 }
-.imgPersonagem{
-    width: 10vw;
-    height: 15vh;
+.nomePersonagem{
+    padding: 2vw;
+    border-right: #444 solid 0.3vw;
+}
+.nomePersonagemReverse{
+    padding: 2vw;
+    border-left: #444 solid 0.3vw;
+}
+.sobrePersonagem{
+    text-align: justify;
+    padding: 2vw;
+    font-size: 1vw;
+
+}
+/* Personagens */
+
+.madeleine{
+    background-image: url("../assets/img/personagensGif/madeline/normal.gif");
+    background-size: 100%;
+}
+.badeleine{ 
+    background-image: url("../assets/img/personagensGif/badeline/yell.gif");
+    background-size: 100%;
+}
+.theo{
+    background-image: url("../assets/img/personagensGif/theo/thinking.gif");
+    background-size: 100%;
+}
+.oshiro{
+    background-image: url("../assets/img/personagensGif/oshiro/serious.gif");
+    background-size: 100%;
+}
+.vovo{
+    background-image: url("../assets/img/personagensGif/vovo/laugh.gif");
+    background-size: 100%;
 }
 
 /* FOOTER */
@@ -129,6 +239,7 @@ footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top: 10vw;
     width: 100%;
     height:30vh;
     background-color: #222222;
