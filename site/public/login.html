@@ -11,12 +11,13 @@
     <link rel="manifest" href="./assets/icon/favicon/manifest.json">
     <link rel="stylesheet" href="./styles/styles-gerais.css">
     <link rel="stylesheet" href="./styles/login.css">
-    <script src="./js/cadastro.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/funcoes.js"></script>
 </head>
 <header>
     <nav>
         <div class="icon">
-            <a href="game.html"><img src="./assets/img/morango.png"></a> 
+            <a href="pico8.html"><img src="./assets/img/morango.png"></a> 
         </div>
             <div class="navbar">
                 <ul>
@@ -39,16 +40,21 @@
 </header>
     <main>
         <div class="banner imgFundo">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
             <div class="container-form">
                  <div class="formulario">
                         <span style="font-size: 2vw;" class="txtVermelho titulo1">Login</span>
                     <div class="campo">
                         <span class="txtBranco mensagem">Email:</span>
-                        <input type="Email" placeholder="Email">
+                        <input id="Email" type="Email" placeholder="Email">
                     </div>
                     <div class="campo">
                         <span class="txtBranco mensagem">Senha:</span>
-                        <input type="password" placeholder="Senha">
+                        <input id="Senha" type="password" placeholder="Senha">
                     </div>
                     <div class="contaExistente">
                         <span class="txtBranco">Não possui uma conta?</span>
@@ -56,6 +62,11 @@
                     </div>
                     <button onclick="login()">Login</button>
                  </div>
+                 <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
             </div>
         </div>
     </main>

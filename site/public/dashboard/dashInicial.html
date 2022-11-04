@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/dash.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="icon">
+                <a href="pico8.html"><img src="./assets/img/morango.png"></a> 
+            </div>
+                <div class="navbar">
+                    <ul>
+                        <li>
+                            <a class="txtBranco" href="index.html">Sair</a>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            <a class="agora" href="#">Cadastre-se</a>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            <a class="txtBranco"href="login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <canvas id="myChart"></canvas>
+          </div>
+           
+
+
+    </main>
+</body>
+</html>
+<script>
+    const labels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+      }]
+    };
+  
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    };
+  </script>
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
+   
