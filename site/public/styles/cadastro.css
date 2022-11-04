@@ -10,11 +10,15 @@ button{
     border: #fff solid 0.1vw;
     border-radius: 300px;
     font-size: 1vw;
-    width: 16vw;
+    width: 10vw;
     height: 5vh;
     margin-top: 10%;
     margin-bottom: 10%;
 }
+input::placeholder { 
+    color: #fff;
+    opacity: 1;
+  }
 
 .banner #div_erros_login {
     margin-top: 15px;
@@ -120,8 +124,8 @@ nav img{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(22, 22, 22, 0.9);
-    height: 60vh;
+    background-color: rgba(44, 44, 44, 0.9);
+    height: 80vh;
     width: 30vw;
     position:absolute;
 }
@@ -132,7 +136,7 @@ nav img{
 .campo{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 80%;
     height: 100%;
 }
 .campo .mensagem{
@@ -143,17 +147,23 @@ nav img{
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: rgba(22, 22, 22, 0);
+    height: 50%;
+    color: #fff;
+    font-size: 1vw;
+    background-color: rgba(44, 44, 44, 0);
     border-top: 0vw;
     border-left: 0vw;
     border-right: 0vw;
     border-bottom: 0.1vw solid #fff;
+    margin-top: 2%;
 }
 .campo #placeholder{
     color: #fff;
 }
 .campo select{
     display: flex;
+    border-style: solid;
+    border-radius: 100px;
     color: #fff;
     height: 2vw;
     background-color: rgba(22, 22, 22, 0.9);
@@ -210,12 +220,12 @@ footer{
   
   .card_erro {
     display: none;
-    background-color: #fff;
-    color: black;
-    width: 230px;
+    background-color: #444444;
+    color: #fff;
+    width: 20%;
     position: fixed;
     border-radius: 4px;
-    border: #ea422c 3px solid;
+    border: #222222 3px solid;
     padding: 10px;
     margin-right: 10%;
   }
