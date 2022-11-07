@@ -12,36 +12,10 @@ button{
     font-size: 1vw;
     width: 16vw;
     height: 5vh;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
-.banner #div_erros_login {
-    margin-top: 15px;
-  }
-
-  .alerta_erro{
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .card_erro {
-    display: none;
-    background-color: #fff;
-    color: black;
-    width: 230px;
-    position: fixed;
-    border-radius: 4px;
-    border: #e6005a 3px solid;
-    padding: 10px;
-    margin-right: 10%;
-  }
-  
-  .card_erro #mensagem_erro{
-    font-weight: 500;
-    font-size: 20px;
-  }
-  
 /* HEADER */
 header{
     width: 100%;
@@ -90,147 +64,92 @@ nav img{
 }
 
 /* Banner principal */
-
 .banner
     {
+        display: flex;
+        justify-content: center;
+        background-image: url("../assets/img/gif/celeste-mountain.gif");
+        background-size: 100%;
         width: 100%;
-        height: 50%;
-        padding: 25% 0 25% 0;
+        height: 100%;
+        padding-top: 4vw;
+   
 }
-.imgFundo {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    background-size: 140vw;
-    background-image: url("../assets/img/backgroundCadastro.png");
-  }
-/* Formulario */
-.container-form {
+.timer{
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 50%;
+    width: 100%; 
+    color: #fff;
+    font-size: 8vw;
+}
+.container-game{
+    width: 80%;
     height: 100%;
+    border: 0.2vw solid #444;
+    border-bottom: 3vw solid #444;
+    background-color: #222;
+    flex-direction: column;
+}
+
+  /* Game */
+  .game{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 100%;
   }
-
-.formulario{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgba(22, 22, 22, 0.9);
-    height: 60vh;
-    width: 30vw;
-    position:absolute;
-}
-
-.titulo1{
-    padding: 2%;
-}
-.campo{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    height: 100%;
-}
-.campo .mensagem{
-    display: flex;
-    font-size: 1vw;
-}
-.campo input{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: rgba(22, 22, 22, 0);
-    border-top: 0vw;
-    border-left: 0vw;
-    border-right: 0vw;
-    border-bottom: 0.1vw solid #fff;
-}
-.campo #placeholder{
-    color: #fff;
-}
-.campo select{
-    display: flex;
-    color: #fff;
-    height: 2vw;
-    background-color: rgba(22, 22, 22, 0.9);
-}
-.campo select option{
-    display: flex;
-    background-color: rgba(22, 22, 22, 0.9);
-}
-
-.contaExistente{
+  .posicao1{
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    font-size: 0.8vw;
-    width: 15vw;
+    width: 70%;
     padding: 2%;
-}
-.contaExistente a{
+    border-top: 0.2vw solid #444;
+    border-left: 0.2vw solid #444;
+    border-right: 0.2vw solid #444;
+    border-bottom: 0vw;
+   
+  }
+  .posicao2{
     display: flex;
-    align-items: center;
-    font-size: 0.8vw;
-}
-
-/* FOOTER */
-footer{
+    justify-content: space-around;
+    width: 70%;
+    padding: 2%;
+    border-left: 0.2vw solid #444;
+    border-right: 0.2vw solid #444;
+    border-bottom: 0vw;
+   
+  }
+  .posicao3{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    padding: 2%;
+    border-left: 0.2vw solid #444;
+    border-right: 0.2vw solid #444;
+    border-bottom: 0.2vw solid #444;
+    margin-bottom: 1vw;
+   
+  }
+  .placar{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height:20vh;
-    background-color: #222222;
-    position: absolute;
-}
-.botao{
+    color: #fff;
+    font-size: 2vw;
+  }
+  #pontos{
+    color: #fff;
+  }
+  .botao{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
-.copyright{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 20%;
+  }
+.posicao{
+    background-image: url("../assets/img/gif/straberryAsa.gif");
+    background-size: 100%;
+    width: 10vw; 
+    height: 5vw; 
 }
 
-
-.alerta_erro{
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .card_erro {
-    display: none;
-    background-color: #fff;
-    color: black;
-    width: 230px;
-    position: fixed;
-    border-radius: 4px;
-    border: #ea422c 3px solid;
-    padding: 10px;
-    margin-right: 10%;
-  }
-  
-  .card_erro #mensagem_erro{
-    font-weight: 500;
-    font-size: 20px;
-  }
-  
-  .formulario .tipo_campo {
-    font-size: 20px;
-    font-weight: 600 !important;
-  }
-  
-  .formulario {
-    display: flex;
-    flex-direction: column;
-  }

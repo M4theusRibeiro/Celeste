@@ -140,9 +140,10 @@ nav img{
     margin-top: 1vw;
     margin-bottom: 1vw;
     width: 50vw;
-     height: 56vh;
-    background-image: url("../assets/img/gif/1647753275_Celeste\ Summit\ 3.gif");
-    background-size: 100%;
+    height: 56vh;
+    background-image: url("../assets/img/gif/madeleine.gif");
+    background-position-x: center;
+    background-size: contain;
 }
 .ImgBaixaBad{
     margin-top: 1vw;
