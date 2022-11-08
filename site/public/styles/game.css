@@ -147,9 +147,14 @@ nav img{
     align-items: center;
   }
 .posicao{
-    background-image: url("../assets/img/gif/straberryAsa.gif");
+    background-image: url("../assets/img/gif/morangoVazio.gif");
     background-size: 100%;
+    background-position: 0%;
     width: 10vw; 
-    height: 5vw; 
+    height: 10vw; 
 }
 
+.posicao img{
+    width: 10vw; 
+    height: 10vw; 
+}

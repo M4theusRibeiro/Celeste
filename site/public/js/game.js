@@ -43,6 +43,14 @@ function comecarJogo() {
 
 }
 function pegarMorango() {
+    var localMorango = document.getElementById("um"); 
+    var posicaoMorango = document.getElementById 
+    var numeroAleatorio = Number(Math.random() * 20).toFixed(0);
+    
+    if (localMorango == "vinte") {
+        console.log("Morango voador coletado " + numeroAleatorio)
+        totalMorangos += 2
+    }
     totalMorangos++
     pontos.innerHTML = totalMorangos
 }
