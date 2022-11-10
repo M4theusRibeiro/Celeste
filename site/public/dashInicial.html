@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../styles/dash.css">
+    <link rel="stylesheet" href="./styles/dash.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="../js/funcoes.js"></script>
 
@@ -23,7 +23,7 @@
                     </li>
                     <li>|</li>
                     <li>
-                        <a class="agora" href="#">Jogo</a>
+                        <a class="txtBranco" href="game.html">Jogo</a>
                     </li>
                     <li>|</li>
                     <li>
@@ -31,7 +31,7 @@
                     </li>
                     <li>|</li>
                     <li>
-                        <a class="txtBranco" href="dashboard/dashInicial.html">Dashboard</a>
+                        <a class="agora" href="dashInicial.html">Dashboard</a>
                     </li>
                 </ul>
                 </div>
@@ -50,30 +50,7 @@
 </body>
 </html>
 <script>
-    const labels = [
-      'Madeleine',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-    ];
-  
-    const data = {
-      labels: labels,
-      datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45],
-      }]
-    };
-  
-    const config = {
-      type: 'bar',
-      data: data,
-      options: {}
-    };
+    
   </script>
   <script>
     const myChart = new Chart(
@@ -158,6 +135,16 @@
                 tension: 0.1
             }]
         };
+  
+    const data = {
+        labels: labels,
+        datasets: [{
+        label: '',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+      }]
+    };
         
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
@@ -181,7 +168,7 @@
         
         // Criando estrutura para plotar gráfico - config
         const config = {
-            type: 'line',
+            type: 'bar',
             data: dados,
         };
 

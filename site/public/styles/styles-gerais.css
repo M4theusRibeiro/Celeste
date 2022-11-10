@@ -55,3 +55,14 @@ html{
 .agora{
     color: black;
 }
+
+.coracao{
+    background-image: url("../assets/img/gif/coracaoAzul.gif");
+    position: absolute;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    width: 10%;
+}

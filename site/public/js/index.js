@@ -1,3 +1,7 @@
 function jogoSecreto(){
     
 }
+
+function coletarCoracao(){
+    
+}
