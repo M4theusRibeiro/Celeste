@@ -15,11 +15,12 @@ senha varchar(30),
 persoFav varchar(30),
 sentimento varchar(30)
 );
-
+drop table comentario;
 create table comentario(
 	idComentario INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
 	descricao VARCHAR(150),
+    img varchar(255),
 	fkUsuario INT,
 	FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 );
