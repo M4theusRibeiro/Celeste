@@ -1,0 +1,140 @@
+*{
+    margin: 0%;
+}
+body{
+    font-family: 'Renogare', sans-serif;
+}
+button{
+    background-color: #ea422c;
+    color: white;
+    border: #fff solid 0.1vw;
+    border-radius: 300px;
+    font-size: 1vw;
+    width: 16vw;
+    height: 5vh;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+  
+/* HEADER */
+header{
+    width: 100%;
+    height: 8vh;
+    color: #fff;
+    background-color: rgba(234, 66, 44, 0.7);
+    position: absolute;
+    overflow: hidden;
+    position: fixed;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+nav img{
+    width: 4vw;
+    height: 4vw;
+}
+.icon{
+    width: 4vw;
+    height: 4vw;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    width: 20vw;
+    font-size: 1vw;
+    padding-right: 2%;
+    justify-content: space-between;
+}
+.navbar a {
+    text-decoration: none;
+    
+}
+.navbar ul {
+    list-style: none;
+    width: 20vw;
+    display: flex;
+    justify-content: space-around;
+}
+.navbar ul li {
+    cursor: pointer;
+}
+
+.bannerMural{
+    display: flex;
+    justify-content: center;
+    background-image: url("../assets/img/gif/celeste-mountain.gif");
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    padding-top: 4vw;
+}
+
+.container{
+    color: #fff;
+}
+
+.formulario{
+    width: 100%;
+    height: 100%;
+}
+.titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Dash */
+  .botaoEditar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1vw;
+    color: white;
+    background-color: #ea422c;
+    
+  }
+  
+  .publicacao {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    border-bottom: 3px solid #ea422c;
+    padding: 10%;
+    margin: 10vh;
+  }
+  
+  .publicacao > *:not(:last-child) {
+    padding: 0 0 10px 0;
+  }
+  
+  .div-results {
+    width: 100%;
+    
+  }
+  
+  .div-results .feed-container {
+    background-color: #222;
+    border-radius: 5px;
+ 
+    
+  }
+  
+  .div-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .div-buttons > * {
+    margin-left: 30px;
+  }
+  
+  

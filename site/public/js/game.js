@@ -28,6 +28,15 @@ function comecarJogo() {
       var display = document.querySelector("#timer")
       var timerAtivo = document.querySelector("#timer").innerHTML;
       console.log(timerAtivo)
+
+    for(var i = 0; i < 60; i++){
+        var numeroAleatorio = Number(Math.random() * 20).toFixed(0);
+        console.log("Botão clicado" + numeroAleatorio)
+        
+    }
+
+
+
     if(timerAtivo == startTimer(duration, display)){
     
     }

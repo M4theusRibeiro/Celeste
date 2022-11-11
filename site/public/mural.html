@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Avisos</title>
+    <title>Celeste | Mural</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./styles/muralFanArt.css">
     <link rel="stylesheet" href="./styles/dash.css">
     <script src="../js/funcoes.js"></script>
 
@@ -21,44 +21,42 @@
 <body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
     <!-- <body onload="validarSessao()"> -->
 
-    <div class="janela">
-
-
-        <div class="header-left">
-
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
-        </div>
-
-        <div class="dash-right">
-
-            <div class="avisos">
+        <header>
+            <nav>
+                <div class="icon">
+                    <a href="pico8.html"><img src="./assets/img/morango.png"></a>
+                </div>
+                <div class="navbar">
+                    <ul>
+                        <li>
+                            <a class="txtBranco" href="index.html">Sair</a>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            <a class="agora" href="#">Jogo</a>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            <a class="txtBranco" href="ranking.html">Ranking</a>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            <a class="txtBranco" href="dashInicial.html">Dashboard</a>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            <a class="agora" href="mural.html">Mural</a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+        <div class="bannerMural">
                 <div class="container">
-                    <h1>Publicar um aviso</h1>
+                    <h1 class="titulo">Olá  <span id="b_usuario"></span>! Publique algo interessante sobre o jogo!</h1>
                     <div class="div-form">
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
@@ -72,43 +70,23 @@
                                 <br>
                                 <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                             </label>
+                            <label>
+                                Imagem:
+                                <img name="imagem" id="imagem">
+                            </label>
                             <br>
                             <button>Enviar</button>
                         </form>
                     </div>
-                    <h1>Mural de Avisos</h1>
+                    <h1 class="titulo">Comentários</h1>
                     <div class="div-results">
                         <div id="feed_container" class="feed-container">
                         </div>
                     </div>
-                </div>
             </div>
-
-
-
-
-            <!-- MODAL -->
-            <!-- <div id="div_modal" class="div-modal">
-                <div id="modal_backdrop" onclick="fecharModal()" class="modal-backdrop">
-                </div>
-                <div id="modal_container" class="modal-container">
-                    <button class="btn-fechar-modal" onclick="fecharModal()">X</button>
-                </div>
-            </div> -->
-
-            <!-- AGUARDAR -->
-            <!-- <div id="div_aguardar" class="div-aguardar">
-                <img src="./assets/aguarde-pink3.gif" id="img_aguarde">
-            </div>  -->
-
-        </div>
-    </div>
-
-
-
-
+        </main>
+        
 </body>
-
 </html>
 
 <script>
@@ -139,7 +117,7 @@
 
             if (resposta.ok) {
                 window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
+                window.location = "mural.html";
                 limparFormulario();
                 finalizarAguardar();
             } else if (resposta.status == 404) {
@@ -156,17 +134,17 @@
 
     }
 
-    function editar(idAviso) {
-        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
-        console.log("cliquei em editar - " + idAviso);
-        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
+    function editar(idComentario) {
+        sessionStorage.ID_POSTAGEM_EDITANDO = idComentario;
+        console.log("cliquei em editar - " + idComentario);
+        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idComentario);
         window.location = "/dashboard/edicao-aviso.html"
 
     }
 
-    function deletar(idAviso) {
-        console.log("Criar função de apagar post escolhido - ID" + idAviso);
-        fetch(`/avisos/deletar/${idAviso}`, {
+    function deletar(idComentario) {
+        console.log("Criar função de apagar post escolhido - ID" + idComentario);
+        fetch(`/avisos/deletar/${idComentario}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
@@ -175,7 +153,7 @@
 
             if (resposta.ok) {
                 window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "/dashboard/mural.html"
+                window.location = "mural.html"
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -215,17 +193,18 @@
                         var divButtons = document.createElement("div");
                         var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
+                        var imagem = document.createElement("img");
 
-
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
+                        spanID.innerHTML = "ID: <b>" + publicacao.idComentario + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+                        imagem.innerHTML = `Imagem: <img src=${publicacao.descricao}>`;
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
 
                         divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
+                        spanTitulo.id = "inputNumero" + publicacao.idComentario;
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
@@ -233,12 +212,12 @@
                         divButtons.className = "div-buttons"
 
                         btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+                        btnEditar.id = "btnEditar" + publicacao.idComentario;
+                        btnEditar.setAttribute("onclick", `editar(${publicacao.idComentario})`);
 
                         btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+                        btnDeletar.id = "btnDeletar" + publicacao.idComentario;
+                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idComentario})`);
 
                         divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
