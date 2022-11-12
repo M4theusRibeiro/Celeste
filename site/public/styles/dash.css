@@ -67,6 +67,7 @@ nav img{
 
 .banner
     {
+        display: flex;
         width: 100%;
         height: 50%;
         padding: 25% 0 25% 0;
@@ -208,8 +209,6 @@ footer{
     display: flex;
     flex-direction: column;
   }
-
- 
 
 
 .avisoCaptura {

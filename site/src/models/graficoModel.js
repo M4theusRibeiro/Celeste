@@ -1,27 +1,34 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idUsuario, limite_linhas) {
 
+function obterGrafico() {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select top ${limite_linhas}
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,  
-                        momento,
-                        FORMAT(momento, 'HH:mm:ss') as momento_grafico
-                    from medida
-                    where fkUsuario = ${idUsuario}
-                    order by id desc`;
+        instrucaoSql = `select count(persoFav) from usuario where persoFav = 'madeleine'`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        momento,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
-                    from medida
-                    where fkUsuario = ${idUsuario}
-                    order by id desc limit ${limite_linhas}`;
+        instrucaoSql = `select count(persoFav) as madeleine, (select count(persoFav) from usuario where persoFav = 'badeleine') as badeleine,(select count(persoFav) from usuario where persoFav = 'theo') as theo, (select count(persoFav) from usuario where persoFav = 'oshiro') as oshiro, (select count(persoFav) from usuario where persoFav = 'vovo') as vovo from usuario where persoFav = 'madeleine' ;`;
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+function obterGraficoSentimento() {
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucaoSql = `select count(sentimento) as ansiedade from usuario where sentimento = 'ansiedade';`;
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select count(sentimento) as fracasso,
+     (select count(sentimento) from usuario where sentimento = 'ansiedade') as ansiedade,
+     (select count(sentimento) from usuario where sentimento = 'solidao') as solidao,
+     (select count(sentimento) from usuario where sentimento = 'desesperanca') as desesperanca,
+     (select count(sentimento) from usuario where sentimento = 'inseguranca') as inseguranca,
+     (select count(sentimento) from usuario where sentimento = 'inadequacao') as inadequacao
+    from usuario where sentimento = 'fracasso';`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -31,27 +38,16 @@ function buscarUltimasMedidas(idUsuario, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(idUsuario) {
 
+//Tirar depois
+function atualizarGrafico() {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select top 1
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,  
-                        CONVERT(varchar, momento, 108) as momento_grafico, 
-                        fkUsuario 
-                        from medida where fkUsuario = ${idUsuario} 
-                    order by id desc`;
+        instrucaoSql = `select count(persoFav) from usuario where persoFav = 'madeleine'`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
-                        fkUsuario 
-                        from medida where fkUsuario = ${idUsuario} 
-                    order by id desc limit 1`;
+        instrucaoSql = `select count(persoFav) as madeleine from usuario where persoFav = 'madeleine';`
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -63,6 +59,7 @@ function buscarMedidasEmTempoReal(idUsuario) {
 
 
 module.exports = {
-    buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    atualizarGrafico,
+    obterGrafico,
+    obterGraficoSentimento
 }

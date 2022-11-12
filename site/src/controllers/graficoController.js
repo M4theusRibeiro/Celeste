@@ -1,14 +1,10 @@
 var graficoModel = require("../models/graficoModel");
 
-function buscarUltimasgrafico(req, res) {
+function obterGrafico(req, res) {
 
-    const limite_linhas = 7;
+    console.log(`Recuperando os dados`);
 
-    var idUsuario = req.params.idUsuario;
-
-    console.log(`Recuperando as ultimas ${limite_linhas} grafico`);
-
-    graficoModel.buscarUltimasgrafico(idUsuario, limite_linhas).then(function (resultado) {
+    graficoModel.obterGrafico().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -21,14 +17,11 @@ function buscarUltimasgrafico(req, res) {
     });
 }
 
+function obterGraficoSentimento(req, res) {
 
-function buscargraficoEmTempoReal(req, res) {
+    console.log(`Recuperando os dados`);
 
-    var idUsuario = req.params.idUsuario;
-
-    console.log(`Recuperando grafico em tempo real`);
-
-    graficoModel.buscargraficoEmTempoReal(idUsuario).then(function (resultado) {
+    graficoModel.obterGraficoSentimento().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -40,9 +33,8 @@ function buscargraficoEmTempoReal(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
-
 module.exports = {
-    buscarUltimasgrafico,
-    buscargraficoEmTempoReal
-
+    obterGrafico,
+    obterGraficoSentimento,
+  
 }
