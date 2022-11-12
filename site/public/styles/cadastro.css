@@ -244,3 +244,7 @@ footer{
     display: flex;
     flex-direction: column;
   }
+
+  .divAguardar{
+    display: none;
+  }

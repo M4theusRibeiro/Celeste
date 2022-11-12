@@ -5,33 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/dash.css">
+    <link rel="stylesheet" href="../styles/dash.css">
+    <link rel="stylesheet" href="../styles/styles-gerais.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="../js/funcoes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+     canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+  </style>
 
 </head>
+
 <body onload=" atualizarFeed()">  
     <header>
         <nav>
             <div class="icon">
-                <a href="pico8.html"><img src="./assets/img/morango.png"></a> 
+                <a href="pico8.html"><img src="../assets/img/morango.png"></a> 
             </div>
                 <div class="navbar">
                   <ul>
                     <li>
-                        <a class="txtBranco" href="ranking.html">Sair</a>
+                        <a class="txtBranco" href="../index.html">Sair</a>
                     </li>
                     <li>|</li>
                     <li>
-                        <a class="txtBranco" href="game.html">Jogo</a>
+                        <a class="txtBranco" href="/dashboard/game.html">Jogo</a>
                     </li>
                     <li>|</li>
                     <li>
-                        <a class="txtBranco" href="ranking.html">Ranking</a>
+                        <a class="txtBranco" href="/dashboard/ranking.html">Ranking</a>
                     </li>
                     <li>|</li>
                     <li>
-                        <a class="agora" href="dashInicial.html">Dashboard</a>
+                        <a class="agora" href="/dashboard/dashInicial.html">Dashboard</a>
                     </li>
                 </ul>
                 </div>
@@ -41,34 +52,120 @@
     </header>
     <main>
         <div>
+            <section style="width: 100%;">
             <canvas id="myChart"></canvas>
+        </section>
           </div>
            
+          <section style="width: 100%;">
+            <canvas id="PersonagemFavorito"></canvas>
+        </section>
+        <section style="width: 100%;">
+            <canvas id="Sentimento mais escolhido"></canvas>
+        </section>
 
 
+        Olá <span id="b_usuario"></span>
+        <div class="dash">
+            <div class="btns-dash">
+                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+                <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Aquario 1</button>
+                <button class="btn-chart btn-white" onclick="obterDadosGrafico(2)">Aquario 2</button>
+                <button class="btn-chart btn-white" onclick="obterDadosGrafico(3)">Aquario 3</button>
+                <button class="btn-chart btn-white" onclick="obterDadosGrafico(4)">Aquario 4</button>
+            </div>
+            <div>
+                <h3 class="tituloGraficos">
+                    <span id="tituloAquario">123</span>
+                </h3>
+            </div>
+
+            <div class="avisoCaptura">
+                <p id="avisoCaptura" style="color: white"></p>
+            </div>
+        </div>
+    </div>
     </main>
 </body>
 </html>
 <script>
-    
-  </script>
-  <script>
-    const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
-  </script>
-   <script>
-    
+
+// const labels = [
+//   'Personagem favorito das pessoas',
+// ];
+// const data = {
+//             labels: labels,
+//             datasets: [{
+//                 label: 'Madeleine',
+//                 data: [4],
+//                 fill: false,
+//                 borderColor: '#ea422c',
+//                 backgroundColor:'#ea422c',
+//                 tension: 0.1
+//             },
+//             {
+//                 label: 'Badeleine',
+//                 data: [2],
+//                 fill: false,
+//                 borderColor: '#db4ce4',
+//                 backgroundColor:'#db4ce4',
+//                 tension: 0.1
+//             },
+//             {
+//                 label: 'Theo',
+//                 data: [5],
+//                 fill: false,
+//                 borderColor: '#e4412c',
+//                 backgroundColor:'#e4412c',
+//                 tension: 0.1
+//             },
+//             {
+//                 label: 'Oshiro',
+//                 data: [6],
+//                 fill: false,
+//                 borderColor: '#7cbc44',
+//                 backgroundColor:'#7cbc44',
+//                 tension: 0.1
+//             },
+//             {
+//                 label: 'Vovó',
+//                 data: [7],
+//                 fill: false,
+//                 borderColor: '#fcec7c',
+//                 backgroundColor:'#fcec7c',
+//                 tension: 0.1
+//             }]
+//         };
+  
+//         const config = {
+//         type: 'bar',
+//         data: data,
+//         options: {
+//             scales: {
+//             y: {
+//                 beginAtZero: true
+//       }
+//     }
+//   },
+// };
+//   const myChart = new Chart(
+//     document.getElementById('myChart'),
+//     config
+//   );
+
+
+
+
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     
     let proximaAtualizacao;
         
-    window.onload = obterDadosGrafico(1);
+    window.onload = obterDadosGrafico();
 
     verificar_autenticacao();
 
-    function alterarTitulo(idUsuario) {
+    function alterarTitulo() {
         var tituloAquario = document.getElementById("tituloAquario")
         tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idUsuario + "</span>"
     }
@@ -115,36 +212,52 @@
         console.log('iniciando plotagem do gráfico...');
 
         // Criando estrutura para plotar gráfico - labels
-        let labels = [];
-        
-        // Criando estrutura para plotar gráfico - dados
-        let dados = {
+        const labels = [
+  'Personagem favorito das pessoas',
+];
+const data = {
             labels: labels,
             datasets: [{
-                label: 'Umidade',
-                data: [],
+                label: 'Madeleine',
+                data: [4],
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                borderColor: '#ea422c',
+                backgroundColor:'#ea422c',
                 tension: 0.1
             },
             {
-                label: 'Temperatura',
-                data: [],
+                label: 'Badeleine',
+                data: [2],
                 fill: false,
-                borderColor: 'rgb(199, 52, 52)',
+                borderColor: '#db4ce4',
+                backgroundColor:'#db4ce4',
+                tension: 0.1
+            },
+            {
+                label: 'Theo',
+                data: [5],
+                fill: false,
+                borderColor: '#e4412c',
+                backgroundColor:'#e4412c',
+                tension: 0.1
+            },
+            {
+                label: 'Oshiro',
+                data: [6],
+                fill: false,
+                borderColor: '#7cbc44',
+                backgroundColor:'#7cbc44',
+                tension: 0.1
+            },
+            {
+                label: 'Vovó',
+                data: [7],
+                fill: false,
+                borderColor: '#fcec7c',
+                backgroundColor:'#fcec7c',
                 tension: 0.1
             }]
         };
-  
-    const data = {
-        labels: labels,
-        datasets: [{
-        label: '',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45],
-      }]
-    };
         
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
@@ -168,17 +281,24 @@
         
         // Criando estrutura para plotar gráfico - config
         const config = {
-            type: 'bar',
-            data: dados,
-        };
+        type: 'bar',
+        data: data,
+        options: {
+            scales: {
+            y: {
+                beginAtZero: true
+      }
+    }
+  },
+};
 
         // Adicionando gráfico criado em div na tela
-        let myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-        );
+     
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config,
 
-        setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
+        setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000));
     }
 
 
