@@ -76,7 +76,7 @@
                             </form>
                         </div>
                   </div>
-                    <h1 class="titulo">Comentários</h1>
+                    <h1 class="titulo txtVermelho">Comentários</h1>
                     <div class="div-results">
                         <div id="feed_container" class="feed_container">
                         </div>
@@ -182,22 +182,39 @@
                     for (let i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
 
-                        // criando e manipulando elementos do HTML via JavaScript
+
+
+
                         var divPublicacao = document.createElement("div");
                         var spanID = document.createElement("span");
                         var spanTitulo = document.createElement("span");
                         var spanNome = document.createElement("span");
-                        var divDescricao = document.createElement("div");
-                        var imgFan = document.createElement("div");
+                        
+                        if(publicacao.descricao != ""){
+                            var divDescricao = document.createElement("div");
+                        }
+                        if(publicacao.img != ""){
+                            var imgFan = document.createElement("div");
+                        }
+
                         var divButtons = document.createElement("div");
                         var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
 
+                 
+                        // criando e manipulando elementos do HTML via JavaScript
                         spanID.innerHTML = "ID: <b>" + publicacao.idComentario + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
-                        divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
-                        imgFan.innerHTML = "Imagem: <img src='" + publicacao.img + "'>";
+
+                        if(publicacao.descricao != ""){
+                            divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+                        }
+
+                        if(publicacao.img != ""){
+                            imgFan.innerHTML = "Imagem: <img src='" + publicacao.img + "'>";
+                        }
+                        
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
 
@@ -205,8 +222,14 @@
                         spanTitulo.id = "inputNumero" + publicacao.idComentario;
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
-                        divDescricao.className = "publicacao-descricao";
-                        imgFan.className = "publicacao-img";
+
+                        if(publicacao.descricao != ""){
+                            divDescricao.className = "publicacao-descricao";
+                        }
+
+                        if(publicacao.img != ""){
+                            imgFan.className = "publicacao-img";
+                        }
 
                         divButtons.className = "div-buttons"
 
@@ -221,8 +244,14 @@
                         divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanTitulo);
-                        divPublicacao.appendChild(divDescricao);
-                        divPublicacao.appendChild(imgFan);
+
+                        if(publicacao.descricao != ""){
+                            divPublicacao.appendChild(divDescricao);
+                        }
+                        if(publicacao.img != ""){
+                            divPublicacao.appendChild(imgFan);
+                        }
+
                         divPublicacao.appendChild(divButtons);
                         divButtons.appendChild(btnEditar);
                         divButtons.appendChild(btnDeletar);
