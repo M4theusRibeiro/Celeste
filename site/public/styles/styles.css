@@ -15,59 +15,56 @@ button{
     margin-top: 10%;
     margin-bottom: 10%;
 }
-/* HEADER */
-header{
-    width: 100%;
-    height: 8vh;
-    color: #fff;
-    background-color: rgba(234, 66, 44,0.7);
-    position: absolute;
-    overflow: hidden;
-    position: fixed;
-}
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-nav img{
-    width: 4vw;
-    height: 4vw;
-}
-.icon{
-    width: 4vw;
-    height: 4vw;
-}
-.navbar{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    width: 20vw;
-    font-size: 1vw;
-    padding-right: 2%;
-    justify-content: space-between;
-}
-.navbar a {
-    text-decoration: none;
-    
-}
-.navbar ul {
-    list-style: none;
-    width: 20vw;
-    display: flex;
-    justify-content: space-around;
-}
-.navbar ul li {
-    cursor: pointer;
-}
 
 /* Banner principal */
+.section
+{
+    width: 100%;
+    float: left;
+}
 
 .banner
     {
-       background-image: url("/assets/img/background.png");
+        position: relative;
+        padding-bottom: 167%;
+        background: #000 url("../assets/img/banner/background.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
     }
-  
+
+    .layer
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+   .layer-dash { background-image: url("../assets/img/banner/dash.png"); }
+   .layer-oshiro { background-image: url("../assets/img/banner/oshiro.png"); }
+   .layer-granny { background-image: url("../assets/img/banner/granny.png"); }
+   .layer-theo { background-image: url("../assets/img/banner/theo.png"); }
+   .layer-badeline { background-image: url("../assets/img/banner/badeline.png"); }
+   .layer-madeline { background-image: url("../assets/img/banner/madeline.png"); }
+   .layer-logo { background-image: url("../assets/img/banner/logo.png"); }
+   .layer-strawberry { background-image: url("../assets/img/banner/strawberry.png"); }
+   .layer-clouds { background-image: url("../assets/img/banner/clouds.png"); }
+   .layer-logo { left: 7.5%; right: 7.5%; top: 0; bottom: 15%; }
+
+   .edge
+    {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        height: 64px;
+        background: url("../assets/img/banner/edge.png") repeat-x;
+    }
+
 .img-celeste{
     display: flex;
     justify-content: center;
@@ -257,4 +254,25 @@ footer{
     align-items: center;
     width: 100%;
     height: 20%;
+}
+.color{
+    /* background-color: #ea422c33; */
+    position: absolute;
+    width: 80%;
+    height: 21%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45%;
+}
+.color2{
+    /* background-color: rgba(34, 34, 153, 0.245); */
+    cursor: pointer;
+    width: 20%;
+    height:55%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
 }

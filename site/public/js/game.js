@@ -63,3 +63,4 @@ function pegarMorango() {
     totalMorangos++
     pontos.innerHTML = totalMorangos
 }
+

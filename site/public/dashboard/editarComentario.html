@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaTech | Página Inicial</title>
 
-    <link rel="stylesheet" href="../css/styles-gerais.css">
-    <link rel="stylesheet" href="../dash.css">
+    <link rel="stylesheet" href="../styles/muralFanArt.css">
+    <link rel="stylesheet" href="../styles/dash.css">
+    <link rel="stylesheet" href="../styles/styles-gerais.css">
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,40 +22,37 @@
 <body onload="validarSessao(), listarInfosDeUm()" style="background-color: #161618;">
     <!-- <body onload="validarSessao()"> -->
 
-    <div class="janela">
+        <header>
+            <nav>
+                <div class="icon">
+                    <a href="pico8.html"><img src="../assets/img/morango.png"></a>
+                </div>
+                <div class="navbar">
+                    <ul>
+                        <li>
+                            <a class="txtBranco" href="../index.html">Sair</a>
+                        </li>
+                        <li>
+                            <a class="agora" href="#">Jogo</a>
+                        </li>
+                        <li>
+                            <a class="txtBranco" href="/dashboard/ranking.html">Ranking</a>
+                        </li>
+                        <li>
+                            <a class="txtBranco" href="/dashboard/dashInicial.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="agora" href="/dashboard/mural.html">Mural</a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+                </div>
+            </nav>
+        </header>
+        <main>
 
-
-        <div class="header-left">
-
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
-        </div>
+       
 
         <div class="dash-right">
 
@@ -93,8 +91,8 @@
             </div>
         </div>
     </div>
+</main>
 </body>
-
 </html>
 
 <script>

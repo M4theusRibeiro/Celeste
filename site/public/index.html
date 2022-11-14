@@ -11,10 +11,11 @@
     <link rel="manifest" href="./assets/icon/favicon/manifest.json">
     <link rel="stylesheet" href="./styles/styles-gerais.css">
     <link rel="stylesheet" href="./styles/styles.css">
-    <script src="index.js"></script>
+    <script src="./js/index.js"></script>
 </head>
 
 <body>
+
     <header>
         <nav>
             <div class="icon">
@@ -22,16 +23,16 @@
             </div>
             <div class="navbar">
                 <ul>
-                    <li>
+                    <li class="btn">
                         <a class="agora" href="#">Home</a>
                     </li>
-                    <li>|</li>
+               
                     <li>
-                        <a class="txtBranco" href="cadastro.html">Cadastre-se</a>
+                        <a class="txtBranco btn" href="cadastro.html">Cadastre-se</a>
                     </li>
-                    <li>|</li>
+               
                     <li>
-                        <a class="txtBranco" href="login.html">Login</a>
+                        <a class="txtBranco btn" href="login.html">Login</a>
                     </li>
                 </ul>
             </div>
@@ -39,13 +40,26 @@
             </div>
         </nav>
     </header>
-    <main>
 
-        <div class="banner">
-            <div class="img-celeste">
-                <img width="100%" height="80%" src="./assets/img/background.png" alt="">
+    <main>
+        <div class="banner section" >
+            <div class="layer layer-oshiro" data-scroll="0.05" data-yoffset="200">&nbsp;</div>
+            <div class="layer layer-dash" data-scroll="0.20" data-yoffset="200">&nbsp;</div>
+            <div class="layer layer-theo" data-scroll="0.05" data-yoffset="300">&nbsp;</div>
+            <div class="layer layer-granny" data-scroll="0.10" data-yoffset="290">&nbsp;</div>
+            <div class="layer layer-badeline" data-scroll="0.15" data-yoffset="0">&nbsp;</div>
+            <div class="layer layer-madeline" data-scroll="0.20" data-yoffset="0">&nbsp;</div>
+            <div class="layer layer-logo" data-scroll="0.25" data-yoffset="0">&nbsp;</div>
+            <div class="layer layer-strawberry" data-scroll="0.30" data-yoffset="0">&nbsp;</div>
+            <div class="layer layer-clouds" data-scroll="0.01" data-yoffset="100">&nbsp;</div>
+            <div class="edge">&nbsp;</div>
+            <div class="color" data-scroll="0" data-yoffset="0">
+                <div onclick="jogoSecreto()" class="color2" data-scroll="0.2" data-yoffset="0">
+                </div>
             </div>
         </div>
+        <div class="banner"></div>
+    
         <div class="bannergame">
             <div class="caixa">
                 <span style="font-style:italic;font-size: 3vw;padding:10%" class="txtBranco"> “É isso <span
@@ -151,7 +165,7 @@
             <span style="font-size: 1vw;" class="txtBranco">Acesse já outras <span
                     class="txtVermelho">informações</span> sobre o jogo, basta
                 <span class="txtVermelho">cadastrar-se</span> agora</span>
-            <a class="txtBranco" href="cadastro.html"><button onclick="cadastrar()">Cadastre-se aqui</button></a>
+            <a class="txtBranco btn" href="cadastro.html"><button onclick="cadastrar()">Cadastre-se aqui</button></a>
         </div>
         <div class="copyright">
             <span style="font-size: 1vw;" class="txtBranco">&copy; Copyright 2022 Sptech Matheus Ribeiro</span>
@@ -160,3 +174,51 @@
 </body>
 
 </html>
+
+<script>
+
+function jogoSecreto(){
+    window.location = "pico8.html"
+}
+
+    window.onload = function()
+{
+	var layers = [];
+	var banner = document.querySelectorAll(".banner")[0];
+
+	// create layer data
+	{
+		var layerElements = document.querySelectorAll(".layer");
+		for (var i = 0; i < layerElements.length; i ++)
+		{
+			layers.push(
+			{
+				element: layerElements[i],
+				scroll: layerElements[i].getAttribute("data-scroll"),
+				offset: layerElements[i].getAttribute("data-yoffset")
+			});
+		}
+		layerElements = null;
+	}
+
+	// update a speicifc layer offset
+	function updateLayerOffset(scroll, layer)
+	{
+        var offset = -((scroll * layer.scroll) - layer.offset * (banner.clientHeight / 3680));
+		layer.element.style.transform = "translate3d(0, " + offset + "px, 0)";
+	}
+
+	function updateScrollValue()
+	{
+        var scroll = window.scrollY;
+		for (var i = 0; i < layers.length; i ++)
+				updateLayerOffset(scroll, layers[i]);
+	}
+
+	
+    document.addEventListener("scroll", updateScrollValue);
+    window.addEventListener("resize", updateScrollValue);
+    updateScrollValue();
+}
+
+</script>
