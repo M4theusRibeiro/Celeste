@@ -18,45 +18,6 @@ button{
 main{
     height: 100%;
 }
-/* HEADER */
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-nav img{
-    width: 4vw;
-    height: 4vw;
-}
-.icon{
-    width: 4vw;
-    height: 4vw;
-}
-.navbar{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    width: 20vw;
-    font-size: 1vw;
-    padding-right: 2%;
-    justify-content: space-between;
-}
-.navbar a {
-    text-decoration: none;
-    
-}
-.navbar ul {
-    list-style: none;
-    width: 20vw;
-    display: flex;
-    justify-content: space-around;
-}
-.navbar ul li {
-    cursor: pointer;
-}
-
-
 
 /* Banner principal */
 .banner

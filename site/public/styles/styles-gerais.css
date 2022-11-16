@@ -16,7 +16,6 @@ header{
     overflow: hidden;
     position: fixed; 
     z-index: 10;
-    
 }
 
 /* Barra de navegação */
@@ -24,11 +23,13 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 nav img{
     width: 4vw;
     height: 4vw;
+    overflow: hidden;
+    position: fixed; 
+   
 }
 .icon{
     width: 4vw;
@@ -38,18 +39,19 @@ nav img{
     display: flex;
     align-items: center;
     list-style: none;
-    width: 20vw;
+    width: 35vw;
     font-size: 1vw;
-    padding-right: 2%;
     justify-content: space-between;
+  
 }
 .navbar a {
     text-decoration: none;
     
 }
 .navbar ul {
+    padding: 0%;
     list-style: none;
-    width: 20vw;
+    width: 29vw;
     display: flex;
     justify-content: space-around;
 }

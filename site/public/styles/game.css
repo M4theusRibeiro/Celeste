@@ -28,13 +28,98 @@ button{
         padding-top: 4vw;
    
 }
+.overlay{
+  display: flex;
+  flex-direction: column;
+  padding-left: 1%;
+}
 .timer{
     display: flex;
     justify-content: center;
-    width: 100%; 
+    background-color: #000;
+    border-radius: 100px;
+    width: 10%; 
+    margin-top: 2%;
     color: #fff;
-    font-size: 8vw;
+    font-size: 0.9vw;
+    overflow: hidden;
+    position: fixed; 
+    z-index: 10;
 }
+.placar{
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    border-radius: 100px;
+    width: 10%; 
+    color: #fff;
+    font-size: 0.9vw;
+    overflow: hidden;
+    position: fixed; 
+    z-index: 10;
+}
+
+.botao{
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  width: 10%; 
+  margin-top: 6%;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 0.9vw;
+  overflow: hidden;
+  position: fixed; 
+  z-index: 10;
+  flex-direction: column;
+}
+
+.botao1{
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  width: 10%; 
+  margin-top: 7%;
+  color: #fff;
+  font-size: 0.8vw;
+  overflow: hidden;
+  position: fixed; 
+  z-index: 10;
+}
+.botao2{
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  width: 10%; 
+  margin-top: 4%;
+  color: #fff;
+  font-size: 0.8vw;
+  overflow: hidden;
+  position: fixed; 
+  z-index: 10;
+}
+
+.nome{
+  display: flex;
+  justify-content: center;
+  width: 10%; 
+  margin-top: 10%;
+  color: #fff;
+  font-size: 0.8vw;
+  overflow: hidden;
+  position: fixed; 
+  z-index: 10;
+  flex-direction: column;
+}
+
+.inputNome{
+  width: 100%;
+  height: 10%;
+  padding: 0vw;
+  border: 0vw;
+  overflow: hidden; 
+}
+
 .container-game{
     width: 80%;
     height: 100%;
@@ -42,6 +127,7 @@ button{
     border-bottom: 3vw solid #444;
     background-color: #222;
     flex-direction: column;
+    padding: 0.9%;
 }
 
   /* Game */
@@ -50,7 +136,11 @@ button{
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   padding-left: 3%;
    width: 100%;
+  }
+  .game img{
+    cursor: pointer;
   }
   .posicao1{
     display: flex;
@@ -84,13 +174,7 @@ button{
     margin-bottom: 1vw;
    
   }
-  .placar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 2vw;
-  }
+
   #pontos{
     color: #fff;
   }

@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="./styles/styles-gerais.css">
     <link rel="stylesheet" href="./styles/styles.css">
     <script src="./js/index.js"></script>
+    <script src="./js/funcoes.js"></script>
 </head>
 
-<body>
+<body onload="validarSessaoHome()">
 
     <header>
         <nav>
@@ -23,15 +24,28 @@
             </div>
             <div class="navbar">
                 <ul>
+                    <li id="sair">
+                        <a class="txtBranco" onclick="limparSessao()">Sair</a>
+                    </li>
                     <li class="btn">
                         <a class="agora" href="#">Home</a>
                     </li>
-               
-                    <li>
-                        <a class="txtBranco btn" href="cadastro.html">Cadastre-se</a>
+                    <li id="jogo">
+                        <a class="txtBranco" href="/dashboard/game.html">Jogo</a>
                     </li>
-               
-                    <li>
+                    <li id="ranking">
+                        <a class="txtBranco" href="/dashboard/ranking.html">Ranking</a>
+                    </li>
+                    <li id="dashboard">
+                        <a class="txtBranco" href="/dashboard/dashInicial.html">Dashboard</a>
+                    </li>
+                    <li id="forum">
+                        <a class="txtBranco" href="/dashboard/mural.html">Fórum</a>
+                    </li>
+                    <li id="cadastro">
+                        <a  class="txtBranco btn" href="cadastro.html">Cadastre-se</a>
+                    </li>
+                    <li id="login">
                         <a class="txtBranco btn" href="login.html">Login</a>
                     </li>
                 </ul>
@@ -177,10 +191,38 @@
 
 <script>
 
+function validarSessaoHome() {
+
+var email = sessionStorage.EMAIL_USUARIO;
+var nome = sessionStorage.NOME_USUARIO;
+var id = sessionStorage.ID_USUARIO;
+
+if (email != null && nome != null && id != null) {
+    login.style.display = 'none';
+    cadastro.style.display = 'none';
+    forum.style.display = 'block';
+    dashboard.style.display = 'block';
+    ranking.style.display = 'block';
+    jogo.style.display = 'block';
+    sair.style.display = 'block';
+
+} else {
+    login.style.display = 'block';
+    cadastro.style.display = 'block';
+    forum.style.display = 'none';
+    dashboard.style.display = 'none';
+    ranking.style.display = 'none';
+    jogo.style.display = 'none';
+    sair.style.display = 'none';
+    }
+}
+
+window.onload = validarSessaoHome()
+
+
 function jogoSecreto(){
     window.location = "pico8.html"
 }
-
     window.onload = function()
 {
 	var layers = [];

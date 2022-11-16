@@ -22,7 +22,12 @@ button{
     width: 100%;
     float: left;
 }
-
+/* #login{
+    display: none;
+}
+#cadastro{
+    display: none;
+} */
 .banner
     {
         position: relative;

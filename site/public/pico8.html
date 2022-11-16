@@ -24,14 +24,12 @@
     <script type="application/ld+json">{"@type":"Product","description":"Climb a mountain","name":"CELESTE Classic","@context":"http:\/\/schema.org\/","aggregateRating":{"ratingValue":"4.7","@type":"AggregateRating","ratingCount":667}}
 
     </script>
-    <title>Celeste Game PICO-8</title>
+    <title>Celeste | Pico 8</title>
     <meta name="csrf_token" value="IkNTNkdUenVteHBTNDBKWCBVUiBCVVRUIG51aTNPN0J2WkhkZ21tVyI=.xpoFbaCXRyZsHVfxD1CKc7by5tQ=" />
     <link rel="stylesheet" href="https://static.itch.io/game.css?1666980614"/>
     <script type="text/javascript">window.itchio_translations_url = 'https://static.itch.io/translations';
     </script>
-    <script src="https://static.itch.io/lib.js?1666980614" type="text/javascript">
-
-    </script>
+    <script src="https://static.itch.io/lib.js?1666980614" type="text/javascript"></script>
     <script src="https://static.itch.io/bundle.min.js?1666980614" type="text/javascript"></script>
     <script src="https://static.itch.io/lib/jquery.maskMoney.js" type="text/javascript"></script>
     <script data-src="https://static.itch.io/react.min.js?1666980614" id="lib_react_src"></script>
@@ -49,9 +47,12 @@
   }</script>
   <link rel="stylesheet" href="./styles//styles-gerais.css">
   <link rel="stylesheet" href="./styles/pico8.css">
+  <script src="./js/index.js"></script>
+  <script src="./js/funcoes.js"></script>
+
 </head>
 
-<body data-host="itch.io" data-page_name="view_game" class="locale_en game_layout embedded_game responsive no_theme_toggle">
+<body  data-host="itch.io" data-page_name="view_game" class="locale_en game_layout embedded_game responsive no_theme_toggle" onload="validarSessaoHome()">
   <header>
         <nav>
             <div class="icon">
@@ -59,15 +60,30 @@
             </div>
                 <div class="navbar">
                     <ul>
-                        <li>
-                            <a class="txtBranco" href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a class="txtBranco" href="cadastro.html">Cadastre-se</a>
-                        </li>
-                        <li>
-                            <a class="txtBranco"href="login.html">Login</a>
-                        </li>
+                        <li id="sair">
+                        <a class="txtBranco" onclick="limparSessao()">Sair</a>
+                    </li>
+                    <li class="btn">
+                        <a class="txtBranco" href="index.html">Home</a>
+                    </li>
+                    <li id="jogo">
+                        <a class="txtBranco" href="/dashboard/game.html">Jogo</a>
+                    </li>
+                    <li id="ranking">
+                        <a class="txtBranco" href="/dashboard/ranking.html">Ranking</a>
+                    </li>
+                    <li id="dashboard">
+                        <a class="txtBranco" href="/dashboard/dashInicial.html">Dashboard</a>
+                    </li>
+                    <li id="forum">
+                        <a class="txtBranco" href="/dashboard/mural.html">Fórum</a>
+                    </li>
+                    <li id="cadastro">
+                        <a  class="txtBranco btn" href="cadastro.html">Cadastre-se</a>
+                    </li>
+                    <li id="login">
+                        <a class="txtBranco btn" href="login.html">Login</a>
+                    </li>
                     </ul>
                 </div>
             </div>
@@ -77,7 +93,40 @@
     <main>
 <div class="banner imgFundo">
     <div class="main wrapper" id="wrapper"><div class="view_html_game_page view_game_page page_widget ready" id="view_html_game_page_71877"><div class="html_embed_widget embed_wrapper" id="html_embed_widget_59390"><div data-height="580" data-width="580" class="game_frame game_loaded" style="width: 580px; height: 580px"><iframe mozallowfullscreen="true" msallowfullscreen="true" frameborder="0" allowfullscreen="true" src="https://v6p9d9t4.ssl.hwcdn.net/html/235259/Celeste/index.html?v=1542780913" scrolling="no" webkitallowfullscreen="true" allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated" allowtransparency="true" id="game_drop"></iframe></div></div>
-</div>
-  </script>
-  </body>
-  </html>
+
+    </div>
+    </body>
+    </html>
+
+ <script>
+    function validarSessaoHome() {
+
+var email = sessionStorage.EMAIL_USUARIO;
+var nome = sessionStorage.NOME_USUARIO;
+var id = sessionStorage.ID_USUARIO;
+
+if (email != null && nome != null && id != null) {
+    login.style.display = 'none';
+    cadastro.style.display = 'none';
+    forum.style.display = 'block';
+    dashboard.style.display = 'block';
+    ranking.style.display = 'block';
+    jogo.style.display = 'block';
+    sair.style.display = 'block';
+
+} else {
+    login.style.display = 'block';
+    cadastro.style.display = 'block';
+    forum.style.display = 'none';
+    dashboard.style.display = 'none';
+    ranking.style.display = 'none';
+    jogo.style.display = 'none';
+    sair.style.display = 'none';
+    }
+}
+
+window.onload = validarSessaoHome()
+    </script>
+
+    
+    

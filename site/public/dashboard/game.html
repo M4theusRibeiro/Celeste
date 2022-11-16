@@ -15,15 +15,18 @@
     <header>
         <nav>
             <div class="icon">
-                <a href="pico8.html"><img src="../assets/img/morango.png"></a>
+                <a href="../pico8.html"><img src="../assets/img/morango.png"></a>
             </div>
             <div class="navbar">
                 <ul>
                     <li>
-                        <a class="txtBranco" href="../index.html">Sair</a>
+                        <a class="txtBranco" onclick="limparSessao()" href="../index.html">Sair</a>
+                    </li>
+                    <li class="btn">
+                        <a class="txtBranco" href="../index.html">Home</a>
                     </li>
                     <li>
-                        <a class="agora" href="#">Jogo</a>
+                        <a class="agora" href="/dashboard/game.html">Jogo</a>
                     </li>
                     <li>
                         <a class="txtBranco" href="/dashboard/ranking.html">Ranking</a>
@@ -32,7 +35,7 @@
                         <a class="txtBranco" href="/dashboard/dashInicial.html">Dashboard</a>
                     </li>
                     <li>
-                        <a class="agora" href="/dashboard/mural.html">Home</a>
+                        <a class="txtBranco" href="/dashboard/mural.html">Fórum</a>
                     </li>
                 </ul>
             </div>
@@ -43,14 +46,22 @@
     <main>
         <div class="banner">
             <div class="container-game">
-                <div class="timer" id="timer">
-                    00:00
+
+                <div class="overlay">
+                    <div class="timer" id="timer">00:00</div>
+                    <div class="placar">Pontuação: <span id="pontos">0</span> </div>    
+                
+               
+                <div class="botao1">
+                    <button id="botao" onclick="salvarRecorde()">Submit</button>
                 </div>
-                <div class="placar">Pontuação: <span id="pontos">0</span> 
+                <div class="botao2">
+                    <button id="botao" onclick="comecarJogo()">Iniciar</button>
                 </div>
-                <div class="botao">
-                    <button onclick="comecarJogo()">Começar jogo</button>
+                <div class="nome">
+                     Digite seu nome: <input class ="inputNome" id="Nome" maxlength="5">
                 </div>
+            </div>
                 <div class="game">
                 <div class="posicao1">
                     <span style="background-color: aqua;" class="posicao"id="um"></span>
@@ -81,3 +92,7 @@
 </body>
 
 </html>
+
+<script>
+  
+</script>
