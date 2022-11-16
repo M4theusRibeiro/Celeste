@@ -16,13 +16,7 @@ button {
     height: 5vh;
     margin-top: 10%;
     margin-bottom: 10%;
-
-}
-
-
-input::placeholder {
-    color: #fff;
-    opacity: 1;
+    
 }
 
 .banner #div_erros_login {
@@ -119,6 +113,7 @@ input::placeholder {
     border-right: 0vw;
     border-bottom: 0.1vw solid #fff;
     margin-top: 2%;
+    margin-bottom: 3%;
 }
 
 .campo #placeholder {

@@ -48,23 +48,23 @@
                  <div class="formulario">
                         <span style="font-size: 2vw;" class="txtVermelho titulo1">Cadastro</span>
                     <div class="campo">
-                        <span class="txtBranco mensagem">Nome:</span>
-                        <input onkeyup="verificarNome()" id="Nome" type="Nome" placeholder="Nome">
+                        <label for="Nome" class="txtBranco mensagem">Nome:</label>
+                        <input onkeyup="verificarNome()" id="Nome" type="Nome">
                     </div>
                     <div class="campo">
-                        <span class="txtBranco mensagem">Email:</span>
-                        <input onkeyup="verificarEmail()" id="Email" type="Email" placeholder="Email">
+                        <label for="Email" class="txtBranco mensagem">Email:</label>
+                        <input onkeyup="verificarEmail()" id="Email" type="Email">
                     </div>
                     <div class="campo">
-                        <span class="txtBranco mensagem">Senha:</span>
-                        <input onkeyup="verificarSenha()" id="Senha" type="password" placeholder="Senha">
+                        <label for="Senha" class="txtBranco mensagem">Senha:</label>
+                        <input onkeyup="verificarSenha()" id="Senha" type="password">
                     </div>
                     <div class="campo">
-                        <span class="txtBranco mensagem">Confirmar senha:</span>
-                        <input onkeyup="validarConfirmarSenha()" id="confirmaSenha" type="password" placeholder="Senha">
+                        <label for="confirmaSenha" class="txtBranco mensagem">Confirmar senha:</label>
+                        <input onkeyup="validarConfirmarSenha()" id="confirmaSenha" type="password">
                     </div>
                     <div class="campo">
-                        <span class="txtBranco mensagem">Personagem favorito:</span>
+                        <label for="persoFav" class="txtBranco mensagem">Personagem favorito:</label>
                         <select class="combo" id="persoFav">
                             <option id="nada" value=""></option>
                             <option value="madeleine">Madeleine</option>
@@ -75,7 +75,7 @@
                         </select>
                     </div>
                     <div class="campo">
-                        <span class="txtBranco mensagem">Sentimento:</span>
+                        <label for="sentimento" class="txtBranco mensagem">Sentimento:</label>
                         <select id="sentimento">
                             <option id="nada" value=""></option>
                             <option value="fracasso">Fracasso</option>
