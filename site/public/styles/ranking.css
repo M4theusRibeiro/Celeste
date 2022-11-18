@@ -47,11 +47,14 @@ main{
 }
 
 /* Tabela */
+.posicao{
+
+}
 .tabela{
    display: flex;
    justify-content: space-evenly;
    align-items: center;
-   width: 50%;
+   width: 60%;
    height: 0%;
    border: #444 0.2vw solid;
   }
@@ -61,21 +64,15 @@ main{
     justify-content: center;
     align-items: center;
     height: 10%;
-   
   }
   .foto img{
-    
-    border-right: #444 0.2vw solid;
     height: 10%;
-    padding-right: 10%;
    
 }
   .nome{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: #444 0.2vw solid;
-    padding: 5%;
     height: 10%;
   
   }
@@ -84,5 +81,7 @@ main{
     justify-content: center;
     align-items: center;
     height: 10%;
+    padding-left: 15%;
+    border-left: #444 0.2vw solid;
  
   }

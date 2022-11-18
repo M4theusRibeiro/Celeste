@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../styles/ranking.css">
     <script src=""></script>
 </head>
-<body>
+<body onload="atualizarFeed()">
     <header>
         <nav>
             <div class="icon">
@@ -52,10 +52,10 @@
                     <div class="foto">
                         <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
                     </div>
-                    <div class="nome">
+                    <div class="nome" id="nome1">
                         -----
                     </div>
-                    <div class="pontuacao">
+                    <div class="pontuacao" id="pontuacao1">
                         ---
                     </div>
                 </div>
@@ -66,10 +66,10 @@
                     <div class="foto">
                         <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
                     </div>
-                    <div class="nome">
+                    <div class="nome" id="nome2">
                         -----
                     </div>
-                    <div class="pontuacao">
+                    <div class="pontuacao" id="pontuacao2">
                         ---
                     </div>
                 </div>
@@ -80,10 +80,10 @@
                     <div class="foto">
                         <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
                     </div>
-                    <div class="nome">
+                    <div class="nome" id="nome3">
                         -----
                     </div>
-                    <div class="pontuacao">
+                    <div class="pontuacao" id="pontuacao3">
                         ---
                     </div>
                 </div>
@@ -94,10 +94,10 @@
                     <div class="foto">
                         <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
                     </div>
-                    <div class="nome">
+                    <div class="nome" id="nome4">
                         -----
                     </div>
-                    <div class="pontuacao">
+                    <div class="pontuacao" id="pontuacao4">
                         ---
                     </div>
                 </div>
@@ -108,10 +108,10 @@
                     <div class="foto">
                         <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
                     </div>
-                    <div class="nome">
+                    <div class="nome" id="nome5">
                         -----
                     </div>
-                    <div class="pontuacao">
+                    <div class="pontuacao" id="pontuacao5">
                         ---
                     </div>
                 </div>
@@ -122,10 +122,10 @@
                     <div class="foto">
                         <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
                     </div>
-                    <div class="nome">
+                    <div class="nome" id="nome6">
                         -----
                     </div>
-                    <div class="pontuacao">
+                    <div class="pontuacao" id="pontuacao6">
                         ---
                     </div>
                 </div>
@@ -136,10 +136,10 @@
                     <div class="foto">
                         <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
                     </div>
-                    <div class="nome">
+                    <div class="nome" id="nome7">
                         -----
                     </div>
-                    <div class="pontuacao">
+                    <div class="pontuacao" id="pontuacao7">
                         ---
                     </div>
                 </div>
@@ -150,10 +150,10 @@
                     <div class="foto">
                         <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
                     </div>
-                    <div class="nome">
+                    <div class="nome" id="nome8">
                         -----
                     </div>
-                    <div class="pontuacao">
+                    <div class="pontuacao" id="pontuacao8">
                         ---
                     </div>
                 </div>
@@ -167,3 +167,57 @@
 
 </body>
 </html>
+
+<script>
+
+function atualizarFeed() {
+    //aguardar();
+    fetch("/ranking/listar").then(function (resposta) {
+        if (resposta.ok) {
+            if (resposta.status == 204) {
+                    console.log("Nenhum resultado encontrado!!")
+                throw "Nenhum resultado encontrado!!";
+            }
+            resposta.json().then(function (resposta) {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                for (let i = 0; i < resposta.length; i++) {
+                    var ranking = resposta[i];
+
+                     if(i == 0){
+                        nome1.innerHTML = ranking.nome
+                        pontuacao1.innerHTML = ranking.pontuacao
+                     }else if(i == 1){
+                        nome2.innerHTML = ranking.nome
+                        pontuacao2.innerHTML = ranking.pontuacao
+                     }else if(i == 2){
+                        nome3.innerHTML = ranking.nome
+                        pontuacao3.innerHTML = ranking.pontuacao
+                     }else if(i == 3){
+                        nome4.innerHTML = ranking.nome
+                        pontuacao4.innerHTML = ranking.pontuacao
+                     }else if(i == 4){
+                        nome5.innerHTML = ranking.nome
+                        pontuacao5.innerHTML = ranking.pontuacao
+                     }else if(i == 5){
+                        nome6.innerHTML = ranking.nome
+                        pontuacao6.innerHTML = ranking.pontuacao
+                     }else if(i == 6){
+                        nome7.innerHTML = ranking.nome
+                        pontuacao7.innerHTML = ranking.pontuacao
+                     }else if(i == 7){
+                        nome8.innerHTML = ranking.nome
+                        pontuacao8.innerHTML = ranking.pontuacao
+                     }
+                }
+            });
+        } else {
+            throw ('Houve um erro na API!');
+        }
+    }).catch(function (resposta) {
+        console.error(resposta);
+
+    });
+}
+
+</script>

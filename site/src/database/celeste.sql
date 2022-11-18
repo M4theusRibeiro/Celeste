@@ -1,24 +1,28 @@
 
-/*
-MySQL - banco local - ambiente de desenvolvimento
-*/
+/*MySQL - banco local - ambiente de desenvolvimento*/
 -- Criando banco de dados
 create database Celeste;
 use Celeste;
 
--- Deletar tabelas
--- drop table usuario;
--- drop table comentario;
-
 -- Criação da tabela usuario
 create table usuario(
-idUsuario int primary key auto_increment,
-nome varchar(45),
-email varchar(85),
-senha varchar(30),
-persoFav varchar(30),
-sentimento varchar(30)
+	idUsuario int primary key auto_increment,
+	nome varchar(45),
+	email varchar(85),
+	senha varchar(30),
+	persoFav varchar(30),
+	sentimento varchar(30)
 );
+
+create table ranking(
+	idRanking int primary key auto_increment,
+	nome varchar(10),
+	pontuacao int,
+	fkUsuario INT,FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
+);
+
+-- Selecionar os primeiros colocados do ranking
+select u.idUsuario, u.nome, r.pontuacao from ranking r join usuario u on u.idUsuario =  r.fkUsuario order by r.pontuacao desc limit 8;
 
 -- Criação da tabela comentario
 create table comentario(
@@ -30,22 +34,6 @@ create table comentario(
 	FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
     primary key(idComentario, fkUsuario)
 );
-
-drop table comentario;
-select * from comentario;
-
-INSERT INTO comentario (titulo, descricao, img, fkUsuario) VALUES 
-('imagem', 'imagem', 'imagem', 6);
-
-
-drop table ranking;
-create table ranking(
-idRanking int primary key auto_increment,
-nome varchar(10),
-pontuacao int,
-fkUsuario int, foreign key(fkUsuario) references usuario(idUsuario)
-);
-
 
 select * from usuario;
 select * from comentario;

@@ -1,22 +1,19 @@
 var rankingModel = require("../models/rankingModel");
 
 function salvarRecorde(req,res){
-    console.log("estou em controler")
     var nome = req.body.nomeServer;
     var pontos = req.body.pontosServer;
-    var idUsuario = req.body.userServer;
-
-    console.log(nome)
-    console.log(pontos)
-    console.log(idUsuario)
+    var id = req.body.idServer
 
     if (nome == undefined) {
         res.status(400).send("O título está indefinido!");
     } else if (pontos == undefined) {
         res.status(400).send("A descrição está indefinido!");
-    }  else {
+    }  else if(id == undefined){
+        res.status(400).send("A descrição está indefinido!");
+    }else{
 
-        rankingModel.salvarRecorde(nome, pontos, idUsuario)
+        rankingModel.salvarRecorde(nome, pontos, id)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -32,6 +29,23 @@ function salvarRecorde(req,res){
     }
 }
 
+function listar(req, res) {
+    rankingModel.listar().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os ranking: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+
+
 module.exports = {
-    salvarRecorde
+    salvarRecorde,
+    listar
 }

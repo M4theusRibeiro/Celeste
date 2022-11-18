@@ -409,10 +409,10 @@ function gerarMorangoVoador(){
 //Função de salvar o recorde no banco
     function salvarRecorde() {
     
-        var idVar = sessionStorage.ID_USUARIO;
         var nomeVar = Nome.value;
         var pontosVar = totalMorangos;
-    
+        var idVar = sessionStorage.ID_USUARIO
+
         fetch("/ranking/recorde", {
             method: "POST",
             headers: {
@@ -421,7 +421,7 @@ function gerarMorangoVoador(){
             body: JSON.stringify({
                 nomeServer: nomeVar,
                 pontosServer: pontosVar,
-                userServer: idVar
+                idServer: idVar
             })
         }).then(function (resposta) {
     
@@ -429,7 +429,6 @@ function gerarMorangoVoador(){
     
             if (resposta.ok) {
     
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela pontos...";
     
                 setTimeout(() => {
                     window.location = "../dashboard/ranking.html";
