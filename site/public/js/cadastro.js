@@ -122,8 +122,9 @@ function validarEmail() {
     var confirmacaoSenhaVar = confirmaSenha.value;
     var persoFavVar = persoFav.value;
     var sentimentoVar = sentimento.value;
+    var imgVar = foto.value;
 
-    if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || persoFavVar == "" || sentimentoVar == "") {
+    if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || persoFavVar == "" || sentimentoVar == "" || imgVar == "") {
         cardErro.style.display = "block"
         mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
@@ -147,7 +148,8 @@ function validarEmail() {
             emailServer: emailVar,
             senhaServer: senhaVar,
             persoServer: persoFavVar,
-            sentimentoServer: sentimentoVar
+            sentimentoServer: sentimentoVar,
+            imgServer: imgVar
         })
     }).then(function (resposta) {
 

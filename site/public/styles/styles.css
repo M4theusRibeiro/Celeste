@@ -100,6 +100,7 @@ button{
     background-color: #fff;
     border: #ea422c solid 1vw;
     border-style:ridge;
+    overflow: hidden;
 }
 
 .borda video{

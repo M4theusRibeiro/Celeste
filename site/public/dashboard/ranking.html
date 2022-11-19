@@ -7,7 +7,7 @@
     <title>Ranking</title>
     <link rel="stylesheet" href="../styles/styles-gerais.css">
     <link rel="stylesheet" href="../styles/ranking.css">
-    <script src=""></script>
+    <script src="../js/funcoes.js"></script>
 </head>
 <body onload="atualizarFeed()">
     <header>
@@ -49,8 +49,8 @@
                     <div id="posicao">
                         1º 
                     </div>
-                    <div class="foto">
-                        <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
+                    <div class="foto1">
+                        <img  id="foto1" width="100%" height="100%" src="../assets/img/personagensGif/madeline/normal.gif">
                     </div>
                     <div class="nome" id="nome1">
                         -----
@@ -63,8 +63,8 @@
                     <div id="posicao">
                         2º 
                     </div>
-                    <div class="foto">
-                        <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
+                    <div class="foto2">
+                        <img id="foto2" width="100%" height="100%" src="../assets/img/personagensGif/badeline/normal.gif">
                     </div>
                     <div class="nome" id="nome2">
                         -----
@@ -77,8 +77,8 @@
                     <div id="posicao">
                         3º 
                     </div>
-                    <div class="foto">
-                        <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
+                    <div class="foto3">
+                        <img id="foto3" width="100%" height="100%" src="../assets/img/personagensGif/oshiro/normal.gif">
                     </div>
                     <div class="nome" id="nome3">
                         -----
@@ -91,8 +91,8 @@
                     <div id="posicao">
                         4º 
                     </div>
-                    <div class="foto">
-                        <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
+                    <div class="foto4">
+                        <img id="foto4" width="100%" height="100%" src="../assets/img/personagensGif/theo/normal.gif">
                     </div>
                     <div class="nome" id="nome4">
                         -----
@@ -105,8 +105,8 @@
                     <div id="posicao">
                         5º 
                     </div>
-                    <div class="foto">
-                        <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
+                    <div class="foto5" id="foto5">
+                        <img width="100%" height="100%" src="../assets/img/personagensGif/vovo/normal.gif">
                     </div>
                     <div class="nome" id="nome5">
                         -----
@@ -119,8 +119,8 @@
                     <div id="posicao">
                         6º 
                     </div>
-                    <div class="foto">
-                        <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
+                    <div class="foto6" id="foto6">
+                        <img width="100%" height="100%" src="../assets/img/personagensGif/madeline/normal.gif">
                     </div>
                     <div class="nome" id="nome6">
                         -----
@@ -133,8 +133,8 @@
                     <div id="posicao">
                         7º 
                     </div>
-                    <div class="foto">
-                        <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
+                    <div class="foto7" id="foto7">
+                        <img width="100%" height="100%" src="../assets/img/personagensGif/badeline/normal.gif">
                     </div>
                     <div class="nome" id="nome7">
                         -----
@@ -147,8 +147,8 @@
                     <div id="posicao">
                         8º 
                     </div>
-                    <div class="foto">
-                        <img width="50%" height="50%" src="../assets/img/personagensGif/badeline/yell.gif">
+                    <div class="foto8" id="foto8">
+                        <img width="100%" height="100%" src="../assets/img/personagensGif/theo/normal.gif">
                     </div>
                     <div class="nome" id="nome8">
                         -----
@@ -187,27 +187,35 @@ function atualizarFeed() {
                      if(i == 0){
                         nome1.innerHTML = ranking.nome
                         pontuacao1.innerHTML = ranking.pontuacao
+                        document.getElementById("foto1").src=ranking.img;
                      }else if(i == 1){
                         nome2.innerHTML = ranking.nome
                         pontuacao2.innerHTML = ranking.pontuacao
+                        document.getElementById("foto2").src=ranking.img;
                      }else if(i == 2){
                         nome3.innerHTML = ranking.nome
                         pontuacao3.innerHTML = ranking.pontuacao
+                        document.getElementById("foto3").src=ranking.img;
                      }else if(i == 3){
                         nome4.innerHTML = ranking.nome
                         pontuacao4.innerHTML = ranking.pontuacao
+                        document.getElementById("foto4").src=ranking.img;
                      }else if(i == 4){
                         nome5.innerHTML = ranking.nome
                         pontuacao5.innerHTML = ranking.pontuacao
+                        document.getElementById("foto5").src=ranking.img;
                      }else if(i == 5){
                         nome6.innerHTML = ranking.nome
                         pontuacao6.innerHTML = ranking.pontuacao
+                        document.getElementById("foto6").src=ranking.img;
                      }else if(i == 6){
                         nome7.innerHTML = ranking.nome
                         pontuacao7.innerHTML = ranking.pontuacao
+                        document.getElementById("foto7").src=ranking.img;
                      }else if(i == 7){
                         nome8.innerHTML = ranking.nome
                         pontuacao8.innerHTML = ranking.pontuacao
+                        document.getElementById("foto8").src=ranking.img;
                      }
                 }
             });
