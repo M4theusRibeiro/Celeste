@@ -15,7 +15,7 @@
     <script src="./js/funcoes.js"></script>
 </head>
 
-<body onload="validarSessaoHome()">
+<body onload="validarSessaoHome(), corPersonagem()">
 
     <header>
         <nav>
@@ -28,7 +28,7 @@
                         <a class="txtBranco" onclick="limparSessao()">Sair</a>
                     </li>
                     <li class="btn">
-                        <a class="agora" href="#">Home</a>
+                        <a class="agora" id="cor" href="#">Home</a>
                     </li>
                     <li id="jogo">
                         <a class="txtBranco" href="/dashboard/game.html">Jogo</a>
@@ -77,7 +77,7 @@
         <div class="bannergame">
             <div class="caixa">
                 <span style="font-style:italic;font-size: 3vw;padding:10%" class="txtBranco"> “É isso <span
-                        class="txtVermelho">Madeleine</span>,
+                        class="agora">Madeleine</span>,
                     apenas respire.” </span>
                 <div class="container">
                     <div class="borda">
@@ -90,16 +90,16 @@
             
         <div class="personagens">
         <!-- Madeleine -->
-        <span class="titulo2 txtVermelho">Personagens</span>
+        <span class="titulo2 agora" id="cor2">Personagens</span>
         <div class="bannerPersonagem">
             <div class="container2">
                 <div class="caixa2">
                     <div class="bordaPersonagem madeleine">
                         
                     </div>
-                    <span class="txtVermelho nomePersonagem" >Madeleine</span>
+                    <span class="agora nomePersonagem" >Madeleine</span>
                     <div class="sobrePersonagem txtBranco">
-                        Bem determinada e insistente, a Madeline mesmo com muitas inseguranças ainda tem sua <span class="txtVermelho ">CORAGEM</span> notada por outros personagens, alguns até a repreendendo e chamando-a de tola, avisando-a para parar antes que ela se machuque. Ainda assim, ela continua em frente.
+                        Bem determinada e insistente, a Madeline mesmo com muitas inseguranças ainda tem sua <span class="agora ">CORAGEM</span> notada por outros personagens, alguns até a repreendendo e chamando-a de tola, avisando-a para parar antes que ela se machuque. Ainda assim, ela continua em frente.
                     </div>        
                 </div> 
                 <div class="ImgBaixa">
@@ -114,7 +114,7 @@
                     <div class="bordaPersonagem badeleine"></div>
                     <span class="txtRoxo nomePersonagemReverse" >Badeleine</span>
                     <div class="sobrePersonagem txtBranco">
-                       <span class="txtRoxo">Badeline</span> é a parte <span class="txtRoxo">INSEGURA</span> de <span class="txtVermelho">Madeline</span>, representando seus <span class="txtRoxo">MEDOS: SOLIDÃO, INADEQUAÇÃO, FRACASSO e DESESPERANÇA</span>. Ela acredita em lidar com seus problemas de antemão, em vez de cometer erros e resolvê-los mais tarde. 
+                       <span class="txtRoxo">Badeline</span> é a parte <span class="txtRoxo">INSEGURA</span> de <span class="agora">Madeline</span>, representando seus <span class="txtRoxo">MEDOS: SOLIDÃO, INADEQUAÇÃO, FRACASSO e DESESPERANÇA</span>. Ela acredita em lidar com seus problemas de antemão, em vez de cometer erros e resolvê-los mais tarde. 
                     </div>
                 </div> 
                 <div class="ImgBaixa">
@@ -128,7 +128,7 @@
             <div class="container2">
                 <div class="caixa2">
                     <div class="bordaPersonagem theo"></div>
-                    <span class="txtVermelho nomePersonagem txtLaranja">Theo</span>
+                    <span class="nomePersonagem txtLaranja">Theo</span>
                     <div class="sobrePersonagem txtBranco">
                         <span class="txtLaranja">Theo</span> é um jovem <span class="txtLaranja"> descontraído, amigável e despreocupado</span>, com uma obsessão por mídia social. Ele adora tirar fotos e só quer se divertir explorando a Montanha. Ele mostra maturidade para querer tirar o máximo proveito de sua vida e atua como <span class="txtLaranja"> apoio emocional</span> para Madeline durante a escalada.
                     </div>
@@ -144,7 +144,7 @@
             <div class="container2">
                 <div style="flex-direction: row-reverse;" class="caixa2">
                     <div class="bordaPersonagem oshiro"></div>
-                    <span class="txtVermelho nomePersonagemReverse txtVerdeClaro">Oshiro</span>
+                    <span class="nomePersonagemReverse txtVerdeClaro">Oshiro</span>
                     <div class="sobrePersonagem txtBranco">
                             O Oshiro é uma alma perdida que está preso a um hotel, ele acredita que o hotel é maravilhoso mas ele precisa de ajuda para seguir em frente e não consegue reconhecer isso. Ele representa <span class="txtVerdeClaro">a parte de você que não quer seguir em frente e esquecer o passado.</span>
                     </div>
@@ -161,7 +161,7 @@
                     <div class="bordaPersonagem vovo">
                         
                     </div>
-                    <span class="txtVermelho nomePersonagem txtAmareloClaro" >Vovó</span>
+                    <span class="nomePersonagem txtAmareloClaro" >Vovó</span>
                     <div class="sobrePersonagem txtBranco">
                             Sendo uma das únicas pessoas que moram na Montanha, a vovó demonstra um grande conhecimento sobre a montanha e sempre alerta Madeleine sobre seus perigos. Sua atitude tende a ser despreocupada, servindo principalmente como meio para Madeline desabafar sobre seus sentimentos.
                     </div>
@@ -177,8 +177,8 @@
     <footer>
         <div class="botao">
             <span style="font-size: 1vw;" class="txtBranco">Acesse já outras <span
-                    class="txtVermelho">informações</span> sobre o jogo, basta
-                <span class="txtVermelho">cadastrar-se</span> agora</span>
+                    class="agora" id="cor3">informações</span> sobre o jogo, basta
+                <span class="agora" id="cor4">cadastrar-se</span> agora</span>
             <a class="txtBranco btn" href="cadastro.html"><button onclick="cadastrar()">Cadastre-se aqui</button></a>
         </div>
         <div class="copyright">
@@ -191,76 +191,5 @@
 
 <script>
 
-function validarSessaoHome() {
-
-var email = sessionStorage.EMAIL_USUARIO;
-var nome = sessionStorage.NOME_USUARIO;
-var id = sessionStorage.ID_USUARIO;
-
-if (email != null && nome != null && id != null) {
-    login.style.display = 'none';
-    cadastro.style.display = 'none';
-    forum.style.display = 'block';
-    dashboard.style.display = 'block';
-    ranking.style.display = 'block';
-    jogo.style.display = 'block';
-    sair.style.display = 'block';
-
-} else {
-    login.style.display = 'block';
-    cadastro.style.display = 'block';
-    forum.style.display = 'none';
-    dashboard.style.display = 'none';
-    ranking.style.display = 'none';
-    jogo.style.display = 'none';
-    sair.style.display = 'none';
-    }
-}
-
-window.onload = validarSessaoHome()
-
-
-function jogoSecreto(){
-    window.location = "pico8.html"
-}
-    window.onload = function()
-{
-	var layers = [];
-	var banner = document.querySelectorAll(".banner")[0];
-
-	// create layer data
-	{
-		var layerElements = document.querySelectorAll(".layer");
-		for (var i = 0; i < layerElements.length; i ++)
-		{
-			layers.push(
-			{
-				element: layerElements[i],
-				scroll: layerElements[i].getAttribute("data-scroll"),
-				offset: layerElements[i].getAttribute("data-yoffset")
-			});
-		}
-		layerElements = null;
-	}
-
-	// update a speicifc layer offset
-	function updateLayerOffset(scroll, layer)
-	{
-        var offset = -((scroll * layer.scroll) - layer.offset * (banner.clientHeight / 3680));
-		layer.element.style.transform = "translate3d(0, " + offset + "px, 0)";
-	}
-
-	function updateScrollValue()
-	{
-        var scroll = window.scrollY;
-		for (var i = 0; i < layers.length; i ++)
-				updateLayerOffset(scroll, layers[i]);
-	}
-
-	
-    document.addEventListener("scroll", updateScrollValue);
-    window.addEventListener("resize", updateScrollValue);
-    updateScrollValue();
-}
 
 </script>

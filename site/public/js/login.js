@@ -52,6 +52,7 @@ function entrar() {
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.idUsuario;
                 sessionStorage.IMG_USUARIO = json.img;
+                sessionStorage.PERSONAGEM_FAV = json.persoFav;
 
                 setTimeout(function () {
                     window.location = "./dashboard/mural.html";

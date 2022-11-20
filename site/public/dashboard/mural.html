@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../styles/muralFanArt.css">
     <link rel="stylesheet" href="../styles/styles-gerais.css">
     <script src="../js/funcoes.js"></script>
+    <script src="../js/mural.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -18,80 +19,82 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
+<body onload="validarSessao(), atualizarFeed(), corPersonagem()" style="background-color: #161618;">
     <!-- <body onload="validarSessao()"> -->
 
-        <header>
-            <nav>
-                <div class="icon">
-                    <a href="../pico8.html"><img src="../assets/img/morango.png"></a>
-                </div>
-                <div class="navbar">
-                    <ul>
-                        <li>
-                            <a class="txtBranco" onclick="limparSessao()" href="../index.html">Sair</a>
-                        </li>
-                        <li class="btn">
-                            <a class="txtBranco" href="../index.html">Home</a>
-                        </li>
-                        <li>
-                            <a class="txtBranco" href="/dashboard/game.html">Jogo</a>
-                        </li>
-                        <li>
-                            <a class="txtBranco" href="/dashboard/ranking.html">Ranking</a>
-                        </li>
-                        <li>
-                            <a class="txtBranco" href="/dashboard/dashInicial.html">Dashboard</a>
-                        </li>
-                        <li>
-                            <a class="agora" href="/dashboard/mural.html">Fórum</a>
-                        </li>
-                    </ul>
-                </div>
-                </div>
-                </div>
-            </nav>
-        </header>
-        <main>
-        <div class="bannerMural">
-                <div class="container">
-                    <h1 class="titulo">Olá,<span id="b_usuario" class="txtVermelho">asd</span>! Publique algo interessante sobre o jogo!</h1>
-                    <div class="formBanner">                 
-                    <div class="form">
-                            <form id="form_postagem" method="post" onsubmit="return publicar()">
-                                <label>
-                                    Título:
-                                    <br>
-                                    <input name="titulo" id="titulo" maxlength="100" type="text">
-                                </label>
-                                <br>
-                                <label>
-                                    Descrição (máximo de 250 caracteres):
-                                    <br>
-                                    <textarea name="descricao" id="descricao" maxlength="250" rows="5"></textarea>
-                                </label>
-                                <label>
-                                    Imagem:
-                                    <input name="imagem" id="imagem" maxlength="250" type="text">
-                                </label>
-                                <br>
-                                <button>Enviar</button>
-                            </form>
-                        </div>
-                  </div>
-                  <h1 class="titulo txtVermelho">ULTIMOS POSTS</h1>
-                  <div class="div-results">
-                      <div id="feed_container" class="feed_container">
-                        </div>
-                    </div>
+    <header>
+        <nav>
+            <div class="icon">
+                <a href="../pico8.html"><img src="../assets/img/morango.png"></a>
             </div>
-        </main>
-        
+            <div class="navbar">
+                <ul>
+                    <li>
+                        <a class="txtBranco" onclick="limparSessao()" href="../index.html">Sair</a>
+                    </li>
+                    <li class="btn">
+                        <a class="txtBranco" href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="txtBranco" href="/dashboard/game.html">Jogo</a>
+                    </li>
+                    <li>
+                        <a class="txtBranco" href="/dashboard/ranking.html">Ranking</a>
+                    </li>
+                    <li>
+                        <a class="txtBranco" href="/dashboard/dashInicial.html">Dashboard</a>
+                    </li>
+                    <li>
+                        <a id="cor" href="/dashboard/mural.html">Fórum</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="bannerMural">
+            <div class="container">
+                <h1 class="titulo">Olá,<span id="cor2"><span id="b_usuario">asd</span></span>! Publique algo interessante
+                    sobre o jogo!</h1>
+                <div class="formBanner">
+                    <div class="form">
+                        <form id="form_postagem" method="post" onsubmit="return publicar()">
+                            <label>
+                                Título:
+                                <br>
+                                <input name="titulo" id="titulo" maxlength="100" type="text">
+                            </label>
+                            <br>
+                            <label>
+                                Descrição (máximo de 250 caracteres):
+                                <br>
+                                <textarea name="descricao" id="descricao" maxlength="250" rows="5"></textarea>
+                            </label>
+                            <label>
+                                Imagem:
+                                <input name="imagem" id="imagem" maxlength="250" type="text">
+                            </label>
+                            <br>
+                            <button>Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <h1 class="titulo" id="cor3">ULTIMOS POSTS</h1>
+                <div class="div-results">
+                    <div id="feed_container" class="feed_container">
+                    </div>
+                </div>
+            </div>
+    </main>
+
 </body>
+
 </html>
 
 <script>
-    
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {
@@ -189,11 +192,11 @@
                         var spanID = document.createElement("span");
                         var spanTitulo = document.createElement("span");
                         var spanNome = document.createElement("span");
-                        
-                        if(publicacao.descricao != ""){
+
+                        if (publicacao.descricao != "") {
                             var divDescricao = document.createElement("div");
                         }
-                        if(publicacao.img != ""){
+                        if (publicacao.img != "") {
                             var imgFan = document.createElement("div");
                         }
 
@@ -201,20 +204,20 @@
                         var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
 
-                 
+
                         // criando e manipulando elementos do HTML via JavaScript
                         spanID.innerHTML = "ID: <b>" + publicacao.idComentario + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
 
-                        if(publicacao.descricao != ""){
+                        if (publicacao.descricao != "") {
                             divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
                         }
 
-                        if(publicacao.img != ""){
+                        if (publicacao.img != "") {
                             imgFan.innerHTML = "Imagem: <img src='" + publicacao.img + "'>";
                         }
-                        
+
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
 
@@ -223,11 +226,11 @@
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
 
-                        if(publicacao.descricao != ""){
+                        if (publicacao.descricao != "") {
                             divDescricao.className = "publicacao-descricao";
                         }
 
-                        if(publicacao.img != ""){
+                        if (publicacao.img != "") {
                             imgFan.className = "publicacao-img";
                         }
 
@@ -245,10 +248,10 @@
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanTitulo);
 
-                        if(publicacao.descricao != ""){
+                        if (publicacao.descricao != "") {
                             divPublicacao.appendChild(divDescricao);
                         }
-                        if(publicacao.img != ""){
+                        if (publicacao.img != "") {
                             divPublicacao.appendChild(imgFan);
                         }
 
@@ -258,7 +261,7 @@
                         feed.appendChild(divPublicacao);
                     }
 
-        
+
                 });
             } else {
                 throw ('Houve um erro na API!');
@@ -282,5 +285,8 @@
 
         return false;
     }
+
+
+
 
 </script>

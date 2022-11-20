@@ -1,197 +1,208 @@
-*{
-    margin: 0%;
+* {
+  margin: 0%;
 }
-body{
-    font-family: 'Renogare', sans-serif;
+
+body {
+  font-family: 'Renogare', sans-serif;
 }
-button{
-    background-color: #ea422c;
-    color: white;
-    border: #fff solid 0.1vw;
-    border-radius: 300px;
-    font-size: 1vw;
-    width: 16vw;
-    height: 5vh;
-    margin-top: 1%;
-    margin-bottom: 1%;
+
+button {
+  background-color: #ea422c;
+  color: white;
+  border: #fff solid 0.1vw;
+  border-radius: 300px;
+  font-size: 1vw;
+  width: 16vw;
+  height: 5vh;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 /* Banner principal */
-.banner
-    {
-        display: flex;
-        justify-content: center;
-        background-image: url("../assets/img/gif/celeste-mountain.gif");
-        background-size: 100%;
-        width: 100%;
-        height: 100%;
-        padding-top: 4vw;
-   
+.banner {
+  display: flex;
+  justify-content: center;
+  background-image: url("../assets/img/gif/celeste-mountain.gif");
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  padding-top: 4vw;
+
 }
-.overlay{
+
+.overlay {
   display: flex;
   flex-direction: column;
   padding-left: 1%;
 }
-.timer{
-    display: flex;
-    justify-content: center;
-    background-color: #000;
-    border-radius: 100px;
-    width: 10%; 
-    margin-top: 2%;
-    color: #fff;
-    font-size: 0.9vw;
-    overflow: hidden;
-    position: fixed; 
-    z-index: 10;
-}
-.placar{
-    display: flex;
-    justify-content: center;
-    background-color: #000;
-    border-radius: 100px;
-    width: 10%; 
-    color: #fff;
-    font-size: 0.9vw;
-    overflow: hidden;
-    position: fixed; 
-    z-index: 10;
-}
 
-.botao{
+.timer {
   display: flex;
   justify-content: center;
   background-color: #000;
-  width: 10%; 
+  border-radius: 100px;
+  width: 10%;
+  margin-top: 2%;
+  color: #fff;
+  font-size: 0.9vw;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+}
+
+.placar {
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  border-radius: 100px;
+  width: 10%;
+  color: #fff;
+  font-size: 0.9vw;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+}
+
+.botao {
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  width: 10%;
   margin-top: 6%;
   border-radius: 100px;
   color: #fff;
   font-size: 0.9vw;
   overflow: hidden;
-  position: fixed; 
+  position: fixed;
   z-index: 10;
   flex-direction: column;
 }
 
-.botao1{
+.botao1 {
   display: flex;
   justify-content: center;
   border-radius: 100px;
-  width: 10%; 
+  width: 10%;
   margin-top: 7%;
   color: #fff;
   font-size: 0.8vw;
   overflow: hidden;
-  position: fixed; 
+  position: fixed;
   z-index: 10;
 }
-.botao2{
+
+.botao2 {
   display: flex;
   justify-content: center;
   border-radius: 100px;
-  width: 10%; 
+  width: 10%;
   margin-top: 4%;
   color: #fff;
   font-size: 0.8vw;
   overflow: hidden;
-  position: fixed; 
+  position: fixed;
   z-index: 10;
 }
 
-.nome{
+.nome {
   display: flex;
   justify-content: center;
-  width: 10%; 
+  width: 10%;
   margin-top: 10%;
   color: #fff;
   font-size: 0.8vw;
   overflow: hidden;
-  position: fixed; 
+  position: fixed;
   z-index: 10;
   flex-direction: column;
 }
 
-.inputNome{
+.inputNome {
   width: 100%;
   height: 10%;
   padding: 0vw;
   border: 0vw;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-.container-game{
-    width: 80%;
-    height: 100%;
-    border: 0.2vw solid #444;
-    border-bottom: 3vw solid #444;
-    background-color: #222;
-    flex-direction: column;
-    padding: 0.9%;
+.container-game {
+  width: 80%;
+  height: 100%;
+  border: 0.2vw solid #444;
+  border-bottom: 3vw solid #444;
+  background-color: #222;
+  flex-direction: column;
+  padding: 0.9%;
 }
 
-  /* Game */
-  .game{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   padding-left: 3%;
-   width: 100%;
-  }
-  .game img{
-    cursor: pointer;
-  }
-  .posicao1{
-    display: flex;
-    justify-content: space-around;
-    width: 70%;
-    padding: 2%;
-    border-top: 0.2vw solid #444;
-    border-left: 0.2vw solid #444;
-    border-right: 0.2vw solid #444;
-    border-bottom: 0vw;
-   
-  }
-  .posicao2{
-    display: flex;
-    justify-content: space-around;
-    width: 70%;
-    padding: 2%;
-    border-left: 0.2vw solid #444;
-    border-right: 0.2vw solid #444;
-    border-bottom: 0vw;
-   
-  }
-  .posicao3{
-    display: flex;
-    justify-content: space-around;
-    width: 70%;
-    padding: 2%;
-    border-left: 0.2vw solid #444;
-    border-right: 0.2vw solid #444;
-    border-bottom: 0.2vw solid #444;
-    margin-bottom: 1vw;
-   
-  }
-
-  #pontos{
-    color: #fff;
-  }
-  .botao{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-.posicao{
-    background-image: url("../assets/img/gif/morangoVazio.gif");
-    background-size: 100%;
-    background-position: 0%;
-    width: 10vw; 
-    height: 10vw; 
+/* Game */
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 3%;
+  width: 100%;
 }
 
-.posicao img{
-    width: 10vw; 
-    height: 10vw; 
+.game img {
+  cursor: pointer;
+}
+
+.posicao1 {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  padding: 2%;
+  border-top: 0.2vw solid #444;
+  border-left: 0.2vw solid #444;
+  border-right: 0.2vw solid #444;
+  border-bottom: 0vw;
+
+}
+
+.posicao2 {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  padding: 2%;
+  border-left: 0.2vw solid #444;
+  border-right: 0.2vw solid #444;
+  border-bottom: 0vw;
+
+}
+
+.posicao3 {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  padding: 2%;
+  border-left: 0.2vw solid #444;
+  border-right: 0.2vw solid #444;
+  border-bottom: 0.2vw solid #444;
+  margin-bottom: 1vw;
+
+}
+
+#pontos {
+  color: #fff;
+}
+
+.botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.posicao {
+  background-image: url("../assets/img/gif/morangoVazio.gif");
+  background-size: 100%;
+  background-position: 0%;
+  width: 10vw;
+  height: 10vw;
+}
+
+.posicao img {
+  width: 10vw;
+  height: 10vw;
 }

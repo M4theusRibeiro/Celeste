@@ -1,94 +1,103 @@
-*{
-    margin: 0%;
+* {
+  margin: 0%;
 }
-body{
-    font-family: 'Renogare', sans-serif;
+
+body {
+  font-family: 'Renogare', sans-serif;
 }
-button{
-    background-color: #ea422c;
-    color: white;
-    border: #fff solid 0.1vw;
-    border-radius: 300px;
-    font-size: 1vw;
-    width: 16vw;
-    height: 5vh;
-    margin-top: 10%;
-    margin-bottom: 10%;
+
+button {
+  background-color: #ea422c;
+  color: white;
+  border: #fff solid 0.1vw;
+  border-radius: 300px;
+  font-size: 1vw;
+  width: 16vw;
+  height: 5vh;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
-main{
-    height: 100%;
+
+main {
+  height: 100%;
 }
 
 /* Banner principal */
-.banner
-    {
-        display: flex;
-        justify-content: center;
-        background-image: url("../assets/img/gif/celeste-mountain.gif");
-        background-size: 100%;
-        width: 100%;
-        height: 100%;
-        padding-top: 4vw;
+.banner {
+  display: flex;
+  justify-content: center;
+  background-image: url("../assets/img/gif/celeste-mountain.gif");
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  padding-top: 4vw;
 }
 
-.container-ranking{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    height: 100%;
-    border: 0.2vw solid #444;
-    border-bottom: 3vw solid #444;
-    background-color: #222;
-    flex-direction: column;
-    color: #fff;
-    font-size: 1vw;
+.container-ranking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  border: 0.2vw solid #444;
+  border-bottom: 3vw solid #444;
+  background-color: #222;
+  flex-direction: column;
+  color: #fff;
+  font-size: 1vw;
 }
 
 /* Tabela */
 
-.tabela{
-   display: flex;
-   justify-content: space-evenly;
-   align-items: center;
-   width: 80%;
-   height: 10%;
-   border: #444 0.2vw solid;
-  }
-  .posicao{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
-    width: 20%;
-  }
-  .foto{
-    display: flex;
-    width: 10%;
-    justify-content: center;
-    align-items: center;
-    height: 10%; 
-
-  }
-  img{
-    height: 100%;
-   width: 100%;
+.tabela {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  height: 10%;
+  border: #444 0.2vw solid;
 }
-  .nome{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
-    width: 20%;
-  
-  }
-  .pontuacao{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
-    padding-left: 15%;
-    border-left: #444 0.2vw solid;
-    width: 20%;
- 
-  }
+
+.posicao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  width: 20%;
+}
+
+.foto {
+  display: flex;
+  width: 10%;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  overflow: hidden;
+
+}
+
+img {
+  height: 100%;
+  width: 100%;
+
+}
+
+.nome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  width: 20%;
+
+}
+
+.pontuacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  padding-left: 15%;
+  border-left: #444 0.2vw solid;
+  width: 20%;
+
+}

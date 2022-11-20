@@ -17,69 +17,67 @@
 <header>
     <nav>
         <div class="icon">
-            <a href="pico8.html"><img src="./assets/img/morango.png"></a> 
+            <a href="pico8.html"><img src="./assets/img/morango.png"></a>
         </div>
-            <div class="navbar">
-                <ul>
-                    <li>
-                        <a class="txtBranco" href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a class="txtBranco" href="cadastro.html">Cadastre-se</a>
-                    </li>
-                    <li>
-                        <a class="agora"href="#">Login</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a class="txtBranco" href="index.html">Home</a>
+                </li>
+                <li>
+                    <a class="txtBranco" href="cadastro.html">Cadastre-se</a>
+                </li>
+                <li>
+                    <a class="agora" href="#">Login</a>
+                </li>
+            </ul>
+        </div>
         </div>
         </div>
     </nav>
 </header>
-    <main>
-        <div class="banner imgFundo">
-            <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
+<main>
+    <div class="banner imgFundo">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div class="container-form">
+            <div class="formulario">
+                <span style="font-size: 2vw;" class="txtVermelho titulo1">Login</span>
+                <div class="campo">
+                    <label for="Email" class="txtBranco mensagem">Email:</label>
+                    <input id="Email" type="Email">
+                </div>
+                <div class="campo">
+                    <label for="Senha" class="txtBranco mensagem">Senha:</label>
+                    <input id="Senha" type="password">
+                </div>
+                <div class="contaExistente">
+                    <span class="txtBranco">Não possui uma conta?</span>
+                    <a class="txtVermelho" href="cadastro.html">Clique aqui</a>
+                </div>
+                <button onclick="entrar()">Login</button>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/img/fita.webp" id="loading-gif">
+                </div>
+                <div id="div_erros_login">
                 </div>
             </div>
-            <div class="container-form">
-                 <div class="formulario">
-                        <span style="font-size: 2vw;" class="txtVermelho titulo1">Login</span>
-                    <div class="campo">
-                        <label for="Email" class="txtBranco mensagem">Email:</label>
-                        <input id="Email" type="Email">
-                    </div>
-                    <div class="campo">
-                        <label for="Senha" class="txtBranco mensagem">Senha:</label>
-                        <input id="Senha" type="password">
-                    </div>
-                    <div class="contaExistente">
-                        <span class="txtBranco">Não possui uma conta?</span>
-                        <a class="txtVermelho" href="cadastro.html">Clique aqui</a>
-                    </div>
-                    <button onclick="entrar()">Login</button>
-                    <div id="div_aguardar" class="loading-div">
-                        <img src="./assets/img/fita.webp" id="loading-gif"></div>
-                       <div id="div_erros_login">
-                    </div>
-                   </div>
-            </div>
-            
         </div>
-    </main>
+
+    </div>
+</main>
 <footer>
-    
+
     <div class="copyright">
         <span style="font-size: 1vw;" class="txtBranco">&copy; Copyright 2022 Sptech Matheus Ribeiro</span>
     </div>
 
 </footer>
+
 <body>
 </body>
 
 </html>
-
-
-
-

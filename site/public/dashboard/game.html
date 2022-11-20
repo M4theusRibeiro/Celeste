@@ -12,7 +12,7 @@
     <script src="../js/funcoes.js"></script>
 </head>
 
-<body>
+<body onload="corPersonagem()">
     <header>
         <nav>
             <div class="icon">
@@ -27,7 +27,7 @@
                         <a class="txtBranco" href="../index.html">Home</a>
                     </li>
                     <li>
-                        <a class="agora" href="/dashboard/game.html">Jogo</a>
+                        <a id="cor" href="/dashboard/game.html">Jogo</a>
                     </li>
                     <li>
                         <a class="txtBranco" href="/dashboard/ranking.html">Ranking</a>
@@ -50,41 +50,41 @@
 
                 <div class="overlay">
                     <div class="timer" id="timer">00:00</div>
-                    <div class="placar">Pontuação: <span id="pontos">0</span> </div>    
-                
-               
-                <div class="botao1">
-                    <button id="botao" onclick="salvarRecorde()">Submit</button>
+                    <div class="placar">Pontuação: <span id="pontos">0</span> </div>
+
+
+                    <div class="botao1">
+                        <button id="botao" onclick="salvarRecorde()">Submit</button>
+                    </div>
+                    <div class="botao2">
+                        <button id="botao2" onclick="comecarJogo()">Iniciar</button>
+                    </div>
+                    <div class="nome">
+                        Digite seu nome: <input class="inputNome" id="Nome" maxlength="5">
+                    </div>
                 </div>
-                <div class="botao2">
-                    <button id="botao" onclick="comecarJogo()">Iniciar</button>
-                </div>
-                <div class="nome">
-                     Digite seu nome: <input class ="inputNome" id="Nome" maxlength="5">
-                </div>
-            </div>
                 <div class="game">
-                <div class="posicao1">
-                    <span style="background-color: aqua;" class="posicao"id="um"></span>
-                    <span style="background-color: black;" class="posicao" id="dois"></span>
-                    <span style="background-color: red;" class="posicao" id="tres"></span>
-                    <span style="background-color: yellow;" class="posicao" id="quatro"></span>
-                    <span style="background-color: orange;" class="posicao" id="cinco"></span>
-                </div>
-                <div class="posicao2">
-                    <span style="background-color: green;" class="posicao" id="seis"></span>
-                    <span style="background-color: blue;" class="posicao" id="sete"></span>
-                    <span style="background-color: purple;" class="posicao" id="oito"></span>
-                    <span style="background-color: greenyellow;" class="posicao" id="nove"></span>
-                    <span style="background-color: orchid;" class="posicao" id="dez"></span>
-                </div>
-                <div class="posicao3">
-                    <span style="background-color: darkgreen;" class="posicao" id="onze"></span>
-                    <span style="background-color:darkturquoise ;" class="posicao" id="doze"></span>
-                    <span style="background-color:darkred;" class="posicao" id="treze"></span>
-                    <span style="background-color: darkturquoise;" class="posicao" id="quatorze"></span>
-                    <span style="background-color: plum;" class="posicao" id="quinze"></span>
-                </div>
+                    <div class="posicao1">
+                        <span style="background-color: aqua;" class="posicao" id="um"></span>
+                        <span style="background-color: black;" class="posicao" id="dois"></span>
+                        <span style="background-color: red;" class="posicao" id="tres"></span>
+                        <span style="background-color: yellow;" class="posicao" id="quatro"></span>
+                        <span style="background-color: orange;" class="posicao" id="cinco"></span>
+                    </div>
+                    <div class="posicao2">
+                        <span style="background-color: green;" class="posicao" id="seis"></span>
+                        <span style="background-color: blue;" class="posicao" id="sete"></span>
+                        <span style="background-color: purple;" class="posicao" id="oito"></span>
+                        <span style="background-color: greenyellow;" class="posicao" id="nove"></span>
+                        <span style="background-color: orchid;" class="posicao" id="dez"></span>
+                    </div>
+                    <div class="posicao3">
+                        <span style="background-color: darkgreen;" class="posicao" id="onze"></span>
+                        <span style="background-color:darkturquoise ;" class="posicao" id="doze"></span>
+                        <span style="background-color:darkred;" class="posicao" id="treze"></span>
+                        <span style="background-color: darkturquoise;" class="posicao" id="quatorze"></span>
+                        <span style="background-color: plum;" class="posicao" id="quinze"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,7 +93,3 @@
 </body>
 
 </html>
-
-<script>
-  
-</script>

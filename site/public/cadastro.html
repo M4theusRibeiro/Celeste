@@ -14,12 +14,13 @@
     <script src="./js/cadastro.js"></script>
     <script src="./js/funcoes.js"></script>
 </head>
+
 <body>
-<header>
-    <nav>
-        <div class="icon">
-            <a href="pico8.html"><img src="./assets/img/morango.png"></a> 
-        </div>
+    <header>
+        <nav>
+            <div class="icon">
+                <a href="pico8.html"><img src="./assets/img/morango.png"></a>
+            </div>
             <div class="navbar">
                 <ul>
                     <li>
@@ -29,14 +30,14 @@
                         <a class="agora" href="#">Cadastre-se</a>
                     </li>
                     <li>
-                        <a class="txtBranco"href="login.html">Login</a>
+                        <a class="txtBranco" href="login.html">Login</a>
                     </li>
                 </ul>
             </div>
-        </div>
-        </div>
-    </nav>
-</header>
+            </div>
+            </div>
+        </nav>
+    </header>
     <main>
         <div class="banner imgFundo">
             <div class="alerta_erro">
@@ -45,91 +46,114 @@
                 </div>
             </div>
             <div class="container-form">
-             
                 <div class="formulario">
-                        <span style="font-size: 2vw;" class="txtVermelho titulo1">Cadastro</span>
-                    <div class="campo">
-                        <label for="Nome" class="txtBranco mensagem">Nome:</label>
-                        <input onkeyup="verificarNome()" id="Nome" type="Nome">
-                    </div>
-                    <div class="campo">
-                        <label for="Email" class="txtBranco mensagem">Email:</label>
-                        <input onkeyup="verificarEmail()" id="Email" type="Email">
-                    </div>
-                    <div class="campo">
-                        <label for="Senha" class="txtBranco mensagem">Senha:</label>
-                        <input onkeyup="verificarSenha()" id="Senha" type="password">
-                    </div>
-                    <div class="campo">
-                        <label for="confirmaSenha" class="txtBranco mensagem">Confirmar senha:</label>
-                        <input onkeyup="validarConfirmarSenha()" id="confirmaSenha" type="password">
-                    </div>
-                    <div class="campo">
-                        <label for="persoFav" class="txtBranco mensagem">Personagem favorito:</label>
-                        <select class="combo" id="persoFav">
-                            <option id="nada" value=""></option>
-                            <option value="madeleine">Madeleine</option>
-                            <option value="badeleine">Badeleine</option>
-                            <option value="theo">Theo</option>
-                            <option value="oshiro">Oshiro</option>
-                            <option value="vovo">Vovó</option>
-                        </select>
-                    </div>
-                    <div class="campo">
-                        <label for="sentimento" class="txtBranco mensagem">Sentimento:</label>
-                        <select id="sentimento">
-                            <option id="nada" value=""></option>
-                            <option value="fracasso">Fracasso</option>
-                            <option value="ansiedade">Ansiedade</option>
-                            <option value="solidao">Solidão</option>    
-                            <option value="desesperanca">Desesperança</option>
-                            <option value="inseguranca">Insegurança</option>
-                            <option value="inadequacao">Inadequação</option>
-                        </select>
-                    </div>
-                    <div class="campo">
-                        <label for="foto" class="txtBranco mensagem">Escolha sua foto:</label>
-                        <select id="foto">
-                            <option id="nada" value=""></option>
-                            <option value="../assets/img/personagensGif/vovo/creep.gif">vovó 1</option>
-                            <option value="../assets/img/personagensGif/vovo/laugh.gif">vovó 2</option>
-                            <option value="../assets/img/personagensGif/vovo/mock.gif">vovó 3</option>    
-                            <option value="../assets/img/personagensGif/vovo/normal.gif">vovó 4</option>
-                            <option value="../assets/img/personagensGif/theo/excited.gif">Theo 1</option>
-                            <option value="../assets/img/personagensGif/theo/normal.gif">Theo 2</option>
-                            <option value="../assets/img/personagensGif/theo/serious.gif">Theo 3</option>
-                            <option value="../assets/img/personagensGif/theo/thinking.gif">Theo 4</option>
-                            <option value="../assets/img/personagensGif/theo/worried.gif">Theo 5</option>
-                            <option value="../assets/img/personagensGif/oshiro/drama.gif">oshiro 1</option>
-                            <option value="../assets/img/personagensGif/oshiro/happy.gif">oshiro 2</option>
-                            <option value="../assets/img/personagensGif/oshiro/lostcontrol.gif">oshiro 3</option>
-                            <option value="../assets/img/personagensGif/oshiro/nervous.gif">oshiro 4</option>
-                            <option value="../assets/img/personagensGif/oshiro/normal.gif">oshiro 5</option>
-                            <option value="../assets/img/personagensGif/oshiro/serious.gif">oshiro 6</option>
-                            <option value="../assets/img/personagensGif/oshiro/suspicious.gif">oshiro 7</option>
-                            <option value="../assets/img/personagensGif/oshiro/worried.gif">oshiro 8</option>
-                            <option value="../assets/img/personagensGif/oshiro/worried-side.gif">oshiro 9</option>
-                            <option value="../assets/img/personagensGif/madeline/angry.gif">madeline 1</option>
-                            <option value="../assets/img/personagensGif/madeline/deadpan.gif">madeline 2</option>
-                            <option value="../assets/img/personagensGif/madeline/determined.gif">madeline 3</option>
-                            <option value="../assets/img/personagensGif/madeline/distracted.gif">madeline 4</option>
-                            <option value="../assets/img/personagensGif/madeline/normal.gif">madeline 5</option>
-                            <option value="../assets/img/personagensGif/madeline/panic.gif">madeline 6</option>
-                            <option value="../assets/img/personagensGif/madeline/sad.gif">madeline 7</option>
-                            <option value="../assets/img/personagensGif/madeline/surprised.gif">madeline 8</option>
-                            <option value="../assets/img/personagensGif/madeline/together.gif">madeline 9</option>
-                            <option value="../assets/img/personagensGif/badeline/angry.gif">badeline 1</option>
-                            <option value="../assets/img/personagensGif/badeline/freakout1.gif">badeline 2</option>
-                            <option value="../assets/img/personagensGif/badeline/freakout2.gif">badeline 3</option>
-                            <option value="../assets/img/personagensGif/badeline/freakout3.gif">badeline 4</option>
-                            <option value="../assets/img/personagensGif/badeline/normal.gif">badeline 5</option>
-                            <option value="../assets/img/personagensGif/badeline/sad.gif">badeline 6</option>
-                            <option value="../assets/img/personagensGif/badeline/scoff.gif">badeline 7</option>
-                            <option value="../assets/img/personagensGif/badeline/serious.gif">badeline 8</option>
-                            <option value="../assets/img/personagensGif/badeline/worried.gif">badeline 9</option>
-                            <option value="../assets/img/personagensGif/badeline/yell.gif">badeline 10</option>
-                            <option value="../assets/img/personagensGif/badeline/upset.gif">badeline 11</option>
-                        </select>
+                    <span style="font-size: 2vw;" class="txtVermelho titulo1">Cadastro</span>
+
+                    <div class="caixa">
+                        <div class="form">
+                            <div class="campo">
+                                <label for="Nome" class="txtBranco mensagem">Nome:</label>
+                                <input onkeyup="verificarNome()" id="Nome" type="Nome">
+                            </div>
+                            <div class="campo">
+                                <label for="Email" class="txtBranco mensagem">Email:</label>
+                                <input onkeyup="verificarEmail()" id="Email" type="Email">
+                            </div>
+                            <div class="campo">
+                                <label for="Senha" class="txtBranco mensagem">Senha:</label>
+                                <input onkeyup="verificarSenha()" id="Senha" type="password">
+                            </div>
+                            <div class="campo">
+                                <label for="confirmaSenha" class="txtBranco mensagem">Confirmar senha:</label>
+                                <input onkeyup="validarConfirmarSenha()" id="confirmaSenha" type="password">
+                            </div>
+                            <div class="campo">
+                                <label for="persoFav" class="txtBranco mensagem">Personagem favorito:</label>
+                                <select class="combo" id="persoFav">
+                                    <option selected disabled>Personagem</option>
+                                    <option value="madeleine">Madeleine</option>
+                                    <option value="badeleine">Badeleine</option>
+                                    <option value="theo">Theo</option>
+                                    <option value="oshiro">Oshiro</option>
+                                    <option value="vovo">Vovó</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label for="sentimento" class="txtBranco mensagem">Sentimento:</label>
+                                <select id="sentimento">
+                                    <option selected disabled>Sentimento</option>
+                                    <option value="fracasso">Fracasso</option>
+                                    <option value="ansiedade">Ansiedade</option>
+                                    <option value="solidao">Solidão</option>
+                                    <option value="desesperanca">Desesperança</option>
+                                    <option value="inseguranca">Insegurança</option>
+                                    <option value="inadequacao">Inadequação</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form">
+                            <div class="img">
+                                <img id="fotoPerfil" width="100%" height="100%"
+                                    src="./assets/img/personagensGif/madeline/normal.gif">
+                            </div>
+                            <div class="campo">
+                                <label for="foto" class="txtBranco mensagem">Escolha sua foto:</label>
+                                <select id="foto" onclick="mostrarFoto()">
+                                    <option selected disabled>Foto</option>
+                                    <option value="../assets/img/personagensGif/vovo/creep.gif">vovó 1</option>
+                                    <option value="../assets/img/personagensGif/vovo/laugh.gif">vovó 2</option>
+                                    <option value="../assets/img/personagensGif/vovo/mock.gif">vovó 3</option>
+                                    <option value="../assets/img/personagensGif/vovo/normal.gif">vovó 4</option>
+                                    <option value="../assets/img/personagensGif/theo/excited.gif">Theo 1</option>
+                                    <option value="../assets/img/personagensGif/theo/normal.gif">Theo 2</option>
+                                    <option value="../assets/img/personagensGif/theo/serious.gif">Theo 3</option>
+                                    <option value="../assets/img/personagensGif/theo/thinking.gif">Theo 4</option>
+                                    <option value="../assets/img/personagensGif/theo/worried.gif">Theo 5</option>
+                                    <option value="../assets/img/personagensGif/oshiro/drama.gif">oshiro 1</option>
+                                    <option value="../assets/img/personagensGif/oshiro/happy.gif">oshiro 2</option>
+                                    <option value="../assets/img/personagensGif/oshiro/lostcontrol.gif">oshiro 3
+                                    </option>
+                                    <option value="../assets/img/personagensGif/oshiro/nervous.gif">oshiro 4</option>
+                                    <option value="../assets/img/personagensGif/oshiro/normal.gif">oshiro 5</option>
+                                    <option value="../assets/img/personagensGif/oshiro/serious.gif">oshiro 6</option>
+                                    <option value="../assets/img/personagensGif/oshiro/suspicious.gif">oshiro 7</option>
+                                    <option value="../assets/img/personagensGif/oshiro/worried.gif">oshiro 8</option>
+                                    <option value="../assets/img/personagensGif/oshiro/worried-side.gif">oshiro 9
+                                    </option>
+                                    <option value="../assets/img/personagensGif/madeline/angry.gif">madeline 1</option>
+                                    <option value="../assets/img/personagensGif/madeline/deadpan.gif">madeline 2
+                                    </option>
+                                    <option value="../assets/img/personagensGif/madeline/determined.gif">madeline 3
+                                    </option>
+                                    <option value="../assets/img/personagensGif/madeline/distracted.gif">madeline 4
+                                    </option>
+                                    <option value="../assets/img/personagensGif/madeline/normal.gif">madeline 5</option>
+                                    <option value="../assets/img/personagensGif/madeline/panic.gif">madeline 6</option>
+                                    <option value="../assets/img/personagensGif/madeline/sad.gif">madeline 7</option>
+                                    <option value="../assets/img/personagensGif/madeline/surprised.gif">madeline 8
+                                    </option>
+                                    <option value="../assets/img/personagensGif/madeline/together.gif">madeline 9
+                                    </option>
+                                    <option value="../assets/img/personagensGif/badeline/angry.gif">badeline 1</option>
+                                    <option value="../assets/img/personagensGif/badeline/freakout1.gif">badeline 2
+                                    </option>
+                                    <option value="../assets/img/personagensGif/badeline/freakout2.gif">badeline 3
+                                    </option>
+                                    <option value="../assets/img/personagensGif/badeline/freakout3.gif">badeline 4
+                                    </option>
+                                    <option value="../assets/img/personagensGif/badeline/normal.gif">badeline 5</option>
+                                    <option value="../assets/img/personagensGif/badeline/sad.gif">badeline 6</option>
+                                    <option value="../assets/img/personagensGif/badeline/scoff.gif">badeline 7</option>
+                                    <option value="../assets/img/personagensGif/badeline/serious.gif">badeline 8
+                                    </option>
+                                    <option value="../assets/img/personagensGif/badeline/worried.gif">badeline 9
+                                    </option>
+                                    <option value="../assets/img/personagensGif/badeline/yell.gif">badeline 10</option>
+                                    <option value="../assets/img/personagensGif/badeline/upset.gif">badeline 11</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="contaExistente">
                         <span class="txtBranco">Já possui uma conta?</span>
@@ -138,18 +162,17 @@
                     <button onclick="cadastrar()">Cadastrar</button>
                 </div>
                 <div id="div_aguardar" class="divAguardar">
-                    <img src="./assets/img/fita.webp" id="loading-gif" >
+                    <img src="./assets/img/fita.webp" id="loading-gif">
                 </div>
-
                 <div id="div_erros_login">
+                </div>
             </div>
-        </div>
     </main>
-<footer>
-    <div class="copyright">
-        <span style="font-size: 1vw;" class="txtBranco">&copy; Copyright 2022 Sptech Matheus Ribeiro</span>
-    </div>
-</footer>
+    <footer>
+        <div class="copyright">
+            <span style="font-size: 1vw;" class="txtBranco">&copy; Copyright 2022 Sptech Matheus Ribeiro</span>
+        </div>
+    </footer>
 </body>
-</html>
 
+</html>

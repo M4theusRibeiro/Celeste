@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +9,17 @@
     <link rel="stylesheet" href="../styles/styles-gerais.css">
     <link rel="stylesheet" href="../styles/ranking.css">
     <script src="../js/funcoes.js"></script>
+    <script src="../js/ranking.js"></script>
 </head>
-<body onload="atualizarFeed()">
+
+<body onload="atualizarFeed(),corPersonagem()">
     <header>
         <nav>
             <div class="icon">
-                <a href="../pico8.html"><img src="../assets/img/morango.png"></a> 
+                <a href="../pico8.html"><img src="../assets/img/morango.png"></a>
             </div>
-                <div class="navbar">
-                  <ul>
+            <div class="navbar">
+                <ul>
                     <li>
                         <a class="txtBranco" onclick="limparSessao()" href="../index.html">Sair</a>
                     </li>
@@ -27,7 +30,7 @@
                         <a class="txtBranco" href="/dashboard/game.html">Jogo</a>
                     </li>
                     <li>
-                        <a class="agora" href="/dashboard/ranking.html">Ranking</a>
+                        <a id="cor" href="/dashboard/ranking.html">Ranking</a>
                     </li>
                     <li>
                         <a class="txtBranco" href="/dashboard/dashInicial.html">Dashboard</a>
@@ -36,7 +39,7 @@
                         <a class="txtBranco" href="/dashboard/mural.html">Fórum</a>
                     </li>
                 </ul>
-                </div>
+            </div>
             </div>
             </div>
         </nav>
@@ -47,10 +50,11 @@
                 TABELA DE PONTOS
                 <div class="tabela">
                     <div id="posicao">
-                        1º 
+                        1º
                     </div>
                     <div class="foto1">
-                        <img  id="foto1" width="100%" height="100%" src="../assets/img/personagensGif/madeline/normal.gif">
+                        <img id="foto1" width="100%" height="100%"
+                            src="../assets/img/personagensGif/madeline/normal.gif">
                     </div>
                     <div class="nome" id="nome1">
                         -----
@@ -61,10 +65,11 @@
                 </div>
                 <div class="tabela">
                     <div id="posicao">
-                        2º 
+                        2º
                     </div>
                     <div class="foto2">
-                        <img id="foto2" width="100%" height="100%" src="../assets/img/personagensGif/badeline/normal.gif">
+                        <img id="foto2" width="100%" height="100%"
+                            src="../assets/img/personagensGif/badeline/normal.gif">
                     </div>
                     <div class="nome" id="nome2">
                         -----
@@ -75,7 +80,7 @@
                 </div>
                 <div class="tabela">
                     <div id="posicao">
-                        3º 
+                        3º
                     </div>
                     <div class="foto3">
                         <img id="foto3" width="100%" height="100%" src="../assets/img/personagensGif/oshiro/normal.gif">
@@ -89,7 +94,7 @@
                 </div>
                 <div class="tabela">
                     <div id="posicao">
-                        4º 
+                        4º
                     </div>
                     <div class="foto4">
                         <img id="foto4" width="100%" height="100%" src="../assets/img/personagensGif/theo/normal.gif">
@@ -103,7 +108,7 @@
                 </div>
                 <div class="tabela">
                     <div id="posicao">
-                        5º 
+                        5º
                     </div>
                     <div class="foto5" id="foto5">
                         <img width="100%" height="100%" src="../assets/img/personagensGif/vovo/normal.gif">
@@ -117,7 +122,7 @@
                 </div>
                 <div class="tabela">
                     <div id="posicao">
-                        6º 
+                        6º
                     </div>
                     <div class="foto6" id="foto6">
                         <img width="100%" height="100%" src="../assets/img/personagensGif/madeline/normal.gif">
@@ -131,7 +136,7 @@
                 </div>
                 <div class="tabela">
                     <div id="posicao">
-                        7º 
+                        7º
                     </div>
                     <div class="foto7" id="foto7">
                         <img width="100%" height="100%" src="../assets/img/personagensGif/badeline/normal.gif">
@@ -145,7 +150,7 @@
                 </div>
                 <div class="tabela">
                     <div id="posicao">
-                        8º 
+                        8º
                     </div>
                     <div class="foto8" id="foto8">
                         <img width="100%" height="100%" src="../assets/img/personagensGif/theo/normal.gif">
@@ -166,66 +171,68 @@
 
 
 </body>
+
 </html>
 
 <script>
 
-function atualizarFeed() {
-    //aguardar();
-    fetch("/ranking/listar").then(function (resposta) {
-        if (resposta.ok) {
-            if (resposta.status == 204) {
+    function atualizarFeed() {
+        //aguardar();
+        fetch("/ranking/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
                     console.log("Nenhum resultado encontrado!!")
-                throw "Nenhum resultado encontrado!!";
-            }
-            resposta.json().then(function (resposta) {
-                console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-                for (let i = 0; i < resposta.length; i++) {
-                    var ranking = resposta[i];
-
-                     if(i == 0){
-                        nome1.innerHTML = ranking.nome
-                        pontuacao1.innerHTML = ranking.pontuacao
-                        document.getElementById("foto1").src=ranking.img;
-                     }else if(i == 1){
-                        nome2.innerHTML = ranking.nome
-                        pontuacao2.innerHTML = ranking.pontuacao
-                        document.getElementById("foto2").src=ranking.img;
-                     }else if(i == 2){
-                        nome3.innerHTML = ranking.nome
-                        pontuacao3.innerHTML = ranking.pontuacao
-                        document.getElementById("foto3").src=ranking.img;
-                     }else if(i == 3){
-                        nome4.innerHTML = ranking.nome
-                        pontuacao4.innerHTML = ranking.pontuacao
-                        document.getElementById("foto4").src=ranking.img;
-                     }else if(i == 4){
-                        nome5.innerHTML = ranking.nome
-                        pontuacao5.innerHTML = ranking.pontuacao
-                        document.getElementById("foto5").src=ranking.img;
-                     }else if(i == 5){
-                        nome6.innerHTML = ranking.nome
-                        pontuacao6.innerHTML = ranking.pontuacao
-                        document.getElementById("foto6").src=ranking.img;
-                     }else if(i == 6){
-                        nome7.innerHTML = ranking.nome
-                        pontuacao7.innerHTML = ranking.pontuacao
-                        document.getElementById("foto7").src=ranking.img;
-                     }else if(i == 7){
-                        nome8.innerHTML = ranking.nome
-                        pontuacao8.innerHTML = ranking.pontuacao
-                        document.getElementById("foto8").src=ranking.img;
-                     }
+                    throw "Nenhum resultado encontrado!!";
                 }
-            });
-        } else {
-            throw ('Houve um erro na API!');
-        }
-    }).catch(function (resposta) {
-        console.error(resposta);
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-    });
-}
+                    for (let i = 0; i < resposta.length; i++) {
+                        var ranking = resposta[i];
+
+                        if (i == 0) {
+                            nome1.innerHTML = ranking.nome
+                            pontuacao1.innerHTML = ranking.pontuacao
+                            document.getElementById("foto1").src = ranking.img;
+                        } else if (i == 1) {
+                            nome2.innerHTML = ranking.nome
+                            pontuacao2.innerHTML = ranking.pontuacao
+                            document.getElementById("foto2").src = ranking.img;
+                        } else if (i == 2) {
+                            nome3.innerHTML = ranking.nome
+                            pontuacao3.innerHTML = ranking.pontuacao
+                            document.getElementById("foto3").src = ranking.img;
+                        } else if (i == 3) {
+                            nome4.innerHTML = ranking.nome
+                            pontuacao4.innerHTML = ranking.pontuacao
+                            document.getElementById("foto4").src = ranking.img;
+                        } else if (i == 4) {
+                            nome5.innerHTML = ranking.nome
+                            pontuacao5.innerHTML = ranking.pontuacao
+                            document.getElementById("foto5").src = ranking.img;
+                        } else if (i == 5) {
+                            nome6.innerHTML = ranking.nome
+                            pontuacao6.innerHTML = ranking.pontuacao
+                            document.getElementById("foto6").src = ranking.img;
+                        } else if (i == 6) {
+                            nome7.innerHTML = ranking.nome
+                            pontuacao7.innerHTML = ranking.pontuacao
+                            document.getElementById("foto7").src = ranking.img;
+                        } else if (i == 7) {
+                            nome8.innerHTML = ranking.nome
+                            pontuacao8.innerHTML = ranking.pontuacao
+                            document.getElementById("foto8").src = ranking.img;
+                        }
+                    }
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+
+        });
+    }
+
 
 </script>

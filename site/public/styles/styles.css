@@ -1,10 +1,12 @@
-*{
+* {
     margin: 0%;
 }
-body{
+
+body {
     font-family: 'Renogare', sans-serif;
 }
-button{
+
+button {
     background-color: #ea422c;
     color: white;
     border: #fff solid 0.1vw;
@@ -17,60 +19,89 @@ button{
 }
 
 /* Banner principal */
-.section
-{
+.section {
     width: 100%;
     float: left;
 }
+
 /* #login{
     display: none;
 }
 #cadastro{
     display: none;
 } */
-.banner
-    {
-        position: relative;
-        padding-bottom: 167%;
-        background: #000 url("../assets/img/banner/background.jpg");
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        overflow: hidden;
-    }
+.banner {
+    position: relative;
+    padding-bottom: 167%;
+    background: #000 url("../assets/img/banner/background.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
 
-    .layer
-    {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-    }
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
 
-   .layer-dash { background-image: url("../assets/img/banner/dash.png"); }
-   .layer-oshiro { background-image: url("../assets/img/banner/oshiro.png"); }
-   .layer-granny { background-image: url("../assets/img/banner/granny.png"); }
-   .layer-theo { background-image: url("../assets/img/banner/theo.png"); }
-   .layer-badeline { background-image: url("../assets/img/banner/badeline.png"); }
-   .layer-madeline { background-image: url("../assets/img/banner/madeline.png"); }
-   .layer-logo { background-image: url("../assets/img/banner/logo.png"); }
-   .layer-strawberry { background-image: url("../assets/img/banner/strawberry.png"); }
-   .layer-clouds { background-image: url("../assets/img/banner/clouds.png"); }
-   .layer-logo { left: 7.5%; right: 7.5%; top: 0; bottom: 15%; }
+.layer-dash {
+    background-image: url("../assets/img/banner/dash.png");
+}
 
-   .edge
-    {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0px;
-        height: 64px;
-        background: url("../assets/img/banner/edge.png") repeat-x;
-    }
+.layer-oshiro {
+    background-image: url("../assets/img/banner/oshiro.png");
+}
 
-.img-celeste{
+.layer-granny {
+    background-image: url("../assets/img/banner/granny.png");
+}
+
+.layer-theo {
+    background-image: url("../assets/img/banner/theo.png");
+}
+
+.layer-badeline {
+    background-image: url("../assets/img/banner/badeline.png");
+}
+
+.layer-madeline {
+    background-image: url("../assets/img/banner/madeline.png");
+}
+
+.layer-logo {
+    background-image: url("../assets/img/banner/logo.png");
+}
+
+.layer-strawberry {
+    background-image: url("../assets/img/banner/strawberry.png");
+}
+
+.layer-clouds {
+    background-image: url("../assets/img/banner/clouds.png");
+}
+
+.layer-logo {
+    left: 7.5%;
+    right: 7.5%;
+    top: 0;
+    bottom: 15%;
+}
+
+.edge {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    height: 64px;
+    background: url("../assets/img/banner/edge.png") repeat-x;
+}
+
+.img-celeste {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,19 +110,21 @@ button{
 
 /* Banner game */
 
-.bannergame{
+.bannergame {
     background-color: #222222;
     width: 100%;
     height: 50vh;
     padding-top: 4vw;
     padding-bottom: 4vw;
 }
-.caixa{
+
+.caixa {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.borda{
+
+.borda {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,20 +132,21 @@ button{
     height: 49vh;
     background-color: #fff;
     border: #ea422c solid 1vw;
-    border-style:ridge;
+    border-style: ridge;
     overflow: hidden;
 }
 
-.borda video{
+.borda video {
     width: 50vw;
     height: 50vh;
 }
 
 /* Banner Personagem */
-.personagens{
+.personagens {
     background-color: #222;
 }
-.bannerPersonagem{
+
+.bannerPersonagem {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,14 +157,16 @@ button{
     background-color: #222;
     margin-top: 14%;
 }
-.caixa2{
+
+.caixa2 {
     display: flex;
     justify-content: start;
     align-items: center;
     font-size: 2vw;
     padding: 1vw;
 }
-.ImgBaixa{
+
+.ImgBaixa {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,7 +175,8 @@ button{
     border-top: #444 solid 0.2vw;
     height: auto;
 }
-.ImgBaixaMad{
+
+.ImgBaixaMad {
     margin-top: 1vw;
     margin-bottom: 1vw;
     width: 50vw;
@@ -148,31 +185,35 @@ button{
     background-position-x: center;
     background-size: contain;
 }
-.ImgBaixaBad{
+
+.ImgBaixaBad {
     margin-top: 1vw;
     margin-bottom: 1vw;
     width: 50vw;
-     height: 56vh;
+    height: 56vh;
     background-image: url("../assets/img/personagensGif/badeline/bad.gif");
     background-size: 100%;
 }
-.ImgBaixaTheo{
+
+.ImgBaixaTheo {
     margin-top: 1vw;
     margin-bottom: 1vw;
     width: 50vw;
-     height: 56vh;
+    height: 56vh;
     background-image: url("../assets/img/personagensGif/theo/theo.gif");
     background-size: 100%;
 }
-.ImgBaixaOshiro{
+
+.ImgBaixaOshiro {
     margin-top: 1vw;
     margin-bottom: 1vw;
     width: 50vw;
-     height: 56vh;
+    height: 56vh;
     background-image: url("../assets/img/personagensGif/oshiro/oshiro.gif");
     background-size: 100%;
 }
-.ImgBaixaVovo{
+
+.ImgBaixaVovo {
     margin-top: 1vw;
     margin-bottom: 1vw;
     width: 50vw;
@@ -180,19 +221,20 @@ button{
     background-image: url("../assets/img/personagensGif/vovo/vovó.gif");
     background-size: 100%;
 }
-.titulo2{
+
+.titulo2 {
     display: flex;
     justify-content: center;
     font-size: 3vw;
     background-color: #222222;
 }
 
-.bordaCard{
+.bordaCard {
     margin: 0.1vw;
     border: #fff solid 0.1vw;
 }
 
-.bordaPersonagem{
+.bordaPersonagem {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,68 +242,79 @@ button{
     height: 12vh;
     border: #fff solid 0.1vw;
 }
-.nomePersonagem{
+
+.nomePersonagem {
     padding: 2vw;
     border-right: #444 solid 0.3vw;
 }
-.nomePersonagemReverse{
+
+.nomePersonagemReverse {
     padding: 2vw;
     border-left: #444 solid 0.3vw;
 }
-.sobrePersonagem{
+
+.sobrePersonagem {
     text-align: justify;
     padding: 2vw;
     font-size: 1vw;
 
 }
+
 /* Personagens */
 
-.madeleine{
+.madeleine {
     background-image: url("../assets/img/personagensGif/madeline/normal.gif");
     background-size: 100%;
 }
-.badeleine{ 
+
+.badeleine {
     background-image: url("../assets/img/personagensGif/badeline/yell.gif");
     background-size: 100%;
 }
-.theo{
+
+.theo {
     background-image: url("../assets/img/personagensGif/theo/thinking.gif");
     background-size: 100%;
 }
-.oshiro{
+
+.oshiro {
     background-image: url("../assets/img/personagensGif/oshiro/serious.gif");
     background-size: 100%;
 }
-.vovo{
+
+.vovo {
     background-image: url("../assets/img/personagensGif/vovo/laugh.gif");
     background-size: 100%;
 }
 
 /* FOOTER */
-footer{
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding-top: 10vw;
     width: 100%;
-    height:30vh;
+    height: 30vh;
     background-color: #222222;
 }
-.botao{
+
+.botao {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.copyright{
+
+.copyright {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 20%;
 }
-.color{
+
+.color {
     /* background-color: #ea422c33; */
     position: absolute;
     width: 80%;
@@ -272,13 +325,14 @@ footer{
     align-items: center;
     margin-top: 45%;
 }
-.color2{
+
+.color2 {
     /* background-color: rgba(34, 34, 153, 0.245); */
     cursor: pointer;
     width: 20%;
-    height:55%;
+    height: 55%;
     z-index: 10;
     display: flex;
     justify-content: center;
-    align-items:flex-start;
+    align-items: flex-start;
 }

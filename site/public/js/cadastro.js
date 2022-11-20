@@ -109,7 +109,127 @@ function validarEmail() {
         return true;
     }
   }
-  
+
+  function mostrarFoto(){
+
+    var ftPerfil = foto.value;
+
+    if(ftPerfil == "../assets/img/personagensGif/vovo/creep.gif"){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/vovo/laugh.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/vovo/mock.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/vovo/normal.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/theo/excited.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/theo/normal.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/theo/serious.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/theo/thinking.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/theo/excited.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/oshiro/drama.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/oshiro/happy.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/oshiro/lostcontrol.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/oshiro/nervous.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/oshiro/normal.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/oshiro/serious.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/oshiro/suspicious.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/oshiro/worried.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/oshiro/worried-side.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/madeline/angry.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/madeline/deadpan.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/madeline/determined.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/madeline/distracted.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/madeline/normal.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/madeline/panic.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/madeline/sad.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/madeline/surprised.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/madeline/together.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/badeline/angry.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/badeline/freakout1.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/badeline/freakout2.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/badeline/freakout3.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/badeline/normal.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/badeline/sad.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/badeline/scoff.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/badeline/serious.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/badeline/worried.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/badeline/yell.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }else if(ftPerfil == "../assets/img/personagensGif/badeline/upset.gif" ){
+        document.getElementById("fotoPerfil").src=ftPerfil;
+        
+    }
+  }
 
   function cadastrar() {
     aguardar();

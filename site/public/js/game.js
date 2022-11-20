@@ -18,6 +18,45 @@ display.textContent = minutes + ":" + seconds;
 },1000);
 }
 
+//Mudar cor 
+function corPersonagem() {
+
+    var personagem = sessionStorage.PERSONAGEM_FAV;
+    if (personagem == 'madeleine') {
+        document.getElementById("cor").style.color = "#ea422c"
+        document.getElementById("botao").style.background = "#ea422c" 
+        document.getElementById("botao").style.color = "#000" 
+        document.getElementById("botao2").style.background = "#ea422c" 
+        document.getElementById("botao2").style.color = "#000" 
+    } else if (personagem == 'badeleine') {
+        document.getElementById("cor").style.color = "#db4ce4"
+        document.getElementById("botao").style.background = "#db4ce4" 
+        document.getElementById("botao").style.color = "#000" 
+        document.getElementById("botao2").style.background = "#db4ce4" 
+        document.getElementById("botao2").style.color = "#000" 
+    } else if (personagem == 'theo') {
+        document.getElementById("cor").style.color = "#e47c2c"
+        document.getElementById("botao").style.background = "#e47c2c" 
+        document.getElementById("botao").style.color = "#000" 
+        document.getElementById("botao2").style.background = "#e47c2c" 
+        document.getElementById("botao2").style.color = "#000" 
+    } else if (personagem == 'oshiro') {
+        document.getElementById("cor").style.color = "#7cbc44"
+        document.getElementById("botao").style.background = "#7cbc44" 
+        document.getElementById("botao").style.color = "#000" 
+        document.getElementById("botao2").style.background = "#7cbc44" 
+        document.getElementById("botao2").style.color = "#000" 
+    } else if (personagem == 'vovo') {
+        document.getElementById("cor").style.color = "#fcec7c"
+        document.getElementById("botao").style.background = "#fcec7c" 
+        document.getElementById("botao").style.color = "#000" 
+        document.getElementById("botao2").style.background = "#fcec7c" 
+        document.getElementById("botao2").style.color = "#000" 
+    }
+}
+
+
+
 //codigo game
 var totalMorangos = 0;
 var tempoDeJogo = 0;

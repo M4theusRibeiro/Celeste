@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Celeste | Dashboard</title>
     <link rel="stylesheet" href="../styles/dash.css">
     <link rel="stylesheet" href="../styles/styles-gerais.css">
-    
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="../js/funcoes.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-     canvas {
+    <script src="../js/funcoes.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
             -moz-user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
             user-select: none;
         }
-  </style>
+    </style>
 
 </head>
 
-<body onload=" obterDadosGrafico(), obterDadosGraficoSentimento()">  
+<body onload=" obterDadosGrafico(), obterDadosGraficoSentimento() ,corPersonagem()">
     <header>
         <nav>
             <div class="icon">
-                <a href="../pico8.html"><img src="../assets/img/morango.png"></a> 
+                <a href="../pico8.html"><img src="../assets/img/morango.png"></a>
             </div>
-                <div class="navbar">
-                  <ul>
+            <div class="navbar">
+                <ul>
                     <li>
                         <a class="txtBranco" onclick="limparSessao()" href="../index.html">Sair</a>
                     </li>
@@ -43,41 +45,42 @@
                         <a class="txtBranco" href="/dashboard/ranking.html">Ranking</a>
                     </li>
                     <li>
-                        <a class="agora" href="/dashboard/dashInicial.html">Dashboard</a>
+                        <a id="cor" href="/dashboard/dashInicial.html">Dashboard</a>
                     </li>
                     <li>
                         <a class="txtBranco" href="/dashboard/mural.html">Fórum</a>
                     </li>
                 </ul>
-                </div>
+            </div>
             </div>
             </div>
         </nav>
     </header>
-    <main>     
+    <main>
         <div class="banner">
             <div class="imgFundo">
-            <span class="titulo"> Olá <span  class="txtVermelho" id="b_usuario"></span></span>
-            <div class="graficos">
-                <div class="titulo">Personagem favorito das pessoas</div>
-            <section style="width: 80%;">
-                <canvas id="PersonagemFavorito"></canvas>
-            </section>
+                <span class="titulo"> Olá <span id="cor2"><span id="b_usuario"></span></span>
+                <div class="graficos">
+                    <div class="titulo">Personagem favorito das pessoas</div>
+                    <section style="width: 80%;">
+                        <canvas id="PersonagemFavorito"></canvas>
+                    </section>
+                </div>
+                <div class="graficos">
+                    <div class="titulo">Sentimento mais escolhido</div>
+                    <section style="width: 80%;">
+                        <canvas id="SentimentoMaisEscolhido"></canvas>
+                    </section>
+                </div>
+            </div>
         </div>
-        <div class="graficos">
-              <div class="titulo">Sentimento mais escolhido</div>
-            <section style="width: 80%;">
-                <canvas id="SentimentoMaisEscolhido"></canvas>
-            </section>  
-        </div>
-        </div>
-    </div>
     </main>
 </body>
+
 </html>
 <script>
 
-  function obterDadosGrafico() {
+    function obterDadosGrafico() {
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
@@ -108,7 +111,7 @@
 
         // Criando estrutura para plotar gráfico - labels
         let labels = ['Personagem favorito das pessoas'];
-        
+
         // Criando estrutura para plotar gráfico - dados
         let dados = {
             labels: labels,
@@ -117,7 +120,7 @@
                 data: [],
                 fill: false,
                 borderColor: '#ea422c',
-                backgroundColor:'#ea422c',
+                backgroundColor: '#ea422c',
                 tension: 0.1
             },
             {
@@ -125,7 +128,7 @@
                 data: [],
                 fill: false,
                 borderColor: '#db4ce4',
-                backgroundColor:'#db4ce4',
+                backgroundColor: '#db4ce4',
                 tension: 0.1
             },
             {
@@ -133,7 +136,7 @@
                 data: [],
                 fill: false,
                 borderColor: '#e4412c',
-                backgroundColor:'#e4412c',
+                backgroundColor: '#e4412c',
                 tension: 0.1
             },
             {
@@ -141,7 +144,7 @@
                 data: [],
                 fill: false,
                 borderColor: '#7cbc44',
-                backgroundColor:'#7cbc44',
+                backgroundColor: '#7cbc44',
                 tension: 0.1
             },
             {
@@ -149,18 +152,18 @@
                 data: [],
                 fill: false,
                 borderColor: '#fcec7c',
-                backgroundColor:'#fcec7c',
+                backgroundColor: '#fcec7c',
                 tension: 0.1
             }]
         };
 
-  
+
 
 
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         console.log(resposta)
-        
+
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
@@ -170,7 +173,7 @@
             dados.datasets[3].data.push(registro.oshiro);
             dados.datasets[4].data.push(registro.vovo);
         }
-        
+
         console.log('----------------------------------------------')
         console.log('O gráfico será plotado com os respectivos valores:')
         console.log('Labels:')
@@ -178,178 +181,183 @@
         console.log('Dados:')
         console.log(dados.datasets)
         console.log('----------------------------------------------')
-        
+
 
         // Criando estrutura para plotar gráfico - config
         const config = {
-        type: 'bar',
-        data: dados,
-        options: {
-            scales: {
-            y: {
-                beginAtZero: true
-      }
-    }
-  },
-};
- 
+            type: 'bar',
+            data: dados,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        };
+
         // Adicionando gráfico criado em div na tela
         const myChart = new Chart(
-    document.getElementById('PersonagemFavorito'),
-    config
-  );
+            document.getElementById('PersonagemFavorito'),
+            config
+        );
 
-       
-}
 
-//Sentimento -------------------
-function obterDadosGraficoSentimento() {
-
-if (proximaAtualizacao != undefined) {
-    clearTimeout(proximaAtualizacao);
-}
-
-fetch(`/grafico/obterGraficoSentimento/`, { cache: 'no-store' }).then(function (response) {
-    if (response.ok) {
-        response.json().then(function (resposta) {
-            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-            resposta.reverse();
-
-            plotarGraficoSentimento(resposta);
-        });
-    } else {
-        console.error('Nenhum dado encontrado ou erro na API');
     }
-})
-    .catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    });
-}
 
-// Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-// Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-// A função *plotarGrafico* também invoca a função *atualizarGrafico*
-function plotarGraficoSentimento(resposta) {
-console.log('iniciando plotagem do gráfico...');
+    //Sentimento -------------------
+    function obterDadosGraficoSentimento() {
 
-// Criando estrutura para plotar gráfico - labels
-let labels = ['Sentimento mais escolhido'];
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
 
-// Criando estrutura para plotar gráfico - dados
-let dados = {
-    labels: labels,
-    datasets: [{
-        label: 'Fracasso',
-        data: [],
-        fill: false,
-        borderColor: '#ea422c',
-        backgroundColor:'#ea422c',
-        tension: 0.1
-    },
-    {
-        label: 'Ansiedade',
-        data: [],
-        fill: false,
-        borderColor: '#db4ce4',
-        backgroundColor:'#db4ce4',
-        tension: 0.1
-    },
-    {
-        label: 'Solidão',
-        data: [],
-        fill: false,
-        borderColor: '#e4412c',
-        backgroundColor:'#e4412c',
-        tension: 0.1
-    },
-    {
-        label: 'Desesperança',
-        data: [],
-        fill: false,
-        borderColor: '#7cbc44',
-        backgroundColor:'#7cbc44',
-        tension: 0.1
-    },
-    {
-        label: 'Insegurança',
-        data: [],
-        fill: false,
-        borderColor: '#fcec7c',
-        backgroundColor:'#fcec7c',
-        tension: 0.1
-    },
-    {
-        label: 'Inadequação',
-        data: [],
-        fill: false,
-        borderColor: '#7cbc44',
-        backgroundColor:'#7cbc44',
-        tension: 0.1
-    }]
-};
- 
-                         
+        fetch(`/grafico/obterGraficoSentimento/`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
 
-console.log('----------------------------------------------')
-console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-console.log(resposta)
-
-// Inserindo valores recebidos em estrutura para plotar o gráfico
-for (i = 0; i < resposta.length; i++) {
-    var registro = resposta[i];
-    dados.datasets[0].data.push(registro.fracasso);
-    dados.datasets[1].data.push(registro.ansiedade);
-    dados.datasets[2].data.push(registro.solidao);
-    dados.datasets[3].data.push(registro.desesperanca);
-    dados.datasets[4].data.push(registro.inseguranca);
-    dados.datasets[5].data.push(registro.inadequacao);
-    
-}
-console.log('----------------------------------------------')
-console.log('O gráfico será plotado com os respectivos valores:')
-console.log('Labels:')
-console.log(labels)
-console.log('Dados:')
-console.log(dados.datasets)
-console.log('----------------------------------------------')
-
-
-// Criando estrutura para plotar gráfico - config
-
-const config = {
-        type: 'bar',
-        data: dados,
-        options: {
-            scales: {
-            y: {
-                beginAtZero: true
+                    plotarGraficoSentimento(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGraficoSentimento(resposta) {
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = ['Sentimento mais escolhido'];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Fracasso',
+                data: [],
+                fill: false,
+                borderColor: '#ea422c',
+                backgroundColor: '#ea422c',
+                tension: 0.1
+            },
+            {
+                label: 'Ansiedade',
+                data: [],
+                fill: false,
+                borderColor: '#db4ce4',
+                backgroundColor: '#db4ce4',
+                tension: 0.1
+            },
+            {
+                label: 'Solidão',
+                data: [],
+                fill: false,
+                borderColor: '#e4412c',
+                backgroundColor: '#e4412c',
+                tension: 0.1
+            },
+            {
+                label: 'Desesperança',
+                data: [],
+                fill: false,
+                borderColor: '#7cbc44',
+                backgroundColor: '#7cbc44',
+                tension: 0.1
+            },
+            {
+                label: 'Insegurança',
+                data: [],
+                fill: false,
+                borderColor: '#fcec7c',
+                backgroundColor: '#fcec7c',
+                tension: 0.1
+            },
+            {
+                label: 'Inadequação',
+                data: [],
+                fill: false,
+                borderColor: '#7cbc44',
+                backgroundColor: '#7cbc44',
+                tension: 0.1
+            }]
+        };
+
+
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.datasets[0].data.push(registro.fracasso);
+            dados.datasets[1].data.push(registro.ansiedade);
+            dados.datasets[2].data.push(registro.solidao);
+            dados.datasets[3].data.push(registro.desesperanca);
+            dados.datasets[4].data.push(registro.inseguranca);
+            dados.datasets[5].data.push(registro.inadequacao);
+
+        }
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+
+        // Criando estrutura para plotar gráfico - config
+
+        const config = {
+            type: 'bar',
+            data: dados,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        };
+        // Adicionando gráfico criado em div na tela
+        const myChart = new Chart(
+            document.getElementById('SentimentoMaisEscolhido'),
+            config
+        );
+
+
+        // Note: changes to the plugin code is not reflected to the chart, because the plugin is loaded at chart construction time and editor changes only trigger an chart.update().
+        const plugin = {
+            id: 'custom_canvas_background_color',
+            beforeDraw: (chart) => {
+                const { ctx } = chart;
+                ctx.save();
+                ctx.globalCompositeOperation = 'destination-over';
+                ctx.fillStyle = 'lightGreen';
+                ctx.fillRect(0, 0, chart.width, chart.height);
+                ctx.restore();
+            }
+        };
     }
-},
-};
-// Adicionando gráfico criado em div na tela
-const myChart = new Chart(
-document.getElementById('SentimentoMaisEscolhido'),
-config
-);
-
-
-// Note: changes to the plugin code is not reflected to the chart, because the plugin is loaded at chart construction time and editor changes only trigger an chart.update().
-const plugin = {
-  id: 'custom_canvas_background_color',
-  beforeDraw: (chart) => {
-    const {ctx} = chart;
-    ctx.save();
-    ctx.globalCompositeOperation = 'destination-over';
-    ctx.fillStyle = 'lightGreen';
-    ctx.fillRect(0, 0, chart.width, chart.height);
-    ctx.restore();
-  }
-};
-}
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     let proximaAtualizacao;
     verificar_autenticacao();
+
+
+
+
+
 
 </script>

@@ -1,53 +1,60 @@
 @import url('http://fonts.cdnfonts.com/css/renogare');
-*{
+
+* {
     margin: 0%;
     font-family: 'Renogare', sans-serif;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
+
 /* Header */
-header{
+header {
     width: 100%;
     height: 8vh;
     color: #fff;
-    background-color: rgba(22,22, 22, 0.7);
+    background-color: rgba(22, 22, 22, 0.7);
     overflow: hidden;
-    position: fixed; 
+    position: fixed;
     z-index: 10;
 }
 
 /* Barra de navegação */
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-nav img{
+
+nav img {
     width: 4vw;
     height: 4vw;
     overflow: hidden;
-    position: fixed; 
-   
+    position: fixed;
+
 }
-.icon{
+
+.icon {
     width: 4vw;
     height: 4vw;
 }
-.navbar{
+
+.navbar {
     display: flex;
     align-items: center;
     list-style: none;
     width: 35vw;
     font-size: 1vw;
     justify-content: space-between;
-  
+
 }
+
 .navbar a {
     text-decoration: none;
-    
+
 }
+
 .navbar ul {
     padding: 0%;
     list-style: none;
@@ -55,6 +62,7 @@ nav img{
     display: flex;
     justify-content: space-around;
 }
+
 .navbar ul li {
     cursor: pointer;
 }
@@ -64,6 +72,7 @@ nav img{
     width: 80%;
     height: 100%;
 }
+
 .container2 {
     width: 80%;
     height: 150%;
@@ -71,38 +80,47 @@ nav img{
     border-bottom: 3vw solid #444;
     background-color: #222;
     flex-direction: column;
-  
+
 }
+
 /* Cores */
-.txtBranco{
+.txtBranco {
     color: #fff;
 }
-.txtVermelho{
-   color: #ea422c;
-}
-.txtLaranja{
-    color:#e4412c
-}
-.txtRoxo{
-    color: #db4ce4;
-}
-.txtVerde{
-    color:#006400
-}
-.txtVerdeClaro{
-    color:#7cbc44
-}
-.txtLight{
-    color:#fce4bc
-}
-.txtAmareloClaro{
-    color:#fcec7c
-}
-.agora{
+
+.txtVermelho {
     color: #ea422c;
 }
 
-.coracao{
+.txtLaranja {
+    color: #e47c2c
+}
+
+.txtRoxo {
+    color: #db4ce4;
+}
+
+.txtVerde {
+    color: #006400
+}
+
+.txtVerdeClaro {
+    color: #7cbc44
+}
+
+.txtLight {
+    color: #fce4bc
+}
+
+.txtAmareloClaro {
+    color: #fcec7c
+}
+
+.agora {
+    color: #ea422c;
+}
+
+.coracao {
     background-image: url("../assets/img/gif/coracaoAzul.gif");
     position: absolute;
     background-size: 100%;
