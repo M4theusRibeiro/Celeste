@@ -24,3 +24,18 @@ function corPersonagem() {
         document.getElementById("cor4").style.color = "#fcec7c"
     }
 }
+
+var personagem = sessionStorage.PERSONAGEM_FAV;
+function temaAtual(){
+    if(personagem == "madeleine"){
+        document.getElementById("imgIcone").src = "../assets/img/red.png"
+    }else if(personagem == "badeleine"){
+        document.getElementById("imgIcone").src = "../assets/img/roxo.png"
+    }else if(personagem == "theo"){
+        document.getElementById("imgIcone").src = "../assets/img/laranja.png"
+    }else if(personagem == "oshiro"){
+        document.getElementById("imgIcone").src = "../assets/img/green.png"
+    }else if(personagem == "vovo"){
+        document.getElementById("imgIcone").src = "../assets/img/amarelo.png"
+    }
+}

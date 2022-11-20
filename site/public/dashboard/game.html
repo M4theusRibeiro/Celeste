@@ -12,12 +12,17 @@
     <script src="../js/funcoes.js"></script>
 </head>
 
-<body onload="corPersonagem()">
+<body onload="corPersonagem(), temaAtual()">
     <header>
         <nav>
-            <div class="icon">
-                <a href="../pico8.html"><img src="../assets/img/morango.png"></a>
-            </div>
+            <span class="icon">
+                <span>
+                    <a href="pico8.html"><img src="../assets/img/morango.png"></a>
+                </span>
+                <span>
+                    <a onclick="trocarTema()"><img id="imgIcone"src="../assets/img/red.png"></a>
+                </span>
+            </span>
             <div class="navbar">
                 <ul>
                     <li>

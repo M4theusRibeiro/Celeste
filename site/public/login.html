@@ -15,10 +15,16 @@
     <script src="./js/funcoes.js"></script>
 </head>
 <header>
+    <body onload="validarSessaoHome(), corPersonagem()">
     <nav>
-        <div class="icon">
-            <a href="pico8.html"><img src="./assets/img/morango.png"></a>
-        </div>
+        <span class="icon">
+            <span>
+                <a href="pico8.html"><img src="./assets/img/morango.png"></a>
+            </span>
+            <span>
+                <a onclick="trocarTema()"><img id="imgIcone"src="../assets/img/red.png"></a>
+            </span>
+        </span>
         <div class="navbar">
             <ul>
                 <li>
@@ -69,6 +75,7 @@
 
     </div>
 </main>
+</body>
 <footer>
 
     <div class="copyright">
@@ -81,3 +88,10 @@
 </body>
 
 </html>
+
+<script>
+
+    window.onload = validarSessaoHome()
+    window.onload = corPersonagem()
+
+</script>

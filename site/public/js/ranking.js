@@ -66,8 +66,6 @@ function atualizarFeed() {
 
 function corPersonagem() {
     
-    
-    
     const personagem = sessionStorage.PERSONAGEM_FAV;
 
     if (personagem == 'madeleine') {

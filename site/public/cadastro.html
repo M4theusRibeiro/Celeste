@@ -15,19 +15,24 @@
     <script src="./js/funcoes.js"></script>
 </head>
 
-<body>
+<body onload="temaAtual()">
     <header>
         <nav>
-            <div class="icon">
-                <a href="pico8.html"><img src="./assets/img/morango.png"></a>
-            </div>
+            <span class="icon">
+                <span>
+                    <a href="pico8.html"><img src="./assets/img/morango.png"></a>
+                </span>
+                <span>
+                    <a onclick="trocarTema()" ><img id="imgIcone" src=" "></a>
+                </span>
+            </span>
             <div class="navbar">
                 <ul>
                     <li>
                         <a class="txtBranco" href="index.html">Home</a>
                     </li>
                     <li>
-                        <a class="agora" href="#">Cadastre-se</a>
+                        <a class="agora" id="cor" href="#">Cadastre-se</a>
                     </li>
                     <li>
                         <a class="txtBranco" href="login.html">Login</a>
@@ -47,7 +52,7 @@
             </div>
             <div class="container-form">
                 <div class="formulario">
-                    <span style="font-size: 2vw;" class="txtVermelho titulo1">Cadastro</span>
+                    <span style="font-size: 2vw;" class="txtVermelho titulo1" id="cor2">Cadastro</span>
 
                     <div class="caixa">
                         <div class="form">
@@ -157,9 +162,9 @@
                     </div>
                     <div class="contaExistente">
                         <span class="txtBranco">Já possui uma conta?</span>
-                        <a class="txtVermelho" on href="login.html">Clique aqui</a>
+                        <a href="login.html"><span id="cor3">Clique aqui</span></a>
                     </div>
-                    <button onclick="cadastrar()">Cadastrar</button>
+                    <button id="botao" onclick="cadastrar()">Cadastrar</button>
                 </div>
                 <div id="div_aguardar" class="divAguardar">
                     <img src="./assets/img/fita.webp" id="loading-gif">
@@ -174,5 +179,8 @@
         </div>
     </footer>
 </body>
-
 </html>
+<script>
+    window.onload = corPersonagem()
+    window.onload = temaAtual()
+</script>

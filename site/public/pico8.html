@@ -21,18 +21,13 @@
         property="twitter:image" />
     <meta content="@MaddyThorson" property="twitter:creator" />
     <meta content="https://mattmakesgames.itch.io/celesteclassic" name="twitter:url" />
-    <script type="application/ld+json">{"itemListElement":[{"position":1,"@type":"ListItem","item":{"@id":"https:\/\/itch.io\/games","name":"Games"}},{"position":2,"@type":"ListItem","item":{"@id":"https:\/\/itch.io\/games\/featured","name":"Featured"}},{"position":3,"@type":"ListItem","item":{"@id":"https:\/\/itch.io\/games\/genre-platformer","name":"Platformer"}},{"position":4,"@type":"ListItem","item":{"@id":"https:\/\/itch.io\/games\/featured\/free","name":"Free"}}],"@type":"BreadcrumbList","@context":"http:\/\/schema.org"}
-
-    </script>
-    <script type="application/ld+json">{"@type":"Product","description":"Climb a mountain","name":"CELESTE Classic","@context":"http:\/\/schema.org\/","aggregateRating":{"ratingValue":"4.7","@type":"AggregateRating","ratingCount":667}}
-
-    </script>
+    <script type="application/ld+json">{"itemListElement":[{"position":1,"@type":"ListItem","item":{"@id":"https:\/\/itch.io\/games","name":"Games"}},{"position":2,"@type":"ListItem","item":{"@id":"https:\/\/itch.io\/games\/featured","name":"Featured"}},{"position":3,"@type":"ListItem","item":{"@id":"https:\/\/itch.io\/games\/genre-platformer","name":"Platformer"}},{"position":4,"@type":"ListItem","item":{"@id":"https:\/\/itch.io\/games\/featured\/free","name":"Free"}}],"@type":"BreadcrumbList","@context":"http:\/\/schema.org"}</script>
+    <script type="application/ld+json">{"@type":"Product","description":"Climb a mountain","name":"CELESTE Classic","@context":"http:\/\/schema.org\/","aggregateRating":{"ratingValue":"4.7","@type":"AggregateRating","ratingCount":667}}</script>
     <title>Celeste | Pico 8</title>
     <meta name="csrf_token"
         value="IkNTNkdUenVteHBTNDBKWCBVUiBCVVRUIG51aTNPN0J2WkhkZ21tVyI=.xpoFbaCXRyZsHVfxD1CKc7by5tQ=" />
     <link rel="stylesheet" href="https://static.itch.io/game.css?1666980614" />
-    <script type="text/javascript">window.itchio_translations_url = 'https://static.itch.io/translations';
-    </script>
+    <script type="text/javascript">window.itchio_translations_url = 'https://static.itch.io/translations';</script>
     <script src="https://static.itch.io/lib.js?1666980614" type="text/javascript"></script>
     <script src="https://static.itch.io/bundle.min.js?1666980614" type="text/javascript"></script>
     <script src="https://static.itch.io/lib/jquery.maskMoney.js" type="text/javascript"></script>
@@ -60,12 +55,17 @@
 </head>
 
 <body data-host="itch.io" data-page_name="view_game"
-    class="locale_en game_layout embedded_game responsive no_theme_toggle" onload="validarSessaoHome()">
+    class="locale_en game_layout embedded_game responsive no_theme_toggle" onload="validarSessaoHome(), corPersonagem()">
     <header>
         <nav>
-            <div class="icon">
-                <a href="game.html"><img src="./assets/img/morango.png"></a>
-            </div>
+            <span class="icon">
+            <span>
+                <a href="pico8.html"><img src="./assets/img/morango.png"></a>
+            </span>
+            <span>
+                <a onclick="trocarTema()"><img id="imgIcone" src="../assets/img/red.png"></a>
+            </span>
+        </span>
             <div class="navbar">
                 <ul>
                     <li id="sair">

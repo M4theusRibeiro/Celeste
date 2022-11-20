@@ -25,51 +25,13 @@ function validarSessaoHome() {
         }
     }
     
-    window.onload = validarSessaoHome()
+   
     
     
     function jogoSecreto(){
         window.location = "pico8.html"
     }
-        window.onload = function()
-    {
-        var layers = [];
-        var banner = document.querySelectorAll(".banner")[0];
-    
-        // create layer data
-        {
-            var layerElements = document.querySelectorAll(".layer");
-            for (var i = 0; i < layerElements.length; i ++)
-            {
-                layers.push(
-                {
-                    element: layerElements[i],
-                    scroll: layerElements[i].getAttribute("data-scroll"),
-                    offset: layerElements[i].getAttribute("data-yoffset")
-                });
-            }
-            layerElements = null;
-        }
-    
-        // update a speicifc layer offset
-        function updateLayerOffset(scroll, layer)
-        {
-            var offset = -((scroll * layer.scroll) - layer.offset * (banner.clientHeight / 3680));
-            layer.element.style.transform = "translate3d(0, " + offset + "px, 0)";
-        }
-    
-        function updateScrollValue()
-        {
-            var scroll = window.scrollY;
-            for (var i = 0; i < layers.length; i ++)
-                    updateLayerOffset(scroll, layers[i]);
-        }
-    
-        
-        document.addEventListener("scroll", updateScrollValue);
-        window.addEventListener("resize", updateScrollValue);
-        updateScrollValue();
-    }
+   
 
 function jogoSecreto(){
     window.location = "pico8.html"
@@ -108,33 +70,51 @@ function validarSessaoHome() {
         }
 
         function corPersonagem() {
-
             var personagem = sessionStorage.PERSONAGEM_FAV;
             if (personagem == 'madeleine') {
+                document.getElementById("imgIcone").src = "../assets/img/red.png"
                 document.getElementById("cor").style.color = "#ea422c"
                 document.getElementById("cor2").style.color = "#ea422c"
                 document.getElementById("cor3").style.color = "#ea422c"
+                document.getElementById("cor4").style.color = "#ea422c"
             } else if (personagem == 'badeleine') {
+                document.getElementById("imgIcone").src = "../assets/img/roxo.png"
                 document.getElementById("cor").style.color = "#db4ce4"
                 document.getElementById("cor2").style.color = "#db4ce4"
                 document.getElementById("cor3").style.color = "#db4ce4"
+                document.getElementById("cor4").style.color = "#db4ce4"
             } else if (personagem == 'theo') {
+                document.getElementById("imgIcone").src = "../assets/img/laranja.png"
                 document.getElementById("cor").style.color = "#e47c2c"
                 document.getElementById("cor2").style.color = "#e47c2c"
                 document.getElementById("cor3").style.color = "#e47c2c"
+                document.getElementById("cor4").style.color = "#e47c2c"
             } else if (personagem == 'oshiro') {
+                document.getElementById("imgIcone").src = "../assets/img/green.png"
                 document.getElementById("cor").style.color = "#7cbc44"
                 document.getElementById("cor2").style.color = "#7cbc44"
                 document.getElementById("cor3").style.color = "#7cbc44"
+                document.getElementById("cor4").style.color = "#7cbc44"
             } else if (personagem == 'vovo') {
+                document.getElementById("imgIcone").src = "../assets/img/amarelo.png"
                 document.getElementById("cor").style.color = "#fcec7c"
                 document.getElementById("cor2").style.color = "#fcec7c"
                 document.getElementById("cor3").style.color = "#fcec7c"
                 document.getElementById("cor4").style.color = "#fcec7c"
             }
         }
-
-
-
-
+        var personagem = sessionStorage.PERSONAGEM_FAV;
+        function temaAtual(){
+            if(personagem == "madeleine"){
+                document.getElementById("imgIcone").src = "../assets/img/red.png"
+            }else if(personagem == "badeleine"){
+                document.getElementById("imgIcone").src = "../assets/img/roxo.png"
+            }else if(personagem == "theo"){
+                document.getElementById("imgIcone").src = "../assets/img/laranja.png"
+            }else if(personagem == "oshiro"){
+                document.getElementById("imgIcone").src = "../assets/img/green.png"
+            }else if(personagem == "vovo"){
+                document.getElementById("imgIcone").src = "../assets/img/amarelo.png"
+            }
+        }
 window.onload = validarSessaoHome()

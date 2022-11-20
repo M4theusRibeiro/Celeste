@@ -15,13 +15,20 @@
     <script src="./js/funcoes.js"></script>
 </head>
 
-<body onload="validarSessaoHome(), corPersonagem()">
+<body onload="validarSessaoHome(), corPersonagem(), temaAtual()">
 
     <header>
         <nav>
-            <div class="icon">
-                <a href="pico8.html"><img src="./assets/img/morango.png"></a>
-            </div>
+            <span class="icon">
+                <span>
+                    <a href="pico8.html"><img src="./assets/img/morango.png"></a>
+                </span>
+                <span>
+                    <a onclick="trocarTema()" ><img id="imgIcone" src="../assets/img/red.png"></a>
+                </span>
+            </span>
+           
+            
             <div class="navbar">
                 <ul>
                     <li id="sair">
@@ -83,7 +90,6 @@
                     <div class="borda">
                         <video autoplay muted loop src="./movie/Celeste.mp4"></video>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -190,6 +196,49 @@
 </html>
 
 <script>
+window.onload = validarSessaoHome()
+window.onload = corPersonagem()
+window.onload = temaAtual()
+window.onload = function()
+    {
+        var layers = [];
+        var banner = document.querySelectorAll(".banner")[0];
+    
+        // create layer data
+        {
+            var layerElements = document.querySelectorAll(".layer");
+            for (var i = 0; i < layerElements.length; i ++)
+            {
+                layers.push(
+                {
+                    element: layerElements[i],
+                    scroll: layerElements[i].getAttribute("data-scroll"),
+                    offset: layerElements[i].getAttribute("data-yoffset")
+                });
+            }
+            layerElements = null;
+        }
+    
+        // update a speicifc layer offset
+        function updateLayerOffset(scroll, layer)
+        {
+            var offset = -((scroll * layer.scroll) - layer.offset * (banner.clientHeight / 3680));
+            layer.element.style.transform = "translate3d(0, " + offset + "px, 0)";
+        }
+    
+        function updateScrollValue()
+        {
+            var scroll = window.scrollY;
+            for (var i = 0; i < layers.length; i ++)
+                    updateLayerOffset(scroll, layers[i]);
+        }
+    
+        
+        document.addEventListener("scroll", updateScrollValue);
+        window.addEventListener("resize", updateScrollValue);
+        updateScrollValue();
+    }
+
 
 
 </script>

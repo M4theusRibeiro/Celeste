@@ -300,3 +300,70 @@ function validarEmail() {
 function sumirMensagem() {
     cardErro.style.display = "none"
 }
+
+function corPersonagem() {
+
+    var personagem = sessionStorage.PERSONAGEM_FAV;
+    if (personagem == 'madeleine') {
+        document.getElementById("cor").style.color = "#ea422c"
+        document.getElementById("cor2").style.color = "#ea422c"
+        document.getElementById("cor3").style.color = "#ea422c"
+    } else if (personagem == 'badeleine') {
+        document.getElementById("cor").style.color = "#db4ce4"
+        document.getElementById("cor2").style.color = "#db4ce4"
+        document.getElementById("cor3").style.color = "#db4ce4"
+    } else if (personagem == 'theo') {
+        document.getElementById("cor").style.color = "#e47c2c"
+        document.getElementById("cor2").style.color = "#e47c2c"
+        document.getElementById("cor3").style.color = "#e47c2c"
+    } else if (personagem == 'oshiro') {
+        document.getElementById("cor").style.color = "#7cbc44"
+        document.getElementById("cor2").style.color = "#7cbc44"
+        document.getElementById("cor3").style.color = "#7cbc44"
+    } else if (personagem == 'vovo') {
+        document.getElementById("cor").style.color = "#fcec7c"
+        document.getElementById("cor2").style.color = "#fcec7c"
+        document.getElementById("cor3").style.color = "#fcec7c"
+        document.getElementById("cor4").style.color = "#fcec7c"
+    }
+}
+
+function trocarTema(){
+    personagem = sessionStorage.PERSONAGEM_FAV
+    if(personagem == undefined){
+        sessionStorage.setItem('PERSONAGEM_FAV', 'madeleine')
+    }
+    console.log(sessionStorage.PERSONAGEM_FAV)
+    if(personagem == "madeleine"){
+        sessionStorage.setItem("PERSONAGEM_FAV", "badeleine");
+        document.getElementById("imgIcone").src = "../assets/img/roxo.png"
+    }else if(personagem == "badeleine"){
+        sessionStorage.setItem("PERSONAGEM_FAV", "theo");
+        document.getElementById("imgIcone").src = "../assets/img/laranja.png"
+    }else if(personagem == "theo"){
+        sessionStorage.setItem("PERSONAGEM_FAV", "oshiro");
+        document.getElementById("imgIcone").src = "../assets/img/green.png"
+    }else if(personagem == "oshiro"){
+        sessionStorage.setItem("PERSONAGEM_FAV", "vovo");
+        document.getElementById("imgIcone").src = "../assets/img/amarelo.png"
+    }else if(personagem == "vovo"){
+        sessionStorage.setItem("PERSONAGEM_FAV", "madeleine"); 
+        document.getElementById("imgIcone").src = "../assets/img/red.png"
+    }
+    corPersonagem()
+}
+
+var personagem = sessionStorage.PERSONAGEM_FAV;
+function temaAtual(){
+    if(personagem == "madeleine"){
+        document.getElementById("imgIcone").src = "../assets/img/red.png"
+    }else if(personagem == "badeleine"){
+        document.getElementById("imgIcone").src = "../assets/img/roxo.png"
+    }else if(personagem == "theo"){
+        document.getElementById("imgIcone").src = "../assets/img/laranja.png"
+    }else if(personagem == "oshiro"){
+        document.getElementById("imgIcone").src = "../assets/img/green.png"
+    }else if(personagem == "vovo"){
+        document.getElementById("imgIcone").src = "../assets/img/amarelo.png"
+    }
+}

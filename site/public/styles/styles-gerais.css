@@ -30,13 +30,9 @@ nav {
 nav img {
     width: 4vw;
     height: 4vw;
-    overflow: hidden;
-    position: fixed;
-
 }
 
 .icon {
-    width: 4vw;
     height: 4vw;
 }
 
@@ -119,7 +115,9 @@ nav img {
 .agora {
     color: #ea422c;
 }
-
+#imgIcone{
+    cursor: pointer;
+}
 .coracao {
     background-image: url("../assets/img/gif/coracaoAzul.gif");
     position: absolute;

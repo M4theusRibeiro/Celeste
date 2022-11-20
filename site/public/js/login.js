@@ -81,4 +81,78 @@ function sumirMensagem() {
     cardErro.style.display = "none"
 }
 
+function trocarTema(){
+    personagem = sessionStorage.PERSONAGEM_FAV
+    if(personagem == undefined){
+        sessionStorage.setItem('PERSONAGEM_FAV', 'madeleine')
+    }
+    console.log(sessionStorage.PERSONAGEM_FAV)
+    if(personagem == "madeleine"){
+        sessionStorage.setItem("PERSONAGEM_FAV", "badeleine");
+        document.getElementById("imgIcone").src = "../assets/img/roxo.png"
+    }else if(personagem == "badeleine"){
+        sessionStorage.setItem("PERSONAGEM_FAV", "theo");
+        document.getElementById("imgIcone").src = "../assets/img/laranja.png"
+    }else if(personagem == "theo"){
+        sessionStorage.setItem("PERSONAGEM_FAV", "oshiro");
+        document.getElementById("imgIcone").src = "../assets/img/green.png"
+    }else if(personagem == "oshiro"){
+        sessionStorage.setItem("PERSONAGEM_FAV", "vovo");
+        document.getElementById("imgIcone").src = "../assets/img/amarelo.png"
+    }else if(personagem == "vovo"){
+        sessionStorage.setItem("PERSONAGEM_FAV", "madeleine"); 
+        document.getElementById("imgIcone").src = "../assets/img/red.png"
+    }
+    corPersonagem()
+}
+
+function corPersonagem() {
+
+    var personagem = sessionStorage.PERSONAGEM_FAV;
+    if (personagem == 'madeleine') {
+        document.getElementById("cor").style.color = "#ea422c"
+        document.getElementById("botao").style.background = "#ea422c" 
+        document.getElementById("botao").style.color = "#000" 
+        document.getElementById("botao2").style.background = "#ea422c" 
+        document.getElementById("botao2").style.color = "#000" 
+    } else if (personagem == 'badeleine') {
+        document.getElementById("cor").style.color = "#db4ce4"
+        document.getElementById("botao").style.background = "#db4ce4" 
+        document.getElementById("botao").style.color = "#000" 
+        document.getElementById("botao2").style.background = "#db4ce4" 
+        document.getElementById("botao2").style.color = "#000" 
+    } else if (personagem == 'theo') {
+        document.getElementById("cor").style.color = "#e47c2c"
+        document.getElementById("botao").style.background = "#e47c2c" 
+        document.getElementById("botao").style.color = "#000" 
+        document.getElementById("botao2").style.background = "#e47c2c" 
+        document.getElementById("botao2").style.color = "#000" 
+    } else if (personagem == 'oshiro') {
+        document.getElementById("cor").style.color = "#7cbc44"
+        document.getElementById("botao").style.background = "#7cbc44" 
+        document.getElementById("botao").style.color = "#000" 
+        document.getElementById("botao2").style.background = "#7cbc44" 
+        document.getElementById("botao2").style.color = "#000" 
+    } else if (personagem == 'vovo') {
+        document.getElementById("cor").style.color = "#fcec7c"
+        document.getElementById("botao").style.background = "#fcec7c" 
+        document.getElementById("botao").style.color = "#000" 
+        document.getElementById("botao2").style.background = "#fcec7c" 
+        document.getElementById("botao2").style.color = "#000" 
+    }
+}
+var personagem = sessionStorage.PERSONAGEM_FAV;
+function temaAtual(){
+    if(personagem == "madeleine"){
+        document.getElementById("imgIcone").src = "../assets/img/red.png"
+    }else if(personagem == "badeleine"){
+        document.getElementById("imgIcone").src = "../assets/img/roxo.png"
+    }else if(personagem == "theo"){
+        document.getElementById("imgIcone").src = "../assets/img/laranja.png"
+    }else if(personagem == "oshiro"){
+        document.getElementById("imgIcone").src = "../assets/img/green.png"
+    }else if(personagem == "vovo"){
+        document.getElementById("imgIcone").src = "../assets/img/amarelo.png"
+    }
+}
 

@@ -24,12 +24,6 @@ button {
     float: left;
 }
 
-/* #login{
-    display: none;
-}
-#cadastro{
-    display: none;
-} */
 .banner {
     position: relative;
     padding-bottom: 167%;
@@ -131,9 +125,9 @@ button {
     width: 38vw;
     height: 49vh;
     background-color: #fff;
-    border: #ea422c solid 1vw;
-    border-style: ridge;
-    overflow: hidden;
+    border: #ea422c solid 0.2vw;
+    background-color: #ea422c;
+    overflow:hidden;
 }
 
 .borda video {
