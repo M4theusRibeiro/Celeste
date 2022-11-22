@@ -448,7 +448,6 @@ function gerarMorangoVoador(){
 //Função de salvar o recorde no banco
     function salvarRecorde() {
     
-        var nomeVar = Nome.value;
         var pontosVar = totalMorangos;
         var idVar = sessionStorage.ID_USUARIO
 
@@ -458,7 +457,6 @@ function gerarMorangoVoador(){
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                nomeServer: nomeVar,
                 pontosServer: pontosVar,
                 idServer: idVar
             })

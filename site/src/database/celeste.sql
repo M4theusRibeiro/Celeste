@@ -1,8 +1,15 @@
 
 /*MySQL - banco local - ambiente de desenvolvimento*/
 -- Criando banco de dados
-create database Celeste;
+create  database Celeste;
 use Celeste;
+
+-- Criação da tabela ranking
+create table ranking(
+	idRanking int primary key auto_increment,
+	nome varchar(45),
+	pontuacao int
+);
 
 -- Criação da tabela usuario
 create table usuario(
@@ -11,18 +18,10 @@ create table usuario(
 	email varchar(85),
 	senha varchar(30),
 	persoFav varchar(30),
-	sentimento varchar(30)
+	sentimento varchar(30),
+    img varchar(100),
+    fkRanking INT,FOREIGN KEY (fkRanking) REFERENCES ranking(idRanking)
 );
-
-create table ranking(
-	idRanking int primary key auto_increment,
-	nome varchar(10),
-	pontuacao int,
-	fkUsuario INT,FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
-);
-
--- Selecionar os primeiros colocados do ranking
-select u.idUsuario, u.nome, r.pontuacao from ranking r join usuario u on u.idUsuario =  r.fkUsuario order by r.pontuacao desc limit 8;
 
 -- Criação da tabela comentario
 create table comentario(
@@ -35,9 +34,13 @@ create table comentario(
     primary key(idComentario, fkUsuario)
 );
 
+-- Selecionar todos os dados de todas as tabelas
 select * from usuario;
-select * from comentario;
 select * from ranking;
+select * from comentario;
+
+-- Selecionar os primeiros colocados do ranking
+select u.img, u.nome, r.pontuacao from ranking r join usuario u on fkRanking = r.idRanking  order by pontuacao desc;
 
 -- Total de pessoas que gostam de cada personagem
 select count(persoFav) as madeline,
@@ -60,3 +63,5 @@ select count(sentimento) as fracasso,
      (select count(sentimento) from usuario where sentimento = 'inseguranca') as inseguranca,
      (select count(sentimento) from usuario where sentimento = 'inadequacao') as inadequacao
     from usuario where sentimento = 'fracasso';
+    
+    

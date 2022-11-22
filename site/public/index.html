@@ -24,11 +24,11 @@
                     <a href="pico8.html"><img src="./assets/img/morango.png"></a>
                 </span>
                 <span>
-                    <a onclick="trocarTema()" ><img id="imgIcone" src="../assets/img/red.png"></a>
+                    <a onclick="trocarTema()"><img id="imgIcone" src="../assets/img/red.png"></a>
                 </span>
             </span>
-           
-            
+
+
             <div class="navbar">
                 <ul>
                     <li id="sair">
@@ -50,7 +50,7 @@
                         <a class="txtBranco" href="/dashboard/mural.html">Fórum</a>
                     </li>
                     <li id="cadastro">
-                        <a  class="txtBranco btn" href="cadastro.html">Cadastre-se</a>
+                        <a class="txtBranco btn" href="cadastro.html">Cadastre-se</a>
                     </li>
                     <li id="login">
                         <a class="txtBranco btn" href="login.html">Login</a>
@@ -63,7 +63,7 @@
     </header>
 
     <main>
-        <div class="banner section" >
+        <div class="banner section">
             <div class="layer layer-oshiro" data-scroll="0.05" data-yoffset="200">&nbsp;</div>
             <div class="layer layer-dash" data-scroll="0.20" data-yoffset="200">&nbsp;</div>
             <div class="layer layer-theo" data-scroll="0.05" data-yoffset="300">&nbsp;</div>
@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="banner"></div>
-    
+        <!-- Banner Game -->
         <div class="bannergame">
             <div class="caixa">
                 <span style="font-style:italic;font-size: 3vw;padding:10%" class="txtBranco"> “É isso <span
@@ -93,97 +93,115 @@
                 </div>
             </div>
         </div>
-            
+
         <div class="personagens">
-        <!-- Madeleine -->
-        <span class="titulo2 agora" id="cor2">Personagens</span>
-        <div class="bannerPersonagem">
-            <div class="container2">
-                <div class="caixa2">
-                    <div class="bordaPersonagem madeleine">
-                        
+            <!-- Madeleine -->
+            <span class="titulo2 agora" id="cor2">Personagens</span>
+            <div class="bannerPersonagem">
+                <div class="container2">
+                    <div class="caixa2">
+                        <div class="bordaPersonagem madeleine"><img
+                                src="./assets/img/personagensGif/madeline/normal.gif"></div>
+                        <span class="agora nomePersonagem">Madeleine</span>
+                        <div class="sobrePersonagem txtBranco">
+                            Bem determinada e insistente, a Madeline mesmo com muitas inseguranças ainda tem sua <span
+                                class="agora ">coragem</span> notada por outros personagens, alguns até a repreendendo e
+                            chamando-a de tola, avisando-a para parar antes que ela se machuque. Ainda assim, ela
+                            continua em frente.
+                        </div>
                     </div>
-                    <span class="agora nomePersonagem" >Madeleine</span>
-                    <div class="sobrePersonagem txtBranco">
-                        Bem determinada e insistente, a Madeline mesmo com muitas inseguranças ainda tem sua <span class="agora ">CORAGEM</span> notada por outros personagens, alguns até a repreendendo e chamando-a de tola, avisando-a para parar antes que ela se machuque. Ainda assim, ela continua em frente.
-                    </div>        
-                </div> 
-                <div class="ImgBaixa">
-                    <span class="ImgBaixaMad"></span>    
-                </div>
-        </div>
-        </div>   
-        <!-- Badeleine -->
-        <div class="bannerPersonagem">
-            <div class="container2">
-                <div style="flex-direction: row-reverse;" class="caixa2">
-                    <div class="bordaPersonagem badeleine"></div>
-                    <span class="txtRoxo nomePersonagemReverse" >Badeleine</span>
-                    <div class="sobrePersonagem txtBranco">
-                       <span class="txtRoxo">Badeline</span> é a parte <span class="txtRoxo">INSEGURA</span> de <span class="agora">Madeline</span>, representando seus <span class="txtRoxo">MEDOS: SOLIDÃO, INADEQUAÇÃO, FRACASSO e DESESPERANÇA</span>. Ela acredita em lidar com seus problemas de antemão, em vez de cometer erros e resolvê-los mais tarde. 
+                    <div class="ImgBaixa">
+                        <span class="ImgBaixaMad"></span>
                     </div>
-                </div> 
-                <div class="ImgBaixa">
-                    <span class="ImgBaixaBad"></span>    
                 </div>
             </div>
-        </div>   
+            <!-- Badeleine -->
+            <div class="bannerPersonagem">
+                <div class="container2">
+                    <div style="flex-direction: row-reverse;" class="caixa2">
+                        <div class="bordaPersonagem badeleine"><img src="./assets/img/personagensGif/badeline/sad.gif">
+                        </div>
+                        <span class="txtRoxo nomePersonagemReverse">Badeleine</span>
+                        <div class="sobrePersonagem txtBranco">
+                            <span class="txtRoxo">Badeline</span> é a parte <span class="txtRoxo">insegura</span> de
+                            <span class="agora">Madeline</span>, representando seus <span class="txtRoxo">medos:
+                                SOLIDÃO, INADEQUAÇÃO, FRACASSO e DESESPERANÇA</span>. Ela acredita em lidar com seus
+                            problemas de antemão, em vez de cometer erros e resolvê-los mais tarde.
+                        </div>
+                    </div>
+                    <div class="ImgBaixa">
+                        <span class="ImgBaixaBad"></span>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Theo -->
-        <div class="bannerPersonagem">
-            <div class="container2">
-                <div class="caixa2">
-                    <div class="bordaPersonagem theo"></div>
-                    <span class="nomePersonagem txtLaranja">Theo</span>
-                    <div class="sobrePersonagem txtBranco">
-                        <span class="txtLaranja">Theo</span> é um jovem <span class="txtLaranja"> descontraído, amigável e despreocupado</span>, com uma obsessão por mídia social. Ele adora tirar fotos e só quer se divertir explorando a Montanha. Ele mostra maturidade para querer tirar o máximo proveito de sua vida e atua como <span class="txtLaranja"> apoio emocional</span> para Madeline durante a escalada.
+            <!-- Theo -->
+            <div class="bannerPersonagem">
+                <div class="container2">
+                    <div class="caixa2">
+                        <div class="bordaPersonagem theo"><img src="./assets/img/personagensGif/theo/thinking.gif">
+                        </div>
+                        <span class="nomePersonagem txtLaranja">Theo</span>
+                        <div class="sobrePersonagem txtBranco">
+                            <span class="txtLaranja">Theo</span> é um jovem <span class="txtLaranja"> descontraído,
+                                amigável e despreocupado</span>, com uma <span class="txtLaranja">obsessão por mídia
+                                social.</span> Ele adora tirar fotos e só quer se divertir explorando a Montanha. Ele
+                            mostra maturidade para querer tirar o máximo proveito de sua vida e atua como <span
+                                class="txtLaranja"> apoio emocional</span> para Madeline durante a escalada.
+                        </div>
                     </div>
-                </div> 
-                <div class="ImgBaixa">
-                    <span class="ImgBaixaTheo"></span>    
+                    <div class="ImgBaixa">
+                        <span class="ImgBaixaTheo"></span>
+                    </div>
                 </div>
             </div>
-        </div> 
 
-        <!-- Oshiro -->
-        <div class="bannerPersonagem">
-            <div class="container2">
-                <div style="flex-direction: row-reverse;" class="caixa2">
-                    <div class="bordaPersonagem oshiro"></div>
-                    <span class="nomePersonagemReverse txtVerdeClaro">Oshiro</span>
-                    <div class="sobrePersonagem txtBranco">
-                            O Oshiro é uma alma perdida que está preso a um hotel, ele acredita que o hotel é maravilhoso mas ele precisa de ajuda para seguir em frente e não consegue reconhecer isso. Ele representa <span class="txtVerdeClaro">a parte de você que não quer seguir em frente e esquecer o passado.</span>
+            <!-- Oshiro -->
+            <div class="bannerPersonagem">
+                <div class="container2">
+                    <div style="flex-direction: row-reverse;" class="caixa2">
+                        <div class="bordaPersonagem oshiro"><img src="./assets/img/personagensGif/oshiro/nervous.gif">
+                        </div>
+                        <span class="nomePersonagemReverse txtVerdeClaro">Oshiro</span>
+                        <div class="sobrePersonagem txtBranco">
+                            O Oshiro é uma alma perdida que está preso a um hotel, ele acredita que o hotel é
+                            maravilhoso mas ele precisa de ajuda para seguir em frente e não consegue reconhecer isso.
+                            Ele representa <span class="txtVerdeClaro">a parte de você que não quer seguir em frente e
+                                esquecer o passado.</span>
+                        </div>
                     </div>
-                </div> 
-                <div class="ImgBaixa">
-                    <span class="ImgBaixaOshiro"></span>    
+                    <div class="ImgBaixa">
+                        <span class="ImgBaixaOshiro"></span>
+                    </div>
                 </div>
             </div>
-        </div> 
-        <!-- Vovó -->
-        <div class="bannerPersonagem">
-            <div class="container2">
-                <div class="caixa2">
-                    <div class="bordaPersonagem vovo">
-                        
+            <!-- Vovó -->
+            <div class="bannerPersonagem">
+                <div class="container2">
+                    <div class="caixa2">
+                        <div class="bordaPersonagem vovo"><img src="./assets/img/personagensGif/vovo/laugh.gif"></div>
+                        <span class="nomePersonagem txtAmareloClaro">Vovó</span>
+                        <div class="sobrePersonagem txtBranco">
+                            Sendo uma das únicas pessoas que moram na Montanha, a <span
+                                class="txtAmareloClaro">vovó</span> demonstra um <span class="txtAmareloClaro">grande
+                                conhecimento</span> sobre a montanha e sempre alerta Madeleine sobre seus perigos. Sua
+                            atitude tende a ser despreocupada, <span class="txtAmareloClaro">servindo principalmente
+                                como meio para Madeline desabafar sobre seus sentimentos.
+                        </div>
                     </div>
-                    <span class="nomePersonagem txtAmareloClaro" >Vovó</span>
-                    <div class="sobrePersonagem txtBranco">
-                            Sendo uma das únicas pessoas que moram na Montanha, a vovó demonstra um grande conhecimento sobre a montanha e sempre alerta Madeleine sobre seus perigos. Sua atitude tende a ser despreocupada, servindo principalmente como meio para Madeline desabafar sobre seus sentimentos.
+                    <div class="ImgBaixa">
+                        <span class="ImgBaixaVovo"></span>
                     </div>
-                </div> 
-                <div class="ImgBaixa">
-                    <span class="ImgBaixaVovo"></span>    
                 </div>
             </div>
-        </div> 
-    </div>
+        </div>      
+
     </main>
 
     <footer>
         <div class="botao">
-            <span style="font-size: 1vw;" class="txtBranco">Acesse já outras <span
-                    class="agora" id="cor3">informações</span> sobre o jogo, basta
+            <span style="font-size: 1vw;" class="txtBranco">Acesse já outras <span class="agora"
+                    id="cor3">informações</span> sobre o jogo, basta
                 <span class="agora" id="cor4">cadastrar-se</span> agora</span>
             <a class="txtBranco btn" href="cadastro.html"><button onclick="cadastrar()">Cadastre-se aqui</button></a>
         </div>
@@ -196,44 +214,40 @@
 </html>
 
 <script>
-window.onload = validarSessaoHome()
-window.onload = corPersonagem()
-window.onload = temaAtual()
-window.onload = function()
-    {
+    window.onload = validarSessaoHome()
+    window.onload = corPersonagem()
+    window.onload = temaAtual()
+    window.onload = function () {
         var layers = [];
         var banner = document.querySelectorAll(".banner")[0];
-    
+
         // create layer data
         {
             var layerElements = document.querySelectorAll(".layer");
-            for (var i = 0; i < layerElements.length; i ++)
-            {
+            for (var i = 0; i < layerElements.length; i++) {
                 layers.push(
-                {
-                    element: layerElements[i],
-                    scroll: layerElements[i].getAttribute("data-scroll"),
-                    offset: layerElements[i].getAttribute("data-yoffset")
-                });
+                    {
+                        element: layerElements[i],
+                        scroll: layerElements[i].getAttribute("data-scroll"),
+                        offset: layerElements[i].getAttribute("data-yoffset")
+                    });
             }
             layerElements = null;
         }
-    
+
         // update a speicifc layer offset
-        function updateLayerOffset(scroll, layer)
-        {
+        function updateLayerOffset(scroll, layer) {
             var offset = -((scroll * layer.scroll) - layer.offset * (banner.clientHeight / 3680));
             layer.element.style.transform = "translate3d(0, " + offset + "px, 0)";
         }
-    
-        function updateScrollValue()
-        {
+
+        function updateScrollValue() {
             var scroll = window.scrollY;
-            for (var i = 0; i < layers.length; i ++)
-                    updateLayerOffset(scroll, layers[i]);
+            for (var i = 0; i < layers.length; i++)
+                updateLayerOffset(scroll, layers[i]);
         }
-    
-        
+
+
         document.addEventListener("scroll", updateScrollValue);
         window.addEventListener("resize", updateScrollValue);
         updateScrollValue();

@@ -232,9 +232,14 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25%;
-    height: 12vh;
+    width: 30%;
+    height: 17vh;
     border: #fff solid 0.1vw;
+    overflow: hidden;
+}
+.bordaPersonagem img{
+    width: 100%;
+    height: 100%;
 }
 
 .nomePersonagem {
@@ -256,7 +261,7 @@ button {
 
 /* Personagens */
 
-.madeleine {
+/* .madeleine {
     background-image: url("../assets/img/personagensGif/madeline/normal.gif");
     background-size: 100%;
 }
@@ -279,7 +284,7 @@ button {
 .vovo {
     background-image: url("../assets/img/personagensGif/vovo/laugh.gif");
     background-size: 100%;
-}
+} */
 
 /* FOOTER */
 footer {

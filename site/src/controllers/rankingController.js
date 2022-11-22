@@ -1,19 +1,16 @@
 var rankingModel = require("../models/rankingModel");
 
 function salvarRecorde(req,res){
-    var nome = req.body.nomeServer;
     var pontos = req.body.pontosServer;
     var id = req.body.idServer
 
-    if (nome == undefined) {
-        res.status(400).send("O título está indefinido!");
-    } else if (pontos == undefined) {
+    if (pontos == undefined) {
         res.status(400).send("A descrição está indefinido!");
     }  else if(id == undefined){
         res.status(400).send("A descrição está indefinido!");
     }else{
 
-        rankingModel.salvarRecorde(nome, pontos, id)
+        rankingModel.salvarRecorde(pontos, id)
             .then(
                 function (resultado) {
                     res.json(resultado);

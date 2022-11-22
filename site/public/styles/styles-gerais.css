@@ -25,15 +25,18 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
 }
 
 nav img {
     width: 4vw;
     height: 4vw;
+    z-index: 10;
 }
 
 .icon {
     height: 4vw;
+    z-index: 10;
 }
 
 .navbar {
@@ -43,12 +46,12 @@ nav img {
     width: 35vw;
     font-size: 1vw;
     justify-content: space-between;
-
+    z-index: 10;
 }
 
 .navbar a {
     text-decoration: none;
-
+    z-index: 10;
 }
 
 .navbar ul {
@@ -57,10 +60,12 @@ nav img {
     width: 29vw;
     display: flex;
     justify-content: space-around;
+    z-index: 10;
 }
 
 .navbar ul li {
     cursor: pointer;
+    z-index: 10;
 }
 
 /* Containers */

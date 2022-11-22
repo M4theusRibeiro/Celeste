@@ -24,15 +24,31 @@ function cadastrar(nome, email, senha,personagem, sentimento, img) {
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
+    cadastrarRanking(nome)
+
     var instrucao = `
-        INSERT INTO usuario (nome, email, senha, persoFav, sentimento, img) VALUES ('${nome}', '${email}', '${senha}','${personagem}','${sentimento}','${img}');
+        INSERT INTO usuario (nome, email, senha, persoFav, sentimento, img, fkRanking) VALUES ('${nome}', '${email}', '${senha}','${personagem}','${sentimento}','${img}',(select count(idRanking) from ranking));
     `;
+    
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
+function cadastrarRanking(nome){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+   
+    var instrucao = `INSERT INTO ranking (nome, pontuacao) values ('${nome}',0);`
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
 module.exports = {
     entrar,
     cadastrar,
+    cadastrarRanking,
     listar,
 };
