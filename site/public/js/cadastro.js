@@ -227,9 +227,17 @@ function validarEmail() {
         
     }else if(ftPerfil == "../assets/img/personagensGif/badeline/upset.gif" ){
         document.getElementById("fotoPerfil").src=ftPerfil;
-        
     }
   }
+
+
+
+
+
+
+
+
+
 
   function cadastrar() {
     aguardar();

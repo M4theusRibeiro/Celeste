@@ -100,9 +100,13 @@ if(jogoRodando == 'não'){
 }
 }
 
+
 //Limpar campos dos morangos
 function limparCampos(){
-    um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
+    var  lista_posicoes = [um, dois, tres, quatro, cinco, seis, sete, oito, nove, dez, onze, doze, treze, quatorze, quinze];
+    for(var i = 0; i < lista_posicoes.length; i++){
+        lista_posicoes[i].innerHTML = ``;
+    }
 }
 
 //Pegar morango comum(Soma mais 1 ponto)
@@ -137,6 +141,7 @@ function pegarMorangoVoador(){
 //Trocar a posição atual do morango
 var nAntigo = 0
 function trocarPosicaoMorango(){
+    var lista_posicoes = [um, dois, tres, quatro, cinco, seis, sete, oito, nove, dez, onze, doze, treze, quatorze, quinze];
 
     console.log("O numero antigo era "+ nAntigo);
     numeroAleatorio = Number(Math.random() * 23).toFixed(0);
@@ -147,93 +152,168 @@ function trocarPosicaoMorango(){
         }else{
             if(numeroAleatorio == 1){
                 console.log("Deu um");
-                um.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
+                for(var i = 0; i < 15; i++){
+                    if(i == 0){
+                        um.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
     
             }else if(numeroAleatorio == 2){
                 console.log("Deu dois");
-                dois.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``
-    
+
+                for(var i = 0; i < 15; i++){
+                    if(i == 1){
+                        dois.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+
             }else if(numeroAleatorio == 3){
                 console.log("Deu três");
-                tres.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;dois.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
-    
+
+                for(var i = 0; i < 15; i++){
+                    if(i == 2){
+                        tres.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+
             }else if(numeroAleatorio == 4){
                 console.log("Deu quatro");
-                quatro.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
-    
+
+                for(var i = 0; i < 15; i++){
+                    if(i == 3){
+                        quatro.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+
             }else if(numeroAleatorio == 5){
                 console.log("Deu cinco");
-                cinco.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-                
-                um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
-    
+
+                for(var i = 0; i < 15; i++){
+                    if(i == 4){
+                        cinco.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+
             }else if(numeroAleatorio == 6){
                 console.log("Deu seis");
-                seis.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
-    
+
+                for(var i = 0; i < 15; i++){
+                    if(i == 5){
+                        seis.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+
             }else if(numeroAleatorio == 7){
                 console.log("Deu sete");
-                sete.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
-    
+
+               for(var i = 0; i < 15; i++){
+                    if(i == 6){
+                        sete.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+
             }else if(numeroAleatorio == 8){
                 console.log("Deu oito");
-                oito.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
-    
+
+                for(var i = 0; i < 15; i++){
+                    if(i == 7){
+                        oito.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+
             }else if(numeroAleatorio == 9){
                 console.log("Deu nove");
-                nove.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
-    
+
+                for(var i = 0; i < 15; i++){
+                    if(i == 8){
+                        nove.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
             }else if(numeroAleatorio == 10){
                 console.log("Deu dez");
-                dez.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
-    
+
+                for(var i = 0; i < 15; i++){
+                    if(i == 9){
+                        dez.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+
             }else if(numeroAleatorio == 11){
                 console.log("Deu onze");
-                onze.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
-    
+               
+                for(var i = 0; i < 15; i++){
+                    if(i == 10){
+                        onze.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+                
             }else if(numeroAleatorio == 12){
                 console.log("Deu doze");
-                doze.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML =``;dois.innerHTML =``;tres.innerHTML =``;quatro.innerHTML =``;cinco.innerHTML =``;seis.innerHTML =``;sete.innerHTML =``;oito.innerHTML =``;nove.innerHTML =``;dez.innerHTML =``;onze.innerHTML =``;treze.innerHTML =``;quatorze.innerHTML =``;quinze.innerHTML =``;
-    
+               
+                for(var i = 0; i < 15; i++){
+                    if(i == 11){
+                        doze.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+                
             }else if(numeroAleatorio == 13){
                 console.log("Deu treze");
-                treze.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
-    
+                
+                for(var i = 0; i < 15; i++){
+                    if(i == 12){
+                        treze.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+                
             }else if(numeroAleatorio == 14){
                 console.log("Deu quatorze");
-                quatorze.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quinze.innerHTML = ``;
-    
+               
+                for(var i = 0; i < 15; i++){
+                    if(i == 13){
+                        quatorze.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+                
             }else if(numeroAleatorio == 15){
                 console.log("Deu quinze");
-                quinze.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoCheio.gif">`;
-    
-                um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;
+                
+                for(var i = 0; i < 15; i++){
+                    if(i == 14){
+                        quinze.innerHTML = `<img onclick="pegarMorango()" src="../assets/img/gif/morangoCheio.gif">`;
+                    }else{
+                        lista_posicoes[i].innerHTML = ``;
+                    }
+                }
+                
+
             }else if(numeroAleatorio == 16 || numeroAleatorio == 17 || numeroAleatorio == 18 || numeroAleatorio == 19 || numeroAleatorio == 20){
               gerarMorangoDourado() 
             }else if(numeroAleatorio == 21 || numeroAleatorio == 22 || numeroAleatorio == 23){
@@ -253,195 +333,347 @@ function trocarPosicaoMorango(){
 var morangoDouradoPosicao = 0
 //Gerar um morango dourado
 function gerarMorangoDourado(){
+    var lista_posicoes = [um, dois, tres, quatro, cinco, seis, sete, oito, nove, dez, onze, doze, treze, quatorze, quinze];
     numeroAleatorio = Number(Math.random() * 15).toFixed(0);
     console.log("Morango Dourado!!!!");
     morangoDouradoPosicao = numeroAleatorio;
+
     if(numeroAleatorio == 1){
         console.log("Deu um");
-        um.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
+        for(var i = 0; i < 15; i++){
+            if(i == 0){
+                um.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 2){
         console.log("Deu dois");
-        dois.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``
+        for(var i = 0; i < 15; i++){
+            if(i == 1){
+                dois.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 3){
         console.log("Deu três");
-        tres.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
+        for(var i = 0; i < 15; i++){
+            if(i == 2){
+                tres.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 4){
         console.log("Deu quatro");
-        quatro.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
+        for(var i = 0; i < 15; i++){
+            if(i == 3){
+                quatro.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 5){
         console.log("Deu cinco");
-        cinco.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
-        
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
+
+        for(var i = 0; i < 15; i++){
+            if(i == 4){
+                cinco.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 6){
         console.log("Deu seis");
-        seis.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
+        for(var i = 0; i < 15; i++){
+            if(i == 5){
+                seis.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 7){
         console.log("Deu sete");
-        sete.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
+        for(var i = 0; i < 15; i++){
+            if(i == 6){
+                sete.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 8){
         console.log("Deu oito");
-        oito.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
+       for(var i = 0; i < 15; i++){
+            if(i == 7){
+                oito.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 9){
         console.log("Deu nove");
-        nove.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
+        for(var i = 0; i < 15; i++){
+            if(i == 8){
+                nove.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 10){
         console.log("Deu dez");
-        dez.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
+        for(var i = 0; i < 15; i++){
+            if(i == 9){
+                dez.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 11){
         console.log("Deu onze");
         onze.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
+        for(var i = 0; i < 15; i++){
+            if(i == 10){
+                onze.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 12){
         console.log("Deu doze");
-        doze.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML =``;dois.innerHTML =``;tres.innerHTML =``;quatro.innerHTML =``;cinco.innerHTML =``;seis.innerHTML =``;sete.innerHTML =``;oito.innerHTML =``;nove.innerHTML =``;dez.innerHTML =``;onze.innerHTML =``;treze.innerHTML =``;quatorze.innerHTML =``;quinze.innerHTML =``;
+        for(var i = 0; i < 15; i++){
+            if(i == 11){
+                doze.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 13){
         console.log("Deu treze");
-        treze.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
-
+        for(var i = 0; i < 15; i++){
+            if(i == 12){
+                treze.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
     }else if(numeroAleatorio == 14){
         console.log("Deu quatorze");
-        quatorze.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quinze.innerHTML = ``;
+        for(var i = 0; i < 15; i++){
+            if(i == 13){
+                quatorze.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 15){
         console.log("Deu quinze");
-        quinze.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
-
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;
+        for(var i = 0; i < 15; i++){
+            if(i == 14){
+                quinze.innerHTML = `<img onclick="pegarMorangoDourado()" src="../assets/img/gif/morangoDourado.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
     }
 }
 
 //Gerar um morango voador
 function gerarMorangoVoador(){
+    var lista_posicoes = [um, dois, tres, quatro, cinco, seis, sete, oito, nove, dez, onze, doze, treze, quatorze, quinze];
     numeroAleatorio = Number(Math.random() * 15).toFixed(0);
     console.log("Morango Voador!!!!");
 
     if(numeroAleatorio == 1){
         console.log("Deu um");
-        um.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
 
-        dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
+        for(var i = 0; i < 15; i++){
+            if(i == 0){
+                um.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 2){
         console.log("Deu dois");
-        dois.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
 
-        um.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``
+        for(var i = 0; i < 15; i++){
+            if(i == 1){
+                dois.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 3){
         console.log("Deu três");
-        tres.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
+        for(var i = 0; i < 15; i++){
+            if(i == 2){
+                tres.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 4){
         console.log("Deu quatro");
-        quatro.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
 
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
+        for(var i = 0; i < 15; i++){
+            if(i == 3){
+                quatro.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
 
     }else if(numeroAleatorio == 5){
         console.log("Deu cinco");
-        cinco.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+       
+        for(var i = 0; i < 15; i++){
+            if(i == 4){
+                cinco.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
         
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
-
     }else if(numeroAleatorio == 6){
         console.log("Deu seis");
-        seis.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
-
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
-
+      
+        for(var i = 0; i < 15; i++){
+            if(i == 5){
+                seis.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
+        
     }else if(numeroAleatorio == 7){
         console.log("Deu sete");
-        sete.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
-
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
-
+     
+        for(var i = 0; i < 15; i++){
+            if(i == 6){
+                sete.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
+        
     }else if(numeroAleatorio == 8){
         console.log("Deu oito");
-        oito.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
-
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
-
+      
+        for(var i = 0; i < 15; i++){
+            if(i == 7){
+                oito.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
+        
     }else if(numeroAleatorio == 9){
         console.log("Deu nove");
-        nove.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
-
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
-
+     
+        for(var i = 0; i < 15; i++){
+            if(i == 8){
+                nove.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
+      
     }else if(numeroAleatorio == 10){
         console.log("Deu dez");
-        dez.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
-
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML =``;
-
+      
+        for(var i = 0; i < 15; i++){
+            if(i == 9){
+                dez.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
+      
     }else if(numeroAleatorio == 11){
         console.log("Deu onze");
-        onze.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
-
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
-
+    
+        for(var i = 0; i < 15; i++){
+            if(i == 10){
+                onze.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
+      
     }else if(numeroAleatorio == 12){
         console.log("Deu doze");
-        doze.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
-
-        um.innerHTML =``;dois.innerHTML =``;tres.innerHTML =``;quatro.innerHTML =``;cinco.innerHTML =``;seis.innerHTML =``;sete.innerHTML =``;oito.innerHTML =``;nove.innerHTML =``;dez.innerHTML =``;onze.innerHTML =``;treze.innerHTML =``;quatorze.innerHTML =``;quinze.innerHTML =``;
-
+      
+        for(var i = 0; i < 15; i++){
+            if(i == 11){
+                doze.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
+      
     }else if(numeroAleatorio == 13){
         console.log("Deu treze");
-        treze.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
-
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;quatorze.innerHTML = ``;quinze.innerHTML = ``;
-
+     
+        for(var i = 0; i < 15; i++){
+            if(i == 12){
+                treze.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
+      
     }else if(numeroAleatorio == 14){
         console.log("Deu quatorze");
-        quatorze.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
-
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quinze.innerHTML = ``;
-
+    
+        for(var i = 0; i < 15; i++){
+            if(i == 13){
+                quatorze.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
+      
     }else if(numeroAleatorio == 15){
         console.log("Deu quinze");
-        quinze.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
-
-        um.innerHTML = ``;dois.innerHTML = ``;tres.innerHTML = ``;quatro.innerHTML = ``;cinco.innerHTML = ``;seis.innerHTML = ``;sete.innerHTML = ``;oito.innerHTML = ``;nove.innerHTML = ``;dez.innerHTML = ``;onze.innerHTML = ``;doze.innerHTML = ``;treze.innerHTML = ``;quatorze.innerHTML = ``;
+        
+        for(var i = 0; i < 15; i++){
+            if(i == 13){
+                quatorze.innerHTML = `<img onclick="pegarMorangoVoador()" src="../assets/img/gif/morangoVoador.gif">`;
+            }else{
+                lista_posicoes[i].innerHTML = ``;
+            }
+        }
     }
 }
 
