@@ -60,7 +60,7 @@
     </header>
     <main>
         <div class="bannerMural">
-            <div class="container">
+            <div class="container-Mural">
                 <h1 class="titulo">Olá,<span id="cor2"><span id="b_usuario">asd</span></span>! Publique algo interessante
                     sobre o jogo!</h1>
                 <div class="formBanner">
@@ -194,6 +194,10 @@
                         var publicacao = resposta[i];
 
                         var divPublicacao = document.createElement("div");
+                        var cabecalho = document.createElement("div");
+                        var divTopo = document.createElement("div");
+                        var divTopoDireita = document.createElement("div");
+                        var divFtPerfil = document.createElement("span")
                         var spanID = document.createElement("span");
                         var spanTitulo = document.createElement("span");
                         var spanNome = document.createElement("span");
@@ -211,6 +215,8 @@
 
 
                         // criando e manipulando elementos do HTML via JavaScript
+
+                        divFtPerfil.innerHTML = "<img src='" + publicacao.ftPerfil + "'>";
                         spanID.innerHTML = "ID: <b>" + publicacao.idComentario + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
@@ -226,7 +232,14 @@
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
 
+                        cabecalho.className = "cabecalho"
+
+                        divTopo.className = "divTopo"
+                        divTopoDireita.className = "divTopoDireita"
+
                         divPublicacao.className = "publicacao";
+                        
+                        divFtPerfil.className = "ftPerfil"
                         spanTitulo.id = "inputNumero" + publicacao.idComentario;
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
@@ -248,13 +261,18 @@
                         btnDeletar.className = "publicacao-btn-editar"
                         btnDeletar.id = "btnDeletar" + publicacao.idComentario;
                         btnDeletar.setAttribute("onclick", `deletar(${publicacao.idComentario})`);
+                        
+                        divPublicacao.appendChild(cabecalho)
+                        
+                        cabecalho.appendChild(divTopo)
+                        cabecalho.appendChild(divTopoDireita)
 
-                        divPublicacao.appendChild(spanID);
-                        divPublicacao.appendChild(spanNome);
-                        divPublicacao.appendChild(spanTitulo);
-
+                        divTopo.appendChild(divFtPerfil)
+                        divTopo.appendChild(spanID);
+                        divTopo.appendChild(spanNome);
+                        divTopoDireita.appendChild(spanTitulo);
                         if (publicacao.descricao != "") {
-                            divPublicacao.appendChild(divDescricao);
+                            divTopoDireita.appendChild(divDescricao);
                         }
                         if (publicacao.img != "") {
                             divPublicacao.appendChild(imgFan);

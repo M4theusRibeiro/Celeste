@@ -30,7 +30,8 @@ button {
 
 }
 
-.container {
+.container-Mural {
+  width: 90%;
   color: #fff;
 }
 
@@ -75,48 +76,50 @@ button {
 
 
 /* Dash */
-.botaoEditar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 1vw;
-  color: white;
-  background-color: #ea422c;
-
-}
-
 .publicacao {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
-  justify-content: center;
-  align-items: stretch;
-  flex-direction: column;
-  border-bottom: 3px solid #ea422c;
-  padding: 10%;
+  border-top: #444 solid 0.2vw;
+  padding: 5%;
   margin: 10vh;
 }
-
-.publicacao>*:not(:last-child) {
-  padding: 0 0 10px 0;
+.publicacao-titulo{
+  padding-bottom: 5%;
 }
 
-.div-results {
+
+.feed_container{
   width: 100%;
-
+  height: 100%;
+  background-color: rgba(19, 19, 20, 0.815);
+  flex-direction: column;
 }
 
-.div-results .feed_container {
-  background-color: #222;
-  border-radius: 5px;
+.cabecalho{
+display: flex;
+}
 
-
+.divTopo{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  width: 20%;
+}
+.divTopo img{
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+}
+.divTopoDireita{
+padding: 4%;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 
 .div-buttons {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .div-buttons>* {
@@ -140,7 +143,6 @@ button {
 }
 
 .imgFan img {
-
   width: 100%;
   height: 100%;
 }
