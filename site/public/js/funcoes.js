@@ -18,10 +18,25 @@ function validarSessao() {
 }
 
 function limparSessao() {
-    // aguardar();
-    sessionStorage.clear();
-    // finalizarAguardar();
-    window.location = "../index.html";
+   
+   
+
+    Swal.fire({
+        title: 'Tem certeza que deseja sair?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Não, quero ficar!',
+        confirmButtonText: 'Sim, quero sair!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+         
+          sessionStorage.clear();
+ 
+          window.location = "../index.html";
+        }
+      })
 }
 
 // carregamento (loading)
@@ -90,3 +105,4 @@ function temaAtual(){
         document.getElementById("imgIcone").src = "../assets/img/amarelo.png"
     }
 }
+

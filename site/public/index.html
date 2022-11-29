@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <script src="./js/index.js"></script>
     <script src="./js/funcoes.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 
 <body onload="validarSessaoHome(), corPersonagem(), temaAtual()">
@@ -55,11 +58,13 @@
                     <li id="login">
                         <a class="txtBranco btn" href="login.html">Login</a>
                     </li>
+                    
                 </ul>
             </div>
-            </div>
-            </div>
-        </nav>
+        </div>
+    </div>
+</nav>
+
     </header>
 
     <main>
@@ -84,16 +89,16 @@
         <div class="bannergame">
             <div class="caixa">
                 <span style="font-style:italic;font-size: 3vw;padding:10%" class="txtBranco"> “É isso <span
-                        class="agora">Madeleine</span>,
+                    class="agora">Madeleine</span>,
                     apenas respire.” </span>
-                <div class="container">
-                    <div class="borda">
+                    <div class="container">
+                        <div class="borda">
                         <video autoplay muted loop src="./movie/Celeste.mp4"></video>
                     </div>
                 </div>
             </div>
         </div>
-
+        
         <div class="personagens">
             <!-- Madeleine -->
             <span class="titulo2 agora" id="cor2">Personagens</span>
@@ -101,25 +106,25 @@
                 <div class="container2">
                     <div class="caixa2">
                         <div class="bordaPersonagem madeleine"><img
-                                src="./assets/img/personagensGif/madeline/normal.gif"></div>
-                        <span class="agora nomePersonagem">Madeleine</span>
-                        <div class="sobrePersonagem txtBranco">
-                            Bem determinada e insistente, a Madeline mesmo com muitas inseguranças ainda tem sua <span
+                            src="./assets/img/personagensGif/madeline/normal.gif"></div>
+                            <span class="agora nomePersonagem">Madeleine</span>
+                            <div class="sobrePersonagem txtBranco">
+                                Bem determinada e insistente, a Madeline mesmo com muitas inseguranças ainda tem sua <span
                                 class="agora ">coragem</span> notada por outros personagens, alguns até a repreendendo e
-                            chamando-a de tola, avisando-a para parar antes que ela se machuque. Ainda assim, ela
-                            continua em frente.
+                                chamando-a de tola, avisando-a para parar antes que ela se machuque. Ainda assim, ela
+                                continua em frente.
+                            </div>
+                        </div>
+                        <div class="ImgBaixa">
+                            <span class="ImgBaixaMad"></span>
                         </div>
                     </div>
-                    <div class="ImgBaixa">
-                        <span class="ImgBaixaMad"></span>
-                    </div>
                 </div>
-            </div>
-            <!-- Badeleine -->
-            <div class="bannerPersonagem">
-                <div class="container2">
-                    <div style="flex-direction: row-reverse;" class="caixa2">
-                        <div class="bordaPersonagem badeleine"><img src="./assets/img/personagensGif/badeline/sad.gif">
+                <!-- Badeleine -->
+                <div class="bannerPersonagem">
+                    <div class="container2">
+                        <div style="flex-direction: row-reverse;" class="caixa2">
+                            <div class="bordaPersonagem badeleine"><img src="./assets/img/personagensGif/badeline/sad.gif">
                         </div>
                         <span class="txtRoxo nomePersonagemReverse">Badeleine</span>
                         <div class="sobrePersonagem txtBranco">
@@ -194,20 +199,25 @@
                     </div>
                 </div>
             </div>
-        </div>      
-
+            <div class="naTela">
+                <div class="livro">
+                    <span id="Livro" class="Livro" > </span>
+                </div>
+            </div>
+        </div>   
+    </div>   
     </main>
-
     <footer>
         <div class="botao">
             <span style="font-size: 1vw;" class="txtBranco">Acesse já outras <span class="agora"
                     id="cor3">informações</span> sobre o jogo, basta
-                <span class="agora" id="cor4">cadastrar-se</span> agora</span>
+                <span class="agora" id="cor4">cadastrar-se</span> agora para me ajudar a pegar os <span class="agora" id="cor5">morangos</span></span>
             <a class="txtBranco btn" href="cadastro.html"><button onclick="cadastrar()">Cadastre-se aqui</button></a>
         </div>
         <div class="copyright">
             <span style="font-size: 1vw;" class="txtBranco">&copy; Copyright 2022 Sptech Matheus Ribeiro</span>
         </div>
+   
     </footer>
 </body>
 

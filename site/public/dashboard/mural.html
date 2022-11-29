@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="../styles/styles-gerais.css">
     <script src="../js/funcoes.js"></script>
     <script src="../js/mural.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -35,7 +37,7 @@
             <div class="navbar">
                 <ul>
                     <li>
-                        <a class="txtBranco" onclick="limparSessao()" href="../index.html">Sair</a>
+                        <a class="txtBranco" onclick="limparSessao()">Sair</a>
                     </li>
                     <li class="btn">
                         <a class="txtBranco" href="../index.html">Home</a>
@@ -61,7 +63,7 @@
     <main>
         <div class="bannerMural">
             <div class="container-Mural">
-                <h1 class="titulo">Olá,<span id="cor2"><span id="b_usuario">asd</span></span>! Publique algo interessante
+                <h1 class="titulo">Olá,<span id="cor2"><span id="b_usuario"></span></span>! Publique algo interessante
                     sobre o jogo!</h1>
                 <div class="formBanner">
                     <div class="form">
@@ -126,8 +128,17 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
+                                    
+                        Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `Post realizado com sucesso pelo usuario de ID: ${idUsuario} !`,
+                        showConfirmButton: false,
+                        timer: 1500
+                        
+                        })
+                        setTimeout('window.location = "/dashboard/mural.html"',1600)
+                
                 limparFormulario();
                 finalizarAguardar();
             } else if (resposta.status == 404) {

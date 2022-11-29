@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../styles/game.css">
     <script src="../js/game.js"></script>
     <script src="../js/funcoes.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 
 <body onload="corPersonagem(), temaAtual()">
@@ -26,7 +29,7 @@
             <div class="navbar">
                 <ul>
                     <li>
-                        <a class="txtBranco" onclick="limparSessao()" href="../index.html">Sair</a>
+                        <a class="txtBranco" onclick="limparSessao()">Sair</a>
                     </li>
                     <li class="btn">
                         <a class="txtBranco" href="../index.html">Home</a>

@@ -65,3 +65,4 @@ select count(sentimento) as fracasso,
     from usuario where sentimento = 'fracasso';
     
     
+
