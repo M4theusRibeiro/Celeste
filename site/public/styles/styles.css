@@ -110,6 +110,7 @@ button {
     height: 50vh;
     padding-top: 4vw;
     padding-bottom: 4vw;
+    
 }
 
 .caixa {
@@ -150,6 +151,7 @@ button {
     flex-direction: column;
     background-color: #222;
     margin-top: 14%;
+    
 }
 
 .caixa2 {
@@ -158,6 +160,8 @@ button {
     align-items: center;
     font-size: 2vw;
     padding: 1vw;
+    width: 100%;
+   
 }
 
 .ImgBaixa {
@@ -167,6 +171,7 @@ button {
     margin-left: 1vw;
     margin-right: 1vw;
     border-top: #444 solid 0.2vw;
+    border-radius: 1000px;
     height: auto;
 }
 
@@ -175,6 +180,7 @@ button {
     margin-bottom: 1vw;
     width: 50vw;
     height: 56vh;
+    border-radius: 1000px;
     background-image: url("../assets/img/gif/madeleine.gif");
     background-position-x: center;
     background-size: contain;
@@ -185,6 +191,7 @@ button {
     margin-bottom: 1vw;
     width: 50vw;
     height: 56vh;
+    border-radius: 1000px;
     background-image: url("../assets/img/personagensGif/badeline/bad.gif");
     background-size: 100%;
 }
@@ -193,6 +200,7 @@ button {
     margin-top: 1vw;
     margin-bottom: 1vw;
     width: 50vw;
+    border-radius: 1000px;
     height: 56vh;
     background-image: url("../assets/img/personagensGif/theo/theo.gif");
     background-size: 100%;
@@ -205,6 +213,7 @@ button {
     height: 56vh;
     background-image: url("../assets/img/personagensGif/oshiro/oshiro.gif");
     background-size: 100%;
+    border-radius: 1000px;
 }
 
 .ImgBaixaVovo {
@@ -214,6 +223,7 @@ button {
     height: 56vh;
     background-image: url("../assets/img/personagensGif/vovo/vovó.gif");
     background-size: 100%;
+    border-radius: 1000px;
 }
 
 .titulo2 {
@@ -221,42 +231,49 @@ button {
     justify-content: center;
     font-size: 3vw;
     background-color: #222222;
+    border-radius: 1000px;
 }
 
 .bordaCard {
     margin: 0.1vw;
     border: #fff solid 0.1vw;
+    border-radius: 1000px;
 }
 
 .bordaPersonagem {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 25%;
     height: 17vh;
     border: #fff solid 0.1vw;
     overflow: hidden;
+    border-radius: 1000px;
 }
 .bordaPersonagem img{
     width: 100%;
     height: 100%;
+    border-radius: 1000px;
 }
 
 .nomePersonagem {
     padding: 2vw;
     border-right: #444 solid 0.3vw;
+    border-radius: 1000px;
 }
 
 .nomePersonagemReverse {
     padding: 2vw;
     border-left: #444 solid 0.3vw;
+    border-radius: 1000px;
 }
 
 .sobrePersonagem {
     text-align: justify;
     padding: 2vw;
     font-size: 1vw;
-
+    border-radius: 1000px;
+    
 }
 
 /* Personagens */
@@ -314,7 +331,7 @@ footer {
 }
 
 .color {
-    /* background-color: #ea422c33; */
+    background-color: #ea422c33;
     position: absolute;
     width: 80%;
     height: 21%;
@@ -326,7 +343,7 @@ footer {
 }
 
 .color2 {
-    /* background-color: rgba(34, 34, 153, 0.245); */
+    background-color: rgba(34, 34, 153, 0.245);
     cursor: pointer;
     width: 20%;
     height: 55%;

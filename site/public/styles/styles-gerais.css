@@ -3,6 +3,7 @@
 * {
     margin: 0%;
     font-family: 'Renogare', sans-serif;
+    
 }
 
 html {
@@ -85,26 +86,13 @@ nav img {
     border-bottom: 3vw solid #444;
     background-color: #222;
     flex-direction: column;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    overflow:visible;
+}
 
-}
-.naTela{
-
-}
-.livro{
-    display: flex;
-    justify-content: end;
-    align-items: flex-end;
-    overflow: hidden;
-    position: fixed;
-    z-index: 10;
-    width: 100%;
-    height: 90%;   
-    top: 100px;
-    
-}
-.Livro{
-    background-image: url("");
-}
 
 /* Cores */
 .txtBranco {

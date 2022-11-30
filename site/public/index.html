@@ -105,7 +105,7 @@
             <div class="bannerPersonagem">
                 <div class="container2">
                     <div class="caixa2">
-                        <div class="bordaPersonagem madeleine"><img
+                        <div class="bordaPersonagem madeleine"style="width: 30%;"><img
                             src="./assets/img/personagensGif/madeline/normal.gif"></div>
                             <span class="agora nomePersonagem">Madeleine</span>
                             <div class="sobrePersonagem txtBranco">
@@ -124,7 +124,7 @@
                 <div class="bannerPersonagem">
                     <div class="container2">
                         <div style="flex-direction: row-reverse;" class="caixa2">
-                            <div class="bordaPersonagem badeleine"><img src="./assets/img/personagensGif/badeline/sad.gif">
+                            <div class="bordaPersonagem badeleine"><img width="100%" height="100%" src="./assets/img/personagensGif/badeline/sad.gif">
                         </div>
                         <span class="txtRoxo nomePersonagemReverse">Badeleine</span>
                         <div class="sobrePersonagem txtBranco">
@@ -144,7 +144,7 @@
             <div class="bannerPersonagem">
                 <div class="container2">
                     <div class="caixa2">
-                        <div class="bordaPersonagem theo"><img src="./assets/img/personagensGif/theo/thinking.gif">
+                        <div class="bordaPersonagem theo " style="width: 30%;"><img src="./assets/img/personagensGif/theo/thinking.gif">
                         </div>
                         <span class="nomePersonagem txtLaranja">Theo</span>
                         <div class="sobrePersonagem txtBranco">
@@ -184,7 +184,7 @@
             <div class="bannerPersonagem">
                 <div class="container2">
                     <div class="caixa2">
-                        <div class="bordaPersonagem vovo"><img src="./assets/img/personagensGif/vovo/laugh.gif"></div>
+                        <div class="bordaPersonagem vovo" style="width: 30%;"><img src="./assets/img/personagensGif/vovo/laugh.gif"></div>
                         <span class="nomePersonagem txtAmareloClaro">Vovó</span>
                         <div class="sobrePersonagem txtBranco">
                             Sendo uma das únicas pessoas que moram na Montanha, a <span
@@ -199,11 +199,7 @@
                     </div>
                 </div>
             </div>
-            <div class="naTela">
-                <div class="livro">
-                    <span id="Livro" class="Livro" > </span>
-                </div>
-            </div>
+           
         </div>   
     </div>   
     </main>
@@ -227,6 +223,8 @@
     window.onload = validarSessaoHome()
     window.onload = corPersonagem()
     window.onload = temaAtual()
+
+    
     window.onload = function () {
         var layers = [];
         var banner = document.querySelectorAll(".banner")[0];
