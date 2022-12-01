@@ -1,7 +1,7 @@
 
 /*MySQL - banco local - ambiente de desenvolvimento*/
 -- Criando banco de dados
-create  database Celeste;
+create database Celeste;
 use Celeste;
 
 -- Criação da tabela ranking
@@ -14,12 +14,12 @@ create table ranking(
 -- Criação da tabela usuario
 create table usuario(
 	idUsuario int primary key auto_increment,
-	nome varchar(45),
-	email varchar(85),
-	senha varchar(30),
-	persoFav varchar(30),
-	sentimento varchar(30),
-    img varchar(100),
+	nome varchar(45) not null,
+	email varchar(85) unique,
+	senha varchar(80) not null,
+	persoFav varchar(30) not null,
+	sentimento varchar(30) not null,
+    img varchar(100) not null,
     fkRanking INT,FOREIGN KEY (fkRanking) REFERENCES ranking(idRanking)
 );
 
@@ -34,6 +34,27 @@ create table comentario(
     primary key(idComentario, fkUsuario)
 );
 
+
+            SELECT 
+            a.idComentario AS idComentario,
+            a.titulo,
+            a.descricao,
+            a.img,
+            a.fkUsuario,
+            u.idUsuario AS idUsuario,
+            u.nome,
+            u.img as ftPerfil,
+            u.email,
+            u.senha
+        FROM comentario a
+            INNER JOIN usuario u
+                ON a.fkUsuario = u.idUsuario order by idComentario desc;
+                
+                
+                
+                
+
+
 -- Selecionar todos os dados de todas as tabelas
 select * from usuario;
 select * from ranking;
@@ -41,7 +62,9 @@ select * from comentario;
 
 -- Selecionar os primeiros colocados do ranking
 select u.img, u.nome, r.pontuacao from ranking r join usuario u on fkRanking = r.idRanking  order by pontuacao desc;
+select u.img, u.nome, r.pontuacao from ranking r join usuario u on fkRanking = r.idRanking  order by pontuacao desc;
 
+select pontuacao from ranking;
 -- Total de pessoas que gostam de cada personagem
 select count(persoFav) as madeline,
 	(select count(persoFav) from usuario where persoFav = 'badeleine') as badeleine,
@@ -63,6 +86,5 @@ select count(sentimento) as fracasso,
      (select count(sentimento) from usuario where sentimento = 'inseguranca') as inseguranca,
      (select count(sentimento) from usuario where sentimento = 'inadequacao') as inadequacao
     from usuario where sentimento = 'fracasso';
-    
     
 

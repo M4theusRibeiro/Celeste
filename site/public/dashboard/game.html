@@ -8,6 +8,7 @@
     <title>Game</title>
     <link rel="stylesheet" href="../styles/styles-gerais.css">
     <link rel="stylesheet" href="../styles/game.css">
+    <link rel="icon" href="../assets/icon/backpack.png">
     <script src="../js/game.js"></script>
     <script src="../js/funcoes.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -15,7 +16,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 
-<body onload="corPersonagem(), temaAtual()">
+<body onload="corPersonagem(), temaAtual(), validarSessao()">
     <header>
         <nav>
             <span class="icon">

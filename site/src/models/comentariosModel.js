@@ -88,7 +88,7 @@ function editar(novaDescricao, idComentario) {
 function deletar(idComentario) {
     console.log("ACESSEI O comentario MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function deletar():", idComentario);
     var instrucao = `
-        DELETE FROM comentarios WHERE id = ${idComentario};
+        DELETE FROM comentario WHERE idComentario = ${idComentario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

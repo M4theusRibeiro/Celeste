@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="../styles/muralFanArt.css">
     <link rel="stylesheet" href="../styles/styles-gerais.css">
+    <link rel="icon" href="../assets/icon/backpack.png">
     <script src="../js/funcoes.js"></script>
     <script src="../js/mural.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -67,20 +68,20 @@
                     sobre o jogo!</h1>
                 <div class="formBanner">
                     <div class="form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
+                        <form id="form_postagem"class="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
-                                Título:
-                                <br>
+                                <br>Título:
+                             
                                 <input name="titulo" id="titulo" maxlength="100" type="text">
                             </label>
-                            <br>
+                          
                             <label>
-                                Descrição (máximo de 250 caracteres):
-                                <br>
+                              <br>  Descrição (máximo de 250 caracteres):
+                             
                                 <textarea name="descricao" id="descricao" maxlength="250" rows="5"></textarea>
                             </label>
                             <label>
-                                Imagem:
+                               <br> Imagem:
                                 <input name="imagem" id="imagem" maxlength="250" type="text">
                             </label>
                             <br>
@@ -172,8 +173,22 @@
         }).then(function (resposta) {
 
             if (resposta.ok) {
-                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "mural.html"
+                Swal.fire({
+                title: 'Tem certeza que deseja deletar seu comentário?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'Não, quero cancelar!',
+                confirmButtonText: 'Sim, quero deletar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                
+                    
+                        setTimeout('window.location = "/dashboard/mural.html"',1600)
+                }
+            })
+               
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {

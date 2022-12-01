@@ -8,16 +8,18 @@
     <title>Ranking</title>
     <link rel="stylesheet" href="../styles/styles-gerais.css">
     <link rel="stylesheet" href="../styles/ranking.css">
+    <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
+    <link rel="icon" href="../assets/icon/backpack.png">
+    
     <script src="../js/funcoes.js"></script>
     <script src="../js/ranking.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
     <script src="sweetalert2/dist/sweetalert2.min.js"></script>
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 
-<body onload="atualizarFeed(), corPersonagem(), temaAtual()">
+<body onload="atualizarFeed(), corPersonagem(), temaAtual(), validarSessao()">
     <header>
         <nav>
             <span class="icon">

@@ -7,7 +7,14 @@ function obterGrafico() {
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         instrucaoSql = `select count(persoFav) from usuario where persoFav = 'madeleine'`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select count(persoFav) as madeleine, (select count(persoFav) from usuario where persoFav = 'badeleine') as badeleine,(select count(persoFav) from usuario where persoFav = 'theo') as theo, (select count(persoFav) from usuario where persoFav = 'oshiro') as oshiro, (select count(persoFav) from usuario where persoFav = 'vovo') as vovo from usuario where persoFav = 'madeleine' ;`;
+        instrucaoSql = `
+        select count(persoFav) as madeleine, 
+        (select count(idUsuario) as totalUser from usuario) totalUser,
+        (select count(persoFav) from usuario where persoFav = 'badeleine') as badeleine,
+        (select count(persoFav) from usuario where persoFav = 'theo') as theo, 
+        (select count(persoFav) from usuario where persoFav = 'oshiro') as oshiro,
+        (select count(persoFav) from usuario where persoFav = 'vovo') as vovo from usuario where persoFav = 'madeleine' ;
+        `;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -23,6 +30,7 @@ function obterGraficoSentimento() {
         instrucaoSql = `select count(sentimento) as ansiedade from usuario where sentimento = 'ansiedade';`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select count(sentimento) as fracasso,
+     (select count(idUsuario) as totalUser from usuario) totalUser,
      (select count(sentimento) from usuario where sentimento = 'ansiedade') as ansiedade,
      (select count(sentimento) from usuario where sentimento = 'solidao') as solidao,
      (select count(sentimento) from usuario where sentimento = 'desesperanca') as desesperanca,

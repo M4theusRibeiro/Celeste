@@ -331,7 +331,7 @@ footer {
 }
 
 .color {
-    background-color: #ea422c33;
+    /* background-color: #ea422c33; */
     position: absolute;
     width: 80%;
     height: 21%;
@@ -343,7 +343,7 @@ footer {
 }
 
 .color2 {
-    background-color: rgba(34, 34, 153, 0.245);
+    /* background-color: rgba(34, 34, 153, 0.245); */
     cursor: pointer;
     width: 20%;
     height: 55%;

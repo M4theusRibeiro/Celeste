@@ -92,7 +92,19 @@ nav img {
     border-bottom-right-radius: 250px;
     overflow:visible;
 }
-
+.container3{
+       width: 80%;
+    height: 150%;
+    border: 0.2vw solid #444;
+    border-bottom: 3vw solid #444;
+    background-color: #222;
+    flex-direction: column;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    overflow:visible;
+}
 
 /* Cores */
 .txtBranco {

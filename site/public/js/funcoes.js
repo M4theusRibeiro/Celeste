@@ -18,9 +18,6 @@ function validarSessao() {
 }
 
 function limparSessao() {
-   
-   
-
     Swal.fire({
         title: 'Tem certeza que deseja sair?',
         icon: 'warning',

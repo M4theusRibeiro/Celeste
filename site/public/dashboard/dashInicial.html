@@ -8,7 +8,8 @@
     <title>Celeste | Dashboard</title>
     <link rel="stylesheet" href="../styles/dash.css">
     <link rel="stylesheet" href="../styles/styles-gerais.css">
-
+    <link rel="icon" href="../assets/icon/backpack.png">
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/funcoes.js"></script>
     <script src="../js/dashboard.js"></script>
@@ -27,7 +28,7 @@
 
 </head>
 
-<body onload=" obterDadosGrafico(), obterDadosGraficoSentimento() ,corPersonagem(), temaAtual()">
+<body onload=" obterDadosGrafico(), obterDadosGraficoSentimento() ,corPersonagem(), temaAtual(), validarSessao()">
     <header>
         <nav>
             <span class="icon">
@@ -67,14 +68,27 @@
     <main>
         <div class="banner">
             <div class="imgFundo">
-                <span class="titulo"> Olá <span id="cor2"><span id="b_usuario"></span>, </span> observe as métricas a baixo
+                <span class="titulo titulo2"> Olá <span id="cor2"><span id="b_usuario"></span>,</span> observe abaixo dados sobre o jogo
+            <div class="caixa">
+                <div class="graficos2">
+                    <div class="titulo3">Total de usuários cadastrados<span id="usuarios" class="usuarios"></span></div>
+                </div>
+                 
+                <div class="graficos2" >
+                    <div class="titulo4">Sentimento que as pessoas mais sentem é <span id="sentimentoMais"></span></div>
+                </div>
+            </div>    
                 <div class="graficos">
+                    <div class="titulo titulo5">Personagem que mais apareceu<span id="personagemMais" class="ftPersonagem"></span></div>
+                </div>
+                <div class="graficos4">
                     <div class="titulo">Personagem favorito das pessoas</div>
                     <section style="width: 80%;">
                         <canvas id="PersonagemFavorito"></canvas>
                     </section>
                 </div>
-                <div class="graficos">
+               
+                <div class="graficos4">
                     <div class="titulo">Sentimento mais escolhido</div>
                     <section style="width: 80%;">
                         <canvas id="SentimentoMaisEscolhido"></canvas>
@@ -87,7 +101,65 @@
 
 </html>
 <script>
+var totalUsuarios = 0
 
+
+
+var madeleine = 0
+var badeleine = 0
+var theo = 0
+var oshiro = 0
+var vovo = 0
+
+var ansiedade = 0;
+var solidao = 0;
+var desesperanca = 0;
+var inseguranca = 0;
+var inadequacao = 0;
+var fracasso = 0;
+
+function mostrarNaTela(){
+    usuarios.innerHTML = totalUsuarios
+    sentimentoMais.innerHTML;
+
+    if(ansiedade > solidao && ansiedade > desesperanca && ansiedade > inseguranca && ansiedade > inadequacao && ansiedade > fracasso){
+        sentimentoMais.innerHTML = `a <span id="sentimento" style='color:#ffc222'>Ansiedade</span>`;
+
+    }else if(solidao > desesperanca && solidao > inseguranca && solidao > inadequacao && solidao > fracasso){
+        sentimentoMais.innerHTML = `a <span id="sentimento" style='color:#e47c2c'>Solidao</span>`;
+
+    }else if(desesperanca > inseguranca && desesperanca > inadequacao && desesperanca > fracasso){
+        sentimentoMais.innerHTML = `a <span id="sentimento" style='color:#ea422c'>Desesperanca</span>`;
+
+    }else if(inseguranca > inadequacao && inseguranca > fracasso){
+        sentimentoMais.innerHTML = `a <span id="sentimento" style='color:#db4ce4'>Inseguranca</span>`;
+
+    }else if(inadequacao > fracasso){
+        sentimentoMais.innerHTML = `a <span id="sentimento" style='color:#7cbc44'>Inadequacao</span>`;
+
+    }else if(fracasso){
+        sentimentoMais.innerHTML = `a <span id="sentimento" style='color:#7cbc44'>Fracasso</span>`;
+
+    }
+
+
+    if(madeleine > badeleine && madeleine > theo && madeleine > oshiro && madeleine > vovo){
+        personagemMais.innerHTML = `<img src="../assets/img/personagensGif/madeline/normal.gif">`
+
+    }else if(badeleine > theo && badeleine > oshiro && badeleine > vovo){
+        personagemMais.innerHTML = `<img src="../assets/img/personagensGif/badeline/worried.gif">`
+
+    }else if(theo > oshiro && theo > vovo){
+        personagemMais.innerHTML = `<img src="../assets/img/personagensGif/theo/excited.gif">`
+
+    }else if(oshiro > vovo){
+        personagemMais.innerHTML = `<img src="../assets/img/personagensGif/oshiro/normal.gif">`
+
+    }else if(vovo){
+        personagemMais.innerHTML = `<img src="../assets/img/personagensGif/vovo/laugh.gif">`
+    }
+           
+}
     function obterDadosGrafico() {
 
         if (proximaAtualizacao != undefined) {
@@ -143,8 +215,9 @@
                 label: 'Theo',
                 data: [],
                 fill: false,
-                borderColor: '#e4412c',
-                backgroundColor: '#e4412c',
+                borderColor: '#e47c2c',
+                backgroundColor: '#e47c2c',
+                
                 tension: 0.1
             },
             {
@@ -178,6 +251,11 @@
             dados.datasets[2].data.push(registro.theo);
             dados.datasets[3].data.push(registro.oshiro);
             dados.datasets[4].data.push(registro.vovo);
+            madeleine += registro.madeleine;
+            badeleine += registro.badeleine;
+            theo += registro.theo;
+            oshiro += registro.oshiro;
+            vovo += registro.vovo;
         }
 
         console.log('----------------------------------------------')
@@ -187,13 +265,24 @@
         console.log('Dados:')
         console.log(dados.datasets)
         console.log('----------------------------------------------')
-
+        Chart.defaults.color = '#fff';
 
         // Criando estrutura para plotar gráfico - config
         const config = {
             type: 'bar',
             data: dados,
             options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            font: {
+                                family:'Renogare',
+                                size: 17
+                            }
+                        }
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true
@@ -251,40 +340,40 @@
                 label: 'Fracasso',
                 data: [],
                 fill: false,
-                borderColor: '#ea422c',
-                backgroundColor: '#ea422c',
+                borderColor: '#7cbc44',
+                backgroundColor: '#7cbc44',
                 tension: 0.1
             },
             {
                 label: 'Ansiedade',
                 data: [],
                 fill: false,
-                borderColor: '#db4ce4',
-                backgroundColor: '#db4ce4',
+                borderColor: '#ffc222',
+                backgroundColor: '#ffc222',
                 tension: 0.1
             },
             {
                 label: 'Solidão',
                 data: [],
                 fill: false,
-                borderColor: '#e4412c',
-                backgroundColor: '#e4412c',
+                borderColor: '#e47c2c',
+                backgroundColor: '#e47c2c',
                 tension: 0.1
             },
             {
                 label: 'Desesperança',
                 data: [],
                 fill: false,
-                borderColor: '#7cbc44',
-                backgroundColor: '#7cbc44',
+                borderColor: '#ea422c',
+                backgroundColor: '#ea422c',
                 tension: 0.1
             },
             {
                 label: 'Insegurança',
                 data: [],
                 fill: false,
-                borderColor: '#fcec7c',
-                backgroundColor: '#fcec7c',
+                borderColor: '#db4ce4',
+                backgroundColor: '#db4ce4',
                 tension: 0.1
             },
             {
@@ -313,6 +402,14 @@
             dados.datasets[4].data.push(registro.inseguranca);
             dados.datasets[5].data.push(registro.inadequacao);
 
+            fracasso += registro.fracasso;
+            ansiedade += registro.ansiedade;
+            solidao += registro.solidao;
+            desesperanca += registro.desesperanca;
+            inseguranca += registro.inseguranca;
+            inadequacao += registro.inadequacao;
+
+            totalUsuarios = registro.totalUser;
         }
         console.log('----------------------------------------------')
         console.log('O gráfico será plotado com os respectivos valores:')
@@ -322,16 +419,29 @@
         console.log(dados.datasets)
         console.log('----------------------------------------------')
 
-
+        mostrarNaTela();
         // Criando estrutura para plotar gráfico - config
-
+        
+        Chart.defaults.color = '#fff';
         const config = {
             type: 'bar',
             data: dados,
-            options: {
+            options: { 
+                plugins: {
+                    legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            font: {
+                                family:'Renogare',
+                                size: 17
+                            }
+                        }
+                    }
+                },
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                       
                     }
                 }
             },
