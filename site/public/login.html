@@ -19,7 +19,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 <header>
-    <body onload="validarSessaoHome(), corPersonagem()">
+    <body onload="corPersonagem()">
     <nav>
         <span class="icon">
             <span>
@@ -38,7 +38,7 @@
                     <a class="txtBranco" href="cadastro.html">Cadastre-se</a>
                 </li>
                 <li>
-                    <a class="agora" href="#">Login</a>
+                    <a class="agora" id="cor" href="#">Login</a>
                 </li>
             </ul>
         </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="container-form">
             <div class="formulario">
-                <span style="font-size: 2vw;" class="txtVermelho titulo1">Login</span>
+                <span style="font-size: 2vw;" class="txtVermelho titulo1" id="cor2">Login</span>
                 <div class="campo">
                     <label for="Email" class="txtBranco mensagem">Email:</label>
                     <input id="Email" type="Email">
@@ -66,9 +66,9 @@
                 </div>
                 <div class="contaExistente">
                     <span class="txtBranco">Não possui uma conta?</span>
-                    <a class="txtVermelho" href="cadastro.html">Clique aqui</a>
+                    <a class="txtVermelho" href="cadastro.html" id="cor3">Clique aqui</a>
                 </div>
-                <button onclick="entrar()">Login</button>
+                <button id="botao" onclick="entrar()">Login</button>
                 <div id="div_aguardar" class="loading-div">
                     <img src="./assets/img/fita.webp" id="loading-gif">
                 </div>

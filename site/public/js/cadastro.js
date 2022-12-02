@@ -1,5 +1,5 @@
 //Validação do campo Nome
-function validarNome(){
+function verificarNome(){
     const nome = document.getElementById('Nome');
     msgErro.innerHTML=``;
     //Verificar se o campo é nulo
@@ -25,7 +25,7 @@ function validarNome(){
 }
 
 //Verificar se o email é válido
-function validarEmail() {
+function verificarEmail() {
     const email = document.getElementById("Email");
   
     msgErro.innerHTML = ``;
@@ -56,7 +56,7 @@ function validarEmail() {
   }
   
   //Verificar se a senha digitada é forte
-  function validarForcaSenha() {
+  function verificarForcaSenha() {
     const password = document.getElementById("Senha");
     msgErro.innerHTML = ``;
   
@@ -92,12 +92,12 @@ function validarEmail() {
   }
   
   //Verificar se a senha digitada no repetir senha é igual a primeira senha digitada
-  function validarConfirmarSenha() {
+  function verificarConfirmarSenha() {
     const senha = document.getElementById("Senha");
     const confirmaSenha = document.getElementById("confirmaSenha");
     msgErro.innerHTML = ``;
   
-    //Verifica se as senhas são diferentes
+    //Verifica se as s  enhas são diferentes
     if (senha.value != confirmaSenha.value) {
       msgErro.innerHTML = `<span style='color:red'>Suas senhas não coincidem</span>`;
       return false;
@@ -198,15 +198,6 @@ function validarEmail() {
     }else if(ftPerfil == "../assets/img/personagensGif/badeline/angry.gif" ){
         document.getElementById("fotoPerfil").src=ftPerfil;
         
-    }else if(ftPerfil == "../assets/img/personagensGif/badeline/freakout1.gif" ){
-        document.getElementById("fotoPerfil").src=ftPerfil;
-        
-    }else if(ftPerfil == "../assets/img/personagensGif/badeline/freakout2.gif" ){
-        document.getElementById("fotoPerfil").src=ftPerfil;
-        
-    }else if(ftPerfil == "../assets/img/personagensGif/badeline/freakout3.gif" ){
-        document.getElementById("fotoPerfil").src=ftPerfil;
-        
     }else if(ftPerfil == "../assets/img/personagensGif/badeline/normal.gif" ){
         document.getElementById("fotoPerfil").src=ftPerfil;
         
@@ -214,9 +205,6 @@ function validarEmail() {
         document.getElementById("fotoPerfil").src=ftPerfil;
         
     }else if(ftPerfil == "../assets/img/personagensGif/badeline/scoff.gif" ){
-        document.getElementById("fotoPerfil").src=ftPerfil;
-        
-    }else if(ftPerfil == "../assets/img/personagensGif/badeline/serious.gif" ){
         document.getElementById("fotoPerfil").src=ftPerfil;
         
     }else if(ftPerfil == "../assets/img/personagensGif/badeline/worried.gif" ){
@@ -230,7 +218,9 @@ function validarEmail() {
     }
   }
 
+function sortearImagem(){
 
+}
 
 
 
@@ -336,26 +326,37 @@ function sumirMensagem() {
     cardErro.style.display = "none"
 }
 
+
 function corPersonagem() {
 
     var personagem = sessionStorage.PERSONAGEM_FAV;
     if (personagem == 'madeleine') {
+        document.getElementById("botao").style.backgroundColor = "#ea422c"
+        document.getElementById("botao").style.color = "#000"
         document.getElementById("cor").style.color = "#ea422c"
         document.getElementById("cor2").style.color = "#ea422c"
         document.getElementById("cor3").style.color = "#ea422c"
     } else if (personagem == 'badeleine') {
+        document.getElementById("botao").style.backgroundColor = "#db4ce4"
+        document.getElementById("botao").style.color = "#000"
         document.getElementById("cor").style.color = "#db4ce4"
         document.getElementById("cor2").style.color = "#db4ce4"
         document.getElementById("cor3").style.color = "#db4ce4"
     } else if (personagem == 'theo') {
+        document.getElementById("botao").style.backgroundColor = "#e47c2c"
+        document.getElementById("botao").style.color = "#000"
         document.getElementById("cor").style.color = "#e47c2c"
         document.getElementById("cor2").style.color = "#e47c2c"
         document.getElementById("cor3").style.color = "#e47c2c"
     } else if (personagem == 'oshiro') {
+        document.getElementById("botao").style.backgroundColor = "#7cbc44"
+        document.getElementById("botao").style.color = "#000"
         document.getElementById("cor").style.color = "#7cbc44"
         document.getElementById("cor2").style.color = "#7cbc44"
         document.getElementById("cor3").style.color = "#7cbc44"
     } else if (personagem == 'vovo') {
+        document.getElementById("botao").style.backgroundColor = "#fcec7c"
+        document.getElementById("botao").style.color = "#000"
         document.getElementById("cor").style.color = "#fcec7c"
         document.getElementById("cor2").style.color = "#fcec7c"
         document.getElementById("cor3").style.color = "#fcec7c"

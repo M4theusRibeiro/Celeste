@@ -18,6 +18,9 @@ button {
   margin-bottom: 10%;
 }
 
+.topo{
+  border-top: #444 solid 0.2vw;
+}
 /* Banner */
 .bannerMural {
   display: flex;
@@ -31,8 +34,9 @@ button {
 }
 
 .container-Mural {
-  width: 90%;
+  width: 80%;
   color: #fff;
+ 
 }
 
 .titulo {
@@ -41,7 +45,12 @@ button {
   justify-content: center;
   padding: 2%;
 }
-
+.form_postagem{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
 .form {
   width: 100%;
   height: 100%;
@@ -55,13 +64,15 @@ button {
 }
 
 .form input {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .form textarea {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .titulo {
@@ -69,11 +80,15 @@ button {
   justify-content: center;
   align-items: center;
   color: #fff;
-  padding-top: 2%;
-  border-top: #444 solid 0.2vw;
-  background-color: rgba(22, 22, 22, 0.9);
-}
 
+  font-size: 2vw;
+  background-color: rgba(22, 22, 22, 0.9);
+ 
+  border: #444 0.2vw solid;
+}
+.tituloCima{
+  width: 100%;
+}
 
 /* Dash */
 .publicacao {

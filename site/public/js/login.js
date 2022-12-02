@@ -17,8 +17,22 @@ function entrar() {
     var senhaVar = Senha.value;
 
     if (emailVar == "" || senhaVar == "") {
-        cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'error',
+            title: 'Todos os campos estão vazios!'
+          })
         finalizarAguardar();
         return false;
     }
@@ -42,7 +56,22 @@ function entrar() {
         console.log("ESTOU NO THEN DO entrar()!")
 
         if (resposta.ok) {
-            console.log(resposta);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'success',
+                title: 'Login realizado com sucesso!'
+              })
 
             resposta.json().then(json => {
                 console.log(json);
@@ -111,34 +140,39 @@ function corPersonagem() {
     var personagem = sessionStorage.PERSONAGEM_FAV;
     if (personagem == 'madeleine') {
         document.getElementById("cor").style.color = "#ea422c"
+        document.getElementById("cor2").style.color = "#ea422c"
+        document.getElementById("cor3").style.color = "#ea422c"
         document.getElementById("botao").style.background = "#ea422c" 
         document.getElementById("botao").style.color = "#000" 
-        document.getElementById("botao2").style.background = "#ea422c" 
-        document.getElementById("botao2").style.color = "#000" 
+      
     } else if (personagem == 'badeleine') {
         document.getElementById("cor").style.color = "#db4ce4"
+        document.getElementById("cor2").style.color = "#db4ce4"
+        document.getElementById("cor3").style.color = "#db4ce4"
         document.getElementById("botao").style.background = "#db4ce4" 
         document.getElementById("botao").style.color = "#000" 
-        document.getElementById("botao2").style.background = "#db4ce4" 
-        document.getElementById("botao2").style.color = "#000" 
+        
     } else if (personagem == 'theo') {
         document.getElementById("cor").style.color = "#e47c2c"
+        document.getElementById("cor2").style.color = "#e47c2c"
+        document.getElementById("cor3").style.color = "#e47c2c"
         document.getElementById("botao").style.background = "#e47c2c" 
         document.getElementById("botao").style.color = "#000" 
-        document.getElementById("botao2").style.background = "#e47c2c" 
-        document.getElementById("botao2").style.color = "#000" 
+        
     } else if (personagem == 'oshiro') {
         document.getElementById("cor").style.color = "#7cbc44"
+        document.getElementById("cor2").style.color = "#7cbc44"
+        document.getElementById("cor3").style.color = "#7cbc44"
         document.getElementById("botao").style.background = "#7cbc44" 
         document.getElementById("botao").style.color = "#000" 
-        document.getElementById("botao2").style.background = "#7cbc44" 
-        document.getElementById("botao2").style.color = "#000" 
+       
     } else if (personagem == 'vovo') {
         document.getElementById("cor").style.color = "#fcec7c"
+        document.getElementById("cor2").style.color = "#fcec7c"
+        document.getElementById("cor3").style.color = "#fcec7c"
         document.getElementById("botao").style.background = "#fcec7c" 
         document.getElementById("botao").style.color = "#000" 
-        document.getElementById("botao2").style.background = "#fcec7c" 
-        document.getElementById("botao2").style.color = "#000" 
+       
     }
 }
 var personagem = sessionStorage.PERSONAGEM_FAV;

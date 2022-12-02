@@ -64,32 +64,33 @@
     <main>
         <div class="bannerMural">
             <div class="container-Mural">
-                <h1 class="titulo">Olá,<span id="cor2"><span id="b_usuario"></span></span>! Publique algo interessante
-                    sobre o jogo!</h1>
+                
+                <span class="titulo topo">Olá,<span id="cor2"><span id="b_usuario"></span></span>! Publique algo interessante
+                    sobre o jogo!</span>
                 <div class="formBanner">
                     <div class="form">
                         <form id="form_postagem"class="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
                                 <br>Título:
                              
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
+                                <input name="titulo" id="titulo" class="tituloCima" maxlength="100" type="text">
                             </label>
                           
                             <label>
                               <br>  Descrição (máximo de 250 caracteres):
                              
-                                <textarea name="descricao" id="descricao" maxlength="250" rows="5"></textarea>
+                                <textarea name="descricao" id="descricao" class="descricao" maxlength="250" rows="5"></textarea>
                             </label>
                             <label>
                                <br> Imagem:
-                                <input name="imagem" id="imagem" maxlength="250" type="text">
+                                <input name="imagem" id="imagem" class="imagem" maxlength="250" type="text">
                             </label>
                             <br>
-                            <button>Enviar</button>
+                            <button id="botao">Enviar</button>
                         </form>
                     </div>
                 </div>
-                <h1 class="titulo" id="cor3">ULTIMOS POSTS</h1>
+                <span class="titulo" id="cor3">ULTIMOS POSTS</span>
                 <div class="div-results">
                     <div id="feed_container" class="feed_container">
                     </div>

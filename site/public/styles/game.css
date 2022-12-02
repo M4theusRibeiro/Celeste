@@ -7,10 +7,9 @@ body {
 }
 
 button {
-  background-color: #ea422c;
+  background-color: #fff;
   color: white;
   border: #fff solid 0.1vw;
-  border-radius: 300px;
   font-size: 1vw;
   width: 16vw;
   height: 5vh;
@@ -69,7 +68,7 @@ button {
   background-color: #000;
   width: 10%;
   margin-top: 6%;
-  border-radius: 100px;
+  
   color: #fff;
   font-size: 0.9vw;
   overflow: hidden;
@@ -81,7 +80,7 @@ button {
 .botao1 {
   display: flex;
   justify-content: center;
-  border-radius: 100px;
+  
   width: 10%;
   margin-top: 7%;
   color: #fff;
@@ -94,7 +93,7 @@ button {
 .botao2 {
   display: flex;
   justify-content: center;
-  border-radius: 100px;
+  
   width: 10%;
   margin-top: 4%;
   color: #fff;
@@ -133,6 +132,7 @@ button {
   background-color: #222;
   flex-direction: column;
   padding: 0.9%;
+  border-radius: 10px;
 }
 
 /* Game */
@@ -143,6 +143,7 @@ button {
   flex-direction: column;
   padding-left: 3%;
   width: 100%;
+  
 }
 
 .game img {
@@ -158,6 +159,7 @@ button {
   border-left: 0.2vw solid #444;
   border-right: 0.2vw solid #444;
   border-bottom: 0vw;
+  border-radius: 10px;
 
 }
 
@@ -169,7 +171,7 @@ button {
   border-left: 0.2vw solid #444;
   border-right: 0.2vw solid #444;
   border-bottom: 0vw;
-
+  border-radius: 10px;
 }
 
 .posicao3 {
@@ -181,7 +183,7 @@ button {
   border-right: 0.2vw solid #444;
   border-bottom: 0.2vw solid #444;
   margin-bottom: 1vw;
-
+  border-radius: 10px;
 }
 
 #pontos {
@@ -196,6 +198,7 @@ button {
 
 .posicao {
   background-image: url("../assets/img/gif/morangoVazio.gif");
+  border-radius: 10px;
   background-size: 100%;
   background-position: 0%;
   width: 10vw;
